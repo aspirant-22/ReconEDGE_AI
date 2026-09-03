@@ -4,11 +4,9 @@
 
 ## Current Phase
 
-**Phase 2 — Synthetic Financial Data**
+**Phase 3 — Deterministic Reconciliation Engine**
 
-Phase 2 adds a deterministic synthetic data generator that produces realistic financial datasets for reconciliation evaluation. The generator creates payment, bank transaction, and invoice records with known ground truth relationships and intentionally injected anomalies.
-
-Phase 2 generates evaluation data only. The reconciliation engine is implemented in Phase 3.
+Phase 3 implements a deterministic, ground-truth-isolated reconciliation engine that matches payments to bank transactions and invoices, detects anomalies, and evaluates prediction accuracy against ground truth.
 
 ## Tech Stack
 
@@ -44,8 +42,10 @@ recon-edge-ai/
 │   ├── models/      # Mongoose schemas
 │   ├── routes/      # API routes
 │   ├── services/    # Business logic
+│   │   └── reconciliation/  # Reconciliation engine
 │   └── utils/       # Utility functions
 ├── data/            # Data storage
+│   └── generated/   # Synthetic data + results
 └── README.md
 ```
 
@@ -102,6 +102,89 @@ cd client && npm run dev
 | POST | `/api/auth/register` | Register user | No |
 | POST | `/api/auth/login` | Login user | No |
 | GET | `/api/auth/me` | Get current user | Yes |
+
+## Phase 3 — Deterministic Reconciliation Engine
+
+### Architecture
+
+The reconciliation engine follows a multi-stage pipeline:
+
+1. **Normalization** — Standardize data formats (dates, amounts, IDs)
+2. **Indexing** — Build lookup maps for efficient matching
+3. **Duplicate Detection** — Identify duplicate bank transactions
+4. **Matching** — Match payments to bank transactions and invoices
+5. **Residual Scan** — Detect unmatched bank transactions
+6. **Classification** — Categorize exceptions
+7. **Evaluation** — Compare predictions to ground truth
+
+### Matching Strategy
+
+| Stage | Method | Confidence |
+|-------|--------|------------|
+| 1 | Reference ID exact match | 1.0 |
+| 2 | Order + Customer ID match | 0.95 |
+| 3 | Amount + Date match | 0.85 |
+| 4 | Description parsing | 0.70 |
+
+### Exception Categories
+
+| Category | Description |
+|----------|-------------|
+| AMOUNT_MISMATCH | Payment and bank amounts differ |
+| MISSING_BANK_TRANSACTION | No bank transaction found for payment |
+| DUPLICATE_BANK_TRANSACTION | Multiple bank transactions for same payment |
+| DATE_MISMATCH | Bank transaction date outside tolerance |
+| UNMATCHED_BANK_TRANSACTION | Bank transaction not matched to any payment |
+
+### Ground Truth Isolation
+
+The engine never reads `ground-truth.json` during prediction/matching. Ground truth is only used post-prediction for evaluation. This ensures the engine operates independently.
+
+### Running
+
+```bash
+cd server
+
+# Run reconciliation engine
+npm run reconcile:data
+
+# Run tests
+npm test
+```
+
+### Output Files
+
+Generated in `data/generated/`:
+- `reconciliation-results.json` — Matched records and exceptions
+- `reconciliation-metrics.json` — Performance metrics and evaluation
+
+### Evaluation Metrics
+
+**Exception Detection (Binary):**
+- Precision, Recall, F1 Score
+- True Positives, False Positives, False Negatives, True Negatives
+
+**Exception Classification (Per-Category):**
+- Precision, Recall, F1 per exception type
+
+**Match Rates:**
+- Payment Match Rate
+- Bank Match Rate
+- Invoice Match Rate
+
+### Test Coverage
+
+```bash
+# Run all tests
+cd server
+npm test
+
+# Tests cover:
+# - Unmatched bank transaction detection
+# - Exception classifier logic
+# - Per-category classification
+# - Separate match rate calculations
+```
 
 ## Phase 2 — Synthetic Financial Data
 
