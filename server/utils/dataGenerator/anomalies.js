@@ -142,6 +142,7 @@ function applyAnomalies(rng, payments, bankTransactions, invoices, scenarios) {
       }
 
       case 'UNMATCHED_BANK_TRANSACTION': {
+        modifiedBankTransactions[i] = null;
         scenarioCounts.UNMATCHED_BANK_TRANSACTION++;
         groundTruth.push({
           paymentId: payment.paymentId,

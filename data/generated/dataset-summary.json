@@ -1,8 +1,8 @@
 {
   "seed": 42,
-  "generatedAt": "2026-09-03T10:00:19.993Z",
+  "generatedAt": "2026-09-03T11:00:51.883Z",
   "paymentRecords": 500,
-  "bankRecords": 525,
+  "bankRecords": 500,
   "invoiceRecords": 500,
   "scenarios": {
     "EXACT_MATCH": 350,

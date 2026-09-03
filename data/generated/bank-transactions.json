@@ -460,16 +460,6 @@
     "description": "QuickPay settlement ORD-500051"
   },
   {
-    "bankTransactionId": "BANK-700052",
-    "referenceId": "PAY-100052",
-    "amount": 23893.32,
-    "transactionDate": "2026-08-08T07:59:27.123Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "SyntheticPay settlement ORD-500052"
-  },
-  {
     "bankTransactionId": "BANK-700053",
     "referenceId": "PAY-100053",
     "amount": 42424.79,
@@ -528,16 +518,6 @@
     "type": "CREDIT",
     "status": "SETTLED",
     "description": "QuickPay settlement ORD-500058"
-  },
-  {
-    "bankTransactionId": "BANK-700059",
-    "referenceId": "PAY-100059",
-    "amount": 46297.75,
-    "transactionDate": "2026-08-19T20:19:12.281Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "QuickPay settlement ORD-500059"
   },
   {
     "bankTransactionId": "BANK-700060",
@@ -650,16 +630,6 @@
     "description": "SyntheticPay settlement ORD-500070"
   },
   {
-    "bankTransactionId": "BANK-700071",
-    "referenceId": "PAY-100071",
-    "amount": 76339.1,
-    "transactionDate": "2026-08-01T18:37:45.408Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "QuickPay settlement ORD-500071"
-  },
-  {
     "bankTransactionId": "BANK-700072",
     "referenceId": "PAY-100072",
     "amount": 39297.98,
@@ -740,16 +710,6 @@
     "description": "SyntheticPay settlement ORD-500080"
   },
   {
-    "bankTransactionId": "BANK-700081",
-    "referenceId": "PAY-100081",
-    "amount": 79952.14,
-    "transactionDate": "2026-08-10T10:47:58.990Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "SyntheticPay settlement ORD-500081"
-  },
-  {
     "bankTransactionId": "BANK-700082",
     "referenceId": "PAY-100082",
     "amount": 4976.29,
@@ -788,16 +748,6 @@
     "type": "CREDIT",
     "status": "SETTLED",
     "description": "SyntheticPay settlement ORD-500085"
-  },
-  {
-    "bankTransactionId": "BANK-700086",
-    "referenceId": "PAY-100086",
-    "amount": 4501.09,
-    "transactionDate": "2026-08-02T22:20:59.302Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "QuickPay settlement ORD-500086"
   },
   {
     "bankTransactionId": "BANK-700087",
@@ -860,16 +810,6 @@
     "description": "SyntheticPay settlement ORD-500092"
   },
   {
-    "bankTransactionId": "BANK-700093",
-    "referenceId": "PAY-100093",
-    "amount": 86681.11,
-    "transactionDate": "2026-08-31T12:45:27.530Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "QuickPay settlement ORD-500093"
-  },
-  {
     "bankTransactionId": "BANK-700094",
     "referenceId": "PAY-100094",
     "amount": 77113.51000000001,
@@ -918,16 +858,6 @@
     "type": "CREDIT",
     "status": "SETTLED",
     "description": "QuickPay settlement ORD-500098"
-  },
-  {
-    "bankTransactionId": "BANK-700099",
-    "referenceId": "PAY-100099",
-    "amount": 34253.48,
-    "transactionDate": "2026-08-14T14:50:43.328Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "PayGateway settlement ORD-500099"
   },
   {
     "bankTransactionId": "BANK-700100",
@@ -1340,16 +1270,6 @@
     "description": "SyntheticPay settlement ORD-500144"
   },
   {
-    "bankTransactionId": "BANK-700145",
-    "referenceId": "PAY-100145",
-    "amount": 12242.58,
-    "transactionDate": "2026-07-12T00:08:30.860Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "QuickPay settlement ORD-500145"
-  },
-  {
     "bankTransactionId": "BANK-700146",
     "referenceId": "PAY-100146",
     "amount": 84213.48,
@@ -1368,16 +1288,6 @@
     "type": "CREDIT",
     "status": "SETTLED",
     "description": "SyntheticPay settlement ORD-500147"
-  },
-  {
-    "bankTransactionId": "BANK-700148",
-    "referenceId": "PAY-100148",
-    "amount": 23707.59,
-    "transactionDate": "2026-08-29T00:49:29.971Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "PayGateway settlement ORD-500148"
   },
   {
     "bankTransactionId": "BANK-700149",
@@ -1480,16 +1390,6 @@
     "description": "QuickPay settlement ORD-500158"
   },
   {
-    "bankTransactionId": "BANK-700159",
-    "referenceId": "PAY-100159",
-    "amount": 15911.79,
-    "transactionDate": "2026-08-02T23:18:23.531Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "SyntheticPay settlement ORD-500159"
-  },
-  {
     "bankTransactionId": "BANK-700160",
     "referenceId": "PAY-100160",
     "amount": 87404.54,
@@ -1588,16 +1488,6 @@
     "type": "CREDIT",
     "status": "SETTLED",
     "description": "PayGateway settlement ORD-500169"
-  },
-  {
-    "bankTransactionId": "BANK-700170",
-    "referenceId": "PAY-100170",
-    "amount": 48221.57,
-    "transactionDate": "2026-08-11T19:47:31.036Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "QuickPay settlement ORD-500170"
   },
   {
     "bankTransactionId": "BANK-700171",
@@ -2290,16 +2180,6 @@
     "description": "PayGateway settlement ORD-500243"
   },
   {
-    "bankTransactionId": "BANK-700244",
-    "referenceId": "PAY-100244",
-    "amount": 76419.68,
-    "transactionDate": "2026-07-18T17:25:19.922Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "QuickPay settlement ORD-500244"
-  },
-  {
     "bankTransactionId": "BANK-700245",
     "referenceId": "PAY-100245",
     "amount": 78771.31,
@@ -2650,16 +2530,6 @@
     "description": "QuickPay settlement ORD-500279"
   },
   {
-    "bankTransactionId": "BANK-700280",
-    "referenceId": "PAY-100280",
-    "amount": 17404.98,
-    "transactionDate": "2026-07-23T09:20:17.257Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "PayGateway settlement ORD-500280"
-  },
-  {
     "bankTransactionId": "BANK-700281",
     "referenceId": "PAY-100281",
     "amount": 36095.38,
@@ -2790,16 +2660,6 @@
     "description": "SyntheticPay settlement ORD-500293"
   },
   {
-    "bankTransactionId": "BANK-700294",
-    "referenceId": "PAY-100294",
-    "amount": 74283.53,
-    "transactionDate": "2026-08-04T14:22:51.218Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "QuickPay settlement ORD-500294"
-  },
-  {
     "bankTransactionId": "BANK-700295",
     "referenceId": "PAY-100295",
     "amount": 38733.72,
@@ -2828,16 +2688,6 @@
     "type": "CREDIT",
     "status": "SETTLED",
     "description": "PayGateway settlement ORD-500297"
-  },
-  {
-    "bankTransactionId": "BANK-700298",
-    "referenceId": "PAY-100298",
-    "amount": 72585.19,
-    "transactionDate": "2026-08-28T22:32:44.761Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "QuickPay settlement ORD-500298"
   },
   {
     "bankTransactionId": "BANK-700299",
@@ -3610,16 +3460,6 @@
     "description": "SyntheticPay settlement ORD-500377"
   },
   {
-    "bankTransactionId": "BANK-700378",
-    "referenceId": "PAY-100378",
-    "amount": 68475.8,
-    "transactionDate": "2026-08-25T16:12:11.565Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "SyntheticPay settlement ORD-500378"
-  },
-  {
     "bankTransactionId": "BANK-700379",
     "referenceId": "PAY-100379",
     "amount": 9374.84,
@@ -3648,16 +3488,6 @@
     "type": "CREDIT",
     "status": "SETTLED",
     "description": "PayGateway settlement ORD-500381"
-  },
-  {
-    "bankTransactionId": "BANK-700382",
-    "referenceId": "PAY-100382",
-    "amount": 71959.43,
-    "transactionDate": "2026-08-29T03:04:18.994Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "SyntheticPay settlement ORD-500382"
   },
   {
     "bankTransactionId": "BANK-700383",
@@ -3778,16 +3608,6 @@
     "type": "CREDIT",
     "status": "SETTLED",
     "description": "SyntheticPay settlement ORD-500395"
-  },
-  {
-    "bankTransactionId": "BANK-700396",
-    "referenceId": "PAY-100396",
-    "amount": 22038.99,
-    "transactionDate": "2026-07-27T03:15:39.838Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "PayGateway settlement ORD-500396"
   },
   {
     "bankTransactionId": "BANK-700397",
@@ -3938,16 +3758,6 @@
     "type": "CREDIT",
     "status": "SETTLED",
     "description": "PayGateway settlement ORD-500414"
-  },
-  {
-    "bankTransactionId": "BANK-700415",
-    "referenceId": "PAY-100415",
-    "amount": 6861.17,
-    "transactionDate": "2026-08-04T18:17:56.908Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "PayGateway settlement ORD-500415"
   },
   {
     "bankTransactionId": "BANK-700417",
@@ -4150,16 +3960,6 @@
     "description": "QuickPay settlement ORD-500437"
   },
   {
-    "bankTransactionId": "BANK-700438",
-    "referenceId": "PAY-100438",
-    "amount": 45624.02,
-    "transactionDate": "2026-07-27T18:04:43.390Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "QuickPay settlement ORD-500438"
-  },
-  {
     "bankTransactionId": "BANK-700439",
     "referenceId": "PAY-100439",
     "amount": 95504.34,
@@ -4360,16 +4160,6 @@
     "description": "SyntheticPay settlement ORD-500458"
   },
   {
-    "bankTransactionId": "BANK-700459",
-    "referenceId": "PAY-100459",
-    "amount": 3777.27,
-    "transactionDate": "2026-08-14T05:00:58.548Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "PayGateway settlement ORD-500459"
-  },
-  {
     "bankTransactionId": "BANK-700460",
     "referenceId": "PAY-100460",
     "amount": 93412.02,
@@ -4460,16 +4250,6 @@
     "description": "PayGateway settlement ORD-500468"
   },
   {
-    "bankTransactionId": "BANK-700469",
-    "referenceId": "PAY-100469",
-    "amount": 66763.56,
-    "transactionDate": "2026-08-10T23:37:14.984Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "SyntheticPay settlement ORD-500469"
-  },
-  {
     "bankTransactionId": "BANK-700470",
     "referenceId": "PAY-100470",
     "amount": 99413.3,
@@ -4478,16 +4258,6 @@
     "type": "CREDIT",
     "status": "SETTLED",
     "description": "QuickPay settlement ORD-500470"
-  },
-  {
-    "bankTransactionId": "BANK-700471",
-    "referenceId": "PAY-100471",
-    "amount": 11679.46,
-    "transactionDate": "2026-07-29T06:56:16.667Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "SyntheticPay settlement ORD-500471"
   },
   {
     "bankTransactionId": "BANK-700472",
@@ -4680,16 +4450,6 @@
     "description": "PayGateway settlement ORD-500492"
   },
   {
-    "bankTransactionId": "BANK-700493",
-    "referenceId": "PAY-100493",
-    "amount": 94454.82,
-    "transactionDate": "2026-08-28T06:47:55.138Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "PayGateway settlement ORD-500493"
-  },
-  {
     "bankTransactionId": "BANK-700494",
     "referenceId": "PAY-100494",
     "amount": 62956.07,
@@ -4738,16 +4498,6 @@
     "type": "CREDIT",
     "status": "SETTLED",
     "description": "QuickPay settlement ORD-500499"
-  },
-  {
-    "bankTransactionId": "BANK-700500",
-    "referenceId": "PAY-100500",
-    "amount": 18578.11,
-    "transactionDate": "2026-07-10T18:03:06.537Z",
-    "currency": "INR",
-    "type": "CREDIT",
-    "status": "SETTLED",
-    "description": "QuickPay settlement ORD-500500"
   },
   {
     "bankTransactionId": "BANK-700501",

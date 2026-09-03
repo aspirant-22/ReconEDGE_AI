@@ -129,6 +129,28 @@ function validateDataset(payments, bankTransactions, invoices, groundTruth, scen
       .map((gt) => gt.paymentId)
   );
 
+  for (const gt of groundTruth) {
+    if (gt.scenario === 'UNMATCHED') {
+      if (gt.expectedBankTransactionId !== null) {
+        errors.push(
+          `UNMATCHED ${gt.paymentId}: expectedBankTransactionId should be null`
+        );
+      }
+
+      const payment = payments.find((p) => p.paymentId === gt.paymentId);
+      if (payment) {
+        const matchingBankTx = bankTransactions.find(
+          (b) => b.referenceId === payment.paymentId
+        );
+        if (matchingBankTx) {
+          errors.push(
+            `UNMATCHED ${gt.paymentId}: corresponding bank transaction ${matchingBankTx.bankTransactionId} exists`
+          );
+        }
+      }
+    }
+  }
+
   return {
     valid: errors.length === 0,
     errors,
