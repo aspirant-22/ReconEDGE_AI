@@ -8,8 +8,8 @@ const SEVERITY_MAP = {
 
 function calculateExceptionAnalytics(results, metrics) {
   const exceptions = results.filter((r) => r.status === 'EXCEPTION');
-  const totalRecords = results.length;
   const totalExceptions = exceptions.length;
+  const totalPayments = metrics.inputRecords.payments;
 
   const exceptionCounts = {};
   for (const exc of exceptions) {
@@ -22,7 +22,7 @@ function calculateExceptionAnalytics(results, metrics) {
     breakdown[type] = {
       count,
       percentageOfExceptions: totalExceptions > 0 ? Number(((count / totalExceptions) * 100).toFixed(2)) : 0,
-      percentageOfTotalRecords: totalRecords > 0 ? Number(((count / totalRecords) * 100).toFixed(2)) : 0,
+      percentageOfTotalPayments: totalPayments > 0 ? Number(((count / totalPayments) * 100).toFixed(2)) : 0,
     };
   }
 
@@ -40,7 +40,7 @@ function calculateExceptionAnalytics(results, metrics) {
 
   return {
     totalExceptions,
-    exceptionRate: totalRecords > 0 ? Number(((totalExceptions / totalRecords) * 100).toFixed(2)) : 0,
+    exceptionRate: totalPayments > 0 ? Number(((totalExceptions / totalPayments) * 100).toFixed(2)) : 0,
     breakdown,
   };
 }

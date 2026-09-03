@@ -3,6 +3,8 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const healthRoutes = require('./routes/health');
 const authRoutes = require('./routes/auth');
+const aiRoutes = require('./routes/ai');
+const dashboardRoutes = require('./routes/dashboard');
 const errorHandler = require('./middleware/errorHandler');
 
 dotenv.config();
@@ -18,6 +20,8 @@ app.use(express.json());
 
 app.use('/api', healthRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api', aiRoutes);
+app.use('/api', dashboardRoutes);
 
 app.use((req, res) => {
   res.status(404).json({

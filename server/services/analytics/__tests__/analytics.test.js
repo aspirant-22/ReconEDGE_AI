@@ -135,4 +135,98 @@ describe('Reconciliation Analytics', () => {
     assert.equal(analytics1.exceptions.totalExceptions, analytics2.exceptions.totalExceptions);
     assert.equal(analytics1.health.healthStatus, analytics2.health.healthStatus);
   });
+
+  it('Test 15 — Exception rate consistency', () => {
+    const exceptionAnalytics = calculateExceptionAnalytics(MOCK_RESULTS, MOCK_METRICS);
+    const overview = calculateReconciliationOverview(MOCK_RESULTS, MOCK_METRICS);
+    assert.equal(exceptionAnalytics.exceptionRate, overview.exceptionRate);
+    const expectedRate = Number(((MOCK_METRICS.exceptionRecords / MOCK_METRICS.inputRecords.payments) * 100).toFixed(2));
+    assert.equal(exceptionAnalytics.exceptionRate, expectedRate);
+    assert.notEqual(exceptionAnalytics.exceptionRate, Number(((MOCK_METRICS.exceptionRecords / MOCK_RESULTS.length) * 100).toFixed(2)));
+  });
+
+  it('Test 16 — Control score removed', () => {
+    const analytics = generateAnalytics(MOCK_RESULTS, MOCK_METRICS);
+    assert.ok(!('controlEffectivenessScore' in analytics.controlEffectiveness));
+    assert.ok('reconciliationRate' in analytics.controlEffectiveness);
+    assert.ok('exceptionRate' in analytics.controlEffectiveness);
+    assert.ok('cleanMatchRate' in analytics.controlEffectiveness);
+    assert.ok('exceptionDetectionPrecision' in analytics.controlEffectiveness);
+    assert.ok('exceptionDetectionRecall' in analytics.controlEffectiveness);
+    assert.ok('exceptionDetectionF1' in analytics.controlEffectiveness);
+  });
+
+  it('Test 17 — Zero amounts included', () => {
+    const zeroResults = [
+      { paymentId: 'PAY-Z1', bankTransactionId: 'BANK-Z1', invoiceId: 'INV-Z1', status: 'MATCHED', exceptionType: null, paymentAmount: 0, bankAmount: 0, invoiceAmount: 0, amountDifference: 0 },
+      { paymentId: 'PAY-Z2', bankTransactionId: 'BANK-Z2', invoiceId: 'INV-Z2', status: 'EXCEPTION', exceptionType: 'AMOUNT_MISMATCH', paymentAmount: 0, bankAmount: 100, invoiceAmount: 0, amountDifference: 100 },
+    ];
+    const zeroMetrics = {
+      inputRecords: { payments: 2, bankTransactions: 2, invoices: 2 },
+      matchedRecords: 1,
+      exceptionRecords: 1,
+      matchRates: { payment: 50, bank: 50, invoice: 50 },
+      evaluation: {
+        exceptionDetection: { truePositives: 1, falsePositives: 0, falseNegatives: 0, trueNegatives: 1, precision: 1, recall: 1, f1: 1, accuracy: 1 },
+        exceptionClassification: { AMOUNT_MISMATCH: { precision: 1, recall: 1, f1: 1, truePositives: 1, falsePositives: 0, falseNegatives: 0 } },
+      },
+    };
+    const financial = calculateFinancialAnalytics(zeroResults);
+    assert.equal(financial.totalPaymentAmount, 0);
+    assert.equal(financial.totalBankAmount, 100);
+    assert.equal(financial.totalInvoiceAmount, 0);
+    assert.equal(financial.amountMismatchImpact, 100);
+  });
+
+  it('Test 18 — Financial precision (0.1 + 0.2 + 0.3)', () => {
+    const precisionResults = [
+      { paymentId: 'PAY-P1', bankTransactionId: 'BANK-P1', invoiceId: 'INV-P1', status: 'MATCHED', exceptionType: null, paymentAmount: 0.1, bankAmount: 0.1, invoiceAmount: 0.1, amountDifference: 0 },
+      { paymentId: 'PAY-P2', bankTransactionId: 'BANK-P2', invoiceId: 'INV-P2', status: 'MATCHED', exceptionType: null, paymentAmount: 0.2, bankAmount: 0.2, invoiceAmount: 0.2, amountDifference: 0 },
+      { paymentId: 'PAY-P3', bankTransactionId: 'BANK-P3', invoiceId: 'INV-P3', status: 'MATCHED', exceptionType: null, paymentAmount: 0.3, bankAmount: 0.3, invoiceAmount: 0.3, amountDifference: 0 },
+    ];
+    const financial = calculateFinancialAnalytics(precisionResults);
+    assert.equal(financial.totalPaymentAmount, 0.6);
+    assert.equal(financial.totalBankAmount, 0.6);
+    assert.equal(financial.totalInvoiceAmount, 0.6);
+    assert.equal(financial.matchedPaymentAmount, 0.6);
+  });
+
+  it('Test 19 — Amount mismatch precise', () => {
+    const mismatchResults = [
+      { paymentId: 'PAY-M1', bankTransactionId: 'BANK-M1', invoiceId: 'INV-M1', status: 'EXCEPTION', exceptionType: 'AMOUNT_MISMATCH', paymentAmount: 1000.25, bankAmount: 1100.50, invoiceAmount: 1000.25, amountDifference: 100.25 },
+    ];
+    const financial = calculateFinancialAnalytics(mismatchResults);
+    assert.equal(financial.amountMismatchImpact, 100.25);
+  });
+
+  it('Test 20 — Duplicate bank does not double-count', () => {
+    const duplicateResults = [
+      { paymentId: 'PAY-D1', bankTransactionId: 'BANK-D1', invoiceId: 'INV-D1', status: 'MATCHED', exceptionType: null, paymentAmount: 500, bankAmount: 500, invoiceAmount: 500, amountDifference: 0 },
+      { paymentId: 'PAY-D2', bankTransactionId: 'BANK-D1', invoiceId: 'INV-D2', status: 'EXCEPTION', exceptionType: 'DUPLICATE_BANK_TRANSACTION', paymentAmount: 300, bankAmount: 500, invoiceAmount: 300, amountDifference: 200 },
+    ];
+    const financial = calculateFinancialAnalytics(duplicateResults);
+    assert.equal(financial.totalPaymentAmount, 800);
+    assert.equal(financial.totalBankAmount, 500);
+    assert.equal(financial.totalInvoiceAmount, 800);
+  });
+
+  it('Test 21 — Missing bank does not contribute to amount mismatch', () => {
+    const missingResults = [
+      { paymentId: 'PAY-X1', bankTransactionId: null, invoiceId: 'INV-X1', status: 'EXCEPTION', exceptionType: 'MISSING_BANK_TRANSACTION', paymentAmount: 5000, bankAmount: null, invoiceAmount: 5000, amountDifference: 0 },
+    ];
+    const financial = calculateFinancialAnalytics(missingResults);
+    assert.equal(financial.amountMismatchImpact, 0);
+    assert.equal(financial.totalPaymentAmount, 5000);
+    assert.equal(financial.totalBankAmount, 0);
+  });
+
+  it('Test 22 — Unmatched bank does not contribute to payment-side amount mismatch', () => {
+    const unmatchedResults = [
+      { paymentId: null, bankTransactionId: 'BANK-U1', invoiceId: null, status: 'EXCEPTION', exceptionType: 'UNMATCHED_BANK_TRANSACTION', paymentAmount: null, bankAmount: 7000, invoiceAmount: null, amountDifference: 0 },
+    ];
+    const financial = calculateFinancialAnalytics(unmatchedResults);
+    assert.equal(financial.amountMismatchImpact, 0);
+    assert.equal(financial.totalPaymentAmount, 0);
+    assert.equal(financial.totalBankAmount, 7000);
+  });
 });

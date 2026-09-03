@@ -93,7 +93,6 @@ function main() {
       'MISSING_BANK_TRANSACTION',
       'DUPLICATE_BANK_TRANSACTION',
       'DATE_MISMATCH',
-      'UNMATCHED',
     ]);
 
     exceptionDetection = calculateExceptionDetection(evaluation);

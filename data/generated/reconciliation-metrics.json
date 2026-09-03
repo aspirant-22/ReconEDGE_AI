@@ -1,0 +1,108 @@
+{
+  "inputRecords": {
+    "payments": 500,
+    "bankTransactions": 500,
+    "invoices": 500
+  },
+  "matchedRecords": 350,
+  "exceptionRecords": 175,
+  "matchRates": {
+    "payment": 70,
+    "bank": 73.68,
+    "invoice": 70
+  },
+  "processingTimeMs": 36,
+  "recordsPerSecond": 41666.67,
+  "exceptionDistribution": {
+    "MISSING_BANK_TRANSACTION": 50,
+    "AMOUNT_MISMATCH": 50,
+    "DUPLICATE_BANK_TRANSACTION": 25,
+    "DATE_MISMATCH": 25,
+    "UNMATCHED_BANK_TRANSACTION": 25
+  },
+  "evaluation": {
+    "overallAccuracy": 1,
+    "exceptionDetection": {
+      "truePositives": 150,
+      "falsePositives": 0,
+      "falseNegatives": 0,
+      "trueNegatives": 350,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "accuracy": 1
+    },
+    "exceptionClassification": {
+      "MISSING_BANK_TRANSACTION": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 50,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "AMOUNT_MISMATCH": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 50,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "DUPLICATE_BANK_TRANSACTION": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 25,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "DATE_MISMATCH": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 25,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      }
+    },
+    "perScenarioMetrics": {
+      "AMOUNT_MISMATCH": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 50,
+        "falsePositives": 0,
+        "falseNegatives": 0,
+        "trueNegatives": 450
+      },
+      "MISSING_BANK_TRANSACTION": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 50,
+        "falsePositives": 0,
+        "falseNegatives": 0,
+        "trueNegatives": 450
+      },
+      "DUPLICATE_BANK_TRANSACTION": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 25,
+        "falsePositives": 0,
+        "falseNegatives": 0,
+        "trueNegatives": 475
+      },
+      "DATE_MISMATCH": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 25,
+        "falsePositives": 0,
+        "falseNegatives": 0,
+        "trueNegatives": 475
+      }
+    }
+  }
+}

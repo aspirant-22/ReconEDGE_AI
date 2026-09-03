@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-09-03T13:58:42.752Z",
+  "overview": {
+    "totalPayments": 500,
+    "totalBankTransactions": 500,
+    "totalInvoices": 500,
+    "totalReconciliationRecords": 525,
+    "matchedRecords": 350,
+    "paymentMatchRate": 70,
+    "bankMatchRate": 73.68,
+    "invoiceMatchRate": 70,
+    "bankAssignmentAccuracy": 100,
+    "totalExceptions": 175,
+    "exceptionRate": 35,
+    "resolvedExceptions": null,
+    "unresolvedExceptions": null
+  },
+  "matching": {
+    "matchedRecords": 350,
+    "paymentMatchRate": 70,
+    "bankMatchRate": 73.68,
+    "invoiceMatchRate": 70,
+    "bankAssignmentAccuracy": 100
+  },
+  "exceptions": {
+    "totalExceptions": 175,
+    "exceptionRate": 35,
+    "breakdown": {
+      "MISSING_BANK_TRANSACTION": {
+        "count": 50,
+        "percentageOfExceptions": 28.57,
+        "percentageOfTotalPayments": 10,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 50,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "AMOUNT_MISMATCH": {
+        "count": 50,
+        "percentageOfExceptions": 28.57,
+        "percentageOfTotalPayments": 10,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 50,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "DUPLICATE_BANK_TRANSACTION": {
+        "count": 25,
+        "percentageOfExceptions": 14.29,
+        "percentageOfTotalPayments": 5,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 25,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "DATE_MISMATCH": {
+        "count": 25,
+        "percentageOfExceptions": 14.29,
+        "percentageOfTotalPayments": 5,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "truePositives": 25,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "UNMATCHED_BANK_TRANSACTION": {
+        "count": 25,
+        "percentageOfExceptions": 14.29,
+        "percentageOfTotalPayments": 5
+      }
+    }
+  },
+  "severity": {
+    "highSeverityCount": 100,
+    "mediumSeverityCount": 75,
+    "lowSeverityCount": 0,
+    "highSeverityPercentage": 57.14,
+    "mediumSeverityPercentage": 42.86,
+    "lowSeverityPercentage": 0,
+    "severityMap": {
+      "MISSING_BANK_TRANSACTION": "HIGH",
+      "UNMATCHED_BANK_TRANSACTION": "HIGH",
+      "DUPLICATE_BANK_TRANSACTION": "HIGH",
+      "AMOUNT_MISMATCH": "MEDIUM",
+      "DATE_MISMATCH": "MEDIUM"
+    }
+  },
+  "financialImpact": {
+    "totalPaymentAmount": 25079405.23,
+    "totalBankAmount": 23432239.4,
+    "totalInvoiceAmount": 25073030.79,
+    "totalAmount": 73584675.42,
+    "matchedPaymentAmount": 17486654.13,
+    "exceptionPaymentAmount": 7592751.1,
+    "amountMismatchImpact": 12012.7,
+    "matchedAmountRate": 69.73,
+    "exceptionAmountRate": 30.27
+  },
+  "controlEffectiveness": {
+    "reconciliationRate": 70,
+    "exceptionRate": 35,
+    "cleanMatchRate": 70,
+    "exceptionDetectionPrecision": 100,
+    "exceptionDetectionRecall": 100,
+    "exceptionDetectionF1": 100
+  },
+  "health": {
+    "healthStatus": "CRITICAL",
+    "healthReason": "Exception rate is 35%, exceeding the critical threshold of 25%."
+  },
+  "topExceptions": [
+    {
+      "type": "MISSING_BANK_TRANSACTION",
+      "count": 50,
+      "percentage": 28.57
+    },
+    {
+      "type": "AMOUNT_MISMATCH",
+      "count": 50,
+      "percentage": 28.57
+    },
+    {
+      "type": "DUPLICATE_BANK_TRANSACTION",
+      "count": 25,
+      "percentage": 14.29
+    },
+    {
+      "type": "DATE_MISMATCH",
+      "count": 25,
+      "percentage": 14.29
+    },
+    {
+      "type": "UNMATCHED_BANK_TRANSACTION",
+      "count": 25,
+      "percentage": 14.29
+    }
+  ]
+}

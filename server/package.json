@@ -9,9 +9,10 @@
     "generate:data": "node utils/dataGenerator/generateData.js",
     "reconcile:data": "node services/reconciliation/index.js",
     "analyze:data": "node services/analytics/index.js",
-    "test": "node --test services/reconciliation/__tests__/*.test.js utils/dataGenerator/__tests__/*.test.js services/analytics/__tests__/*.test.js"
+    "test": "node --test services/reconciliation/__tests__/*.test.js utils/dataGenerator/__tests__/*.test.js services/analytics/__tests__/*.test.js services/ai/__tests__/*.test.js"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

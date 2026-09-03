@@ -1,3 +1,12 @@
+function toMinorUnits(amount) {
+  if (amount === null || amount === undefined) return null;
+  return Math.round(amount * 100);
+}
+
+function isPresent(value) {
+  return value !== null && value !== undefined;
+}
+
 function calculateFinancialAnalytics(results) {
   let totalPaymentAmount = 0;
   let totalBankAmount = 0;
@@ -6,9 +15,11 @@ function calculateFinancialAnalytics(results) {
   let exceptionPaymentAmount = 0;
   let amountMismatchImpact = 0;
 
+  const seenBankIds = new Set();
+
   for (const r of results) {
-    if (r.paymentId) {
-      const paymentAmt = r.paymentAmount || 0;
+    if (isPresent(r.paymentId)) {
+      const paymentAmt = toMinorUnits(r.paymentAmount) || 0;
       totalPaymentAmount += paymentAmt;
 
       if (r.status === 'MATCHED') {
@@ -18,31 +29,38 @@ function calculateFinancialAnalytics(results) {
       }
     }
 
-    if (r.bankAmount) {
-      totalBankAmount += r.bankAmount;
+    if (isPresent(r.bankTransactionId)) {
+      if (!seenBankIds.has(r.bankTransactionId)) {
+        seenBankIds.add(r.bankTransactionId);
+        const bankAmt = toMinorUnits(r.bankAmount) || 0;
+        totalBankAmount += bankAmt;
+      }
     }
 
-    if (r.invoiceAmount) {
-      totalInvoiceAmount += r.invoiceAmount;
+    if (isPresent(r.invoiceId)) {
+      const invoiceAmt = toMinorUnits(r.invoiceAmount) || 0;
+      totalInvoiceAmount += invoiceAmt;
     }
 
-    if (r.exceptionType === 'AMOUNT_MISMATCH' && r.paymentAmount && r.bankAmount) {
-      amountMismatchImpact += Math.abs(r.paymentAmount - r.bankAmount);
+    if (
+      r.exceptionType === 'AMOUNT_MISMATCH' &&
+      isPresent(r.paymentAmount) &&
+      isPresent(r.bankAmount)
+    ) {
+      amountMismatchImpact += Math.abs(toMinorUnits(r.paymentAmount) - toMinorUnits(r.bankAmount));
     }
   }
 
   const totalAmount = totalPaymentAmount + totalBankAmount + totalInvoiceAmount;
-  const matchedAmount = matchedPaymentAmount;
-  const exceptionAmount = exceptionPaymentAmount;
 
   return {
-    totalPaymentAmount: Math.round(totalPaymentAmount * 100) / 100,
-    totalBankAmount: Math.round(totalBankAmount * 100) / 100,
-    totalInvoiceAmount: Math.round(totalInvoiceAmount * 100) / 100,
-    totalAmount: Math.round(totalAmount * 100) / 100,
-    matchedPaymentAmount: Math.round(matchedPaymentAmount * 100) / 100,
-    exceptionPaymentAmount: Math.round(exceptionPaymentAmount * 100) / 100,
-    amountMismatchImpact: Math.round(amountMismatchImpact * 100) / 100,
+    totalPaymentAmount: totalPaymentAmount / 100,
+    totalBankAmount: totalBankAmount / 100,
+    totalInvoiceAmount: totalInvoiceAmount / 100,
+    totalAmount: totalAmount / 100,
+    matchedPaymentAmount: matchedPaymentAmount / 100,
+    exceptionPaymentAmount: exceptionPaymentAmount / 100,
+    amountMismatchImpact: amountMismatchImpact / 100,
     matchedAmountRate: totalPaymentAmount > 0 ? Number(((matchedPaymentAmount / totalPaymentAmount) * 100).toFixed(2)) : 0,
     exceptionAmountRate: totalPaymentAmount > 0 ? Number(((exceptionPaymentAmount / totalPaymentAmount) * 100).toFixed(2)) : 0,
   };

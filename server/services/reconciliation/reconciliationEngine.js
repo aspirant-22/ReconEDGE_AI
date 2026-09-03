@@ -19,9 +19,11 @@ function reconcile(payments, bankTransactions, invoices) {
     detectDuplicateBankTransactions(normBank, null);
 
   const duplicateMap = new Map();
+  const duplicateBankIds = new Set();
   for (const group of duplicateGroups) {
     for (const dupId of group.duplicates) {
       duplicateMap.set(dupId, group);
+      duplicateBankIds.add(dupId);
     }
   }
 
@@ -117,7 +119,7 @@ function reconcile(payments, bankTransactions, invoices) {
   }
 
   for (const bankTx of normBank) {
-    if (!usedBankIds.has(bankTx.bankTransactionId)) {
+    if (!usedBankIds.has(bankTx.bankTransactionId) && !duplicateBankIds.has(bankTx.bankTransactionId)) {
       results.push({
         paymentId: null,
         orderId: null,

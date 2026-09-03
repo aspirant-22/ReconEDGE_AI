@@ -17,8 +17,6 @@ function calculateControlEffectiveness(results, metrics) {
   const exceptionDetectionRecall = exceptionDetection.recall;
   const exceptionDetectionF1 = exceptionDetection.f1;
 
-  const controlEffectivenessScore = Number(((reconciliationRate * 0.4 + cleanMatchRate * 0.3 + exceptionDetectionF1 * 100 * 0.3)).toFixed(2));
-
   return {
     reconciliationRate,
     exceptionRate,
@@ -26,7 +24,6 @@ function calculateControlEffectiveness(results, metrics) {
     exceptionDetectionPrecision: Number((exceptionDetectionPrecision * 100).toFixed(2)),
     exceptionDetectionRecall: Number((exceptionDetectionRecall * 100).toFixed(2)),
     exceptionDetectionF1: Number((exceptionDetectionF1 * 100).toFixed(2)),
-    controlEffectivenessScore,
   };
 }
 

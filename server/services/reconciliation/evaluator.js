@@ -24,6 +24,13 @@ function buildGroundTruthIndex(groundTruth) {
   return index;
 }
 
+function normalizeScenario(scenario) {
+  if (scenario === 'UNMATCHED') {
+    return 'MISSING_BANK_TRANSACTION';
+  }
+  return scenario;
+}
+
 function evaluatePredictions(predictions, groundTruthIndex) {
   const evaluation = [];
 
@@ -47,7 +54,7 @@ function evaluatePredictions(predictions, groundTruthIndex) {
     }
 
     const predictedScenario = pred.exceptionType || 'MATCHED';
-    const expectedScenario = gt.scenario;
+    const expectedScenario = normalizeScenario(gt.scenario);
 
     const scenarioCorrect = predictedScenario === expectedScenario ||
       (predictedScenario === 'MATCHED' && expectedScenario === 'EXACT_MATCH');
@@ -156,4 +163,5 @@ module.exports = {
   calculateBankMatchAccuracy,
   calculateExceptionDetection,
   calculateExceptionClassification,
+  normalizeScenario,
 };

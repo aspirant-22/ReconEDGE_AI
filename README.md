@@ -4,7 +4,7 @@
 
 ## Current Phase
 
-**Phase 4 — Metrics & Analytics**
+**Phase 5 — AI Exception Analyzer**
 
 Phase 4 builds a deterministic analytics layer on top of the reconciliation engine, transforming raw results into meaningful financial-control metrics for dashboard consumption.
 
@@ -42,7 +42,9 @@ recon-edge-ai/
 │   ├── models/      # Mongoose schemas
 │   ├── routes/      # API routes
 │   ├── services/    # Business logic
-│   │   └── reconciliation/  # Reconciliation engine
+│   │   ├── reconciliation/  # Reconciliation engine
+│   │   ├── analytics/       # Phase 4 metrics & analytics
+│   │   └── ai/              # Phase 5 AI exception analyzer
 │   └── utils/       # Utility functions
 ├── data/            # Data storage
 │   └── generated/   # Synthetic data + results
@@ -102,6 +104,8 @@ cd client && npm run dev
 | POST | `/api/auth/register` | Register user | No |
 | POST | `/api/auth/login` | Login user | No |
 | GET | `/api/auth/me` | Get current user | Yes |
+| GET | `/api/ai/status` | AI service status | No |
+| POST | `/api/ai/analyze-exception` | Analyze exception with AI | No |
 
 ## Phase 3 — Deterministic Reconciliation Engine
 
@@ -274,23 +278,56 @@ Operational + Exception + Quality Metrics
 reconciliation-analytics.json
 ```
 
-### Available Metrics
+### Exception Rate (Payment-Side)
 
-| Category | Metrics |
-|----------|---------|
-| Overview | totalPayments, totalBankTransactions, totalInvoices, matchedRecords, paymentMatchRate, bankMatchRate, invoiceMatchRate, bankAssignmentAccuracy |
-| Exceptions | totalExceptions, exceptionRate, breakdown by category |
-| Severity | highSeverityCount, mediumSeverityCount, lowSeverityCount |
-| Financial Impact | totalPaymentAmount, totalBankAmount, matchedPaymentAmount, amountMismatchImpact |
-| Control Effectiveness | reconciliationRate, exceptionRate, cleanMatchRate, controlEffectivenessScore |
-| Health | healthStatus (HEALTHY/WARNING/CRITICAL), healthReason |
+Primary exception rate is always payment-side:
 
-### Severity Model
+```
+exceptionRate = payment-side exception records / total payments
+```
 
-| Severity | Categories |
-|----------|-----------|
-| HIGH | MISSING_BANK_TRANSACTION, UNMATCHED_BANK_TRANSACTION, DUPLICATE_BANK_TRANSACTION |
-| MEDIUM | AMOUNT_MISMATCH, DATE_MISMATCH |
+For the current dataset: `175 / 500 = 35.00%`
+
+Bank-only records (UNMATCHED_BANK_TRANSACTION) are excluded from the primary exception rate denominator.
+
+### Match Rates
+
+| Metric | Definition | Baseline |
+|--------|-----------|----------|
+| Payment Match Rate | matched payment records / total payments | 350/500 = 70.00% |
+| Bank Match Rate | matched bank records / results containing bankTransactionId | 350/475 = 73.68% |
+| Invoice Match Rate | matched invoice records / total invoices | 350/500 = 70.00% |
+| Bank Assignment Accuracy | bank transactions correctly assigned to payments / bank transactions with payment match | 100.00% |
+
+### Financial Analytics
+
+All financial calculations use integer minor units internally (paise for INR) to avoid floating-point accumulation artifacts. Decimal values are only converted at the output boundary.
+
+| Metric | Population | Denominator |
+|--------|-----------|-------------|
+| totalPaymentAmount | SUM of all payment amounts in reconciliation results | N/A |
+| totalBankAmount | SUM of unique bank transaction amounts (deduplicated by bankTransactionId) | N/A |
+| totalInvoiceAmount | SUM of all invoice amounts in reconciliation results | N/A |
+| matchedPaymentAmount | SUM of payment amounts where status = MATCHED | N/A |
+| exceptionPaymentAmount | SUM of payment amounts where status = EXCEPTION | N/A |
+| amountMismatchImpact | SUM of abs(payment - bank) for AMOUNT_MISMATCH records only | N/A |
+| matchedAmountRate | matchedPaymentAmount / totalPaymentAmount | totalPaymentAmount |
+| exceptionAmountRate | exceptionPaymentAmount / totalPaymentAmount | totalPaymentAmount |
+
+Zero is a valid financial amount and is never silently excluded.
+
+### Control Effectiveness
+
+The control effectiveness section provides transparent metrics without arbitrary weighted scores:
+
+| Metric | Definition |
+|--------|-----------|
+| reconciliationRate | matched records / total payments |
+| exceptionRate | exception records / total payments (payment-side) |
+| cleanMatchRate | payment match rate |
+| exceptionDetectionPrecision | truePositives / (truePositives + falsePositives) |
+| exceptionDetectionRecall | truePositives / (truePositives + falseNegatives) |
+| exceptionDetectionF1 | harmonic mean of precision and recall |
 
 ### Health Classification
 
@@ -299,6 +336,24 @@ reconciliation-analytics.json
 | HEALTHY | Exception rate < 10% |
 | WARNING | Exception rate >= 10% and < 25% |
 | CRITICAL | Exception rate >= 25% |
+
+### Severity Model
+
+| Severity | Categories |
+|----------|-----------|
+| HIGH | MISSING_BANK_TRANSACTION, UNMATCHED_BANK_TRANSACTION, DUPLICATE_BANK_TRANSACTION |
+| MEDIUM | AMOUNT_MISMATCH, DATE_MISMATCH |
+
+### Available Metrics
+
+| Category | Metrics |
+|----------|---------|
+| Overview | totalPayments, totalBankTransactions, totalInvoices, matchedRecords, paymentMatchRate, bankMatchRate, invoiceMatchRate, bankAssignmentAccuracy |
+| Exceptions | totalExceptions, exceptionRate (payment-side), breakdown by category with percentageOfTotalPayments |
+| Severity | highSeverityCount, mediumSeverityCount, lowSeverityCount |
+| Financial Impact | totalPaymentAmount, totalBankAmount, totalInvoiceAmount, matchedPaymentAmount, exceptionPaymentAmount, amountMismatchImpact, matchedAmountRate, exceptionAmountRate |
+| Control Effectiveness | reconciliationRate, exceptionRate, cleanMatchRate, exceptionDetectionPrecision, exceptionDetectionRecall, exceptionDetectionF1 |
+| Health | healthStatus (HEALTHY/WARNING/CRITICAL), healthReason |
 
 ### Running
 
@@ -324,6 +379,145 @@ Generated in `data/generated/`:
 | Output | reconciliation-metrics.json | reconciliation-analytics.json |
 
 **Phase 4 does not use Gemini or AI.**
+
+## Phase 5 — AI Exception Analyzer
+
+### Overview
+
+Phase 5 integrates Google Gemini to analyze reconciliation exceptions and provide human-readable explanations, risk context, and recommended next actions.
+
+### Architecture
+
+```
+Deterministic Reconciliation
+        ↓
+    Exceptions
+        ↓
+  AI Exception Analyzer (Gemini)
+        ↓
+┌───────────────────────────────┐
+│                               │
+│  Explanation                  │
+│  Risk Context                 │
+│  Recommended Actions          │
+│                               │
+└───────────────┬───────────────┘
+                ↓
+          Human Review
+```
+
+### Key Principles
+
+- Gemini does **not** reconcile transactions
+- Gemini does **not** modify financial records
+- Gemini does **not** use ground truth
+- Gemini provides **advisory** explanations only
+- Human review is **required** before any financial action
+- Reconciliation continues working if Gemini fails
+
+### Environment Configuration
+
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_MODEL=gemini-3.6-flash
+```
+
+**Security:** API key is stored server-side only. Never exposed to the frontend.
+
+### API Endpoints
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| GET | `/api/ai/status` | AI service status | No |
+| POST | `/api/ai/analyze-exception` | Analyze a reconciliation exception | No |
+
+#### POST /api/ai/analyze-exception
+
+Request:
+```json
+{
+  "exceptionId": "PAY-100002"
+}
+```
+
+Response:
+```json
+{
+  "success": true,
+  "exceptionId": "PAY-100002",
+  "exceptionType": "AMOUNT_MISMATCH",
+  "analysis": {
+    "summary": "Payment and bank amounts differ by ₹144.58.",
+    "likelyCause": "Possible fee, adjustment, or partial payment.",
+    "riskLevel": "MEDIUM",
+    "recommendedActions": [
+      "Verify settlement details with the bank.",
+      "Check if any fees were deducted."
+    ],
+    "confidence": 0.82,
+    "requiresHumanReview": true
+  }
+}
+```
+
+### Structured AI Output
+
+| Field | Type | Description |
+|-------|------|-------------|
+| summary | string | Brief explanation of the exception |
+| likelyCause | string | Most probable cause based on evidence |
+| riskLevel | LOW / MEDIUM / HIGH | AI risk assessment (advisory only) |
+| recommendedActions | string[] | 1-5 recommended human actions |
+| confidence | number (0-1) | AI confidence in its analysis |
+| requiresHumanReview | boolean | Whether human review is needed |
+
+### Exception Types Supported
+
+| Exception Type | Analysis Focus |
+|---------------|----------------|
+| AMOUNT_MISMATCH | Payment/bank amount difference, possible fees |
+| MISSING_BANK_TRANSACTION | Payment without bank settlement |
+| DUPLICATE_BANK_TRANSACTION | Multiple bank records for same payment |
+| DATE_MISMATCH | Settlement timing differences |
+| UNMATCHED_BANK_TRANSACTION | Bank record without matching payment |
+
+### Guardrails
+
+- AI cannot modify financial records
+- AI cannot change reconciliation status
+- AI cannot approve/reject transactions
+- AI cannot delete transactions
+- AI does not use ground truth
+- AI does not perform reconciliation
+- Response validation (risk level, confidence, etc.)
+- Prompt injection defense for transaction fields
+- Timeout protection (30s)
+- Graceful failure handling
+
+### Failure Handling
+
+| Failure | Behavior |
+|---------|----------|
+| Missing API key | Returns AI_UNAVAILABLE |
+| Invalid API key | Returns AI_UNAVAILABLE |
+| Timeout | Returns AI_TIMEOUT |
+| Rate limit | Returns AI_RATE_LIMITED |
+| Network error | Returns AI_UNAVAILABLE |
+| Malformed response | Returns AI_INVALID_RESPONSE |
+
+Reconciliation and analytics continue working without Gemini.
+
+### Running
+
+```bash
+cd server
+
+# Run AI tests
+node --test services/ai/__tests__/ai.test.js
+
+# Run all tests
+npm test
+```
 
 ## Frontend Routes
 
