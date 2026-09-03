@@ -3,11 +3,13 @@ dotenv.config();
 
 const app = require('./app');
 const connectDB = require('./config/db');
+const geminiClient = require('./services/ai/geminiClient');
 
 const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
   try {
+    geminiClient.initializeClient();
     await connectDB();
     app.listen(PORT, () => {
       console.log(`ReconEDGE AI API running on port ${PORT}`);

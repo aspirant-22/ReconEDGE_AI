@@ -7,6 +7,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Reconciliation from './pages/Reconciliation';
 import Exceptions from './pages/Exceptions';
+import FinanceQA from './pages/FinanceQA';
 import AuditLogs from './pages/AuditLogs';
 
 const PublicRoute = ({ children }) => {
@@ -45,6 +46,7 @@ const AppRoutes = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/reconciliation" element={<Reconciliation />} />
         <Route path="/exceptions" element={<Exceptions />} />
+        <Route path="/finance-qa" element={<FinanceQA />} />
         <Route path="/audit-logs" element={<AuditLogs />} />
       </Route>
       <Route path="*" element={<Navigate to="/dashboard" replace />} />

@@ -3,6 +3,8 @@ const { analyzeException, validateExceptionRecord, buildPayload, hasGroundTruthF
 const { buildPrompt, buildAnalysisPayload, EXCEPTION_INSTRUCTIONS } = require('./prompts');
 const { parseResponse } = require('./responseParser');
 const { validateAnalysis, VALID_RISK_LEVELS, MAX_RECOMMENDATIONS } = require('./aiGuardrails');
+const financeContext = require('./financeContext');
+const financeQA = require('./financeQA');
 
 module.exports = {
   geminiClient,
@@ -19,4 +21,6 @@ module.exports = {
   validateAnalysis,
   VALID_RISK_LEVELS,
   MAX_RECOMMENDATIONS,
+  financeContext,
+  financeQA,
 };
