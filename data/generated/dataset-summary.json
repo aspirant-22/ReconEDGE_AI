@@ -1,0 +1,15 @@
+{
+  "seed": 42,
+  "generatedAt": "2026-09-03T10:00:19.993Z",
+  "paymentRecords": 500,
+  "bankRecords": 525,
+  "invoiceRecords": 500,
+  "scenarios": {
+    "EXACT_MATCH": 350,
+    "AMOUNT_MISMATCH": 50,
+    "MISSING_BANK_TRANSACTION": 25,
+    "DUPLICATE_BANK_TRANSACTION": 25,
+    "DATE_MISMATCH": 25,
+    "UNMATCHED_BANK_TRANSACTION": 25
+  }
+}

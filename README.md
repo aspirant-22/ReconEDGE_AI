@@ -4,9 +4,11 @@
 
 ## Current Phase
 
-**Phase 1 — Foundation Setup**
+**Phase 2 — Synthetic Financial Data**
 
-This phase establishes the project architecture, authentication system, and placeholder UI. No reconciliation logic, AI functionality, or financial data processing has been implemented yet.
+Phase 2 adds a deterministic synthetic data generator that produces realistic financial datasets for reconciliation evaluation. The generator creates payment, bank transaction, and invoice records with known ground truth relationships and intentionally injected anomalies.
+
+Phase 2 generates evaluation data only. The reconciliation engine is implemented in Phase 3.
 
 ## Tech Stack
 
@@ -100,6 +102,76 @@ cd client && npm run dev
 | POST | `/api/auth/register` | Register user | No |
 | POST | `/api/auth/login` | Login user | No |
 | GET | `/api/auth/me` | Get current user | Yes |
+
+## Phase 2 — Synthetic Financial Data
+
+### Why Synthetic Data
+
+Synthetic data allows us to test the reconciliation engine with known ground truth. We can precisely measure match rate, precision, recall, and exception detection accuracy because we control the expected relationships.
+
+### Dataset Types
+
+| Dataset | Description |
+|---------|-------------|
+| Payments | Payment gateway transaction records (INR) |
+| Bank Transactions | Bank settlement records |
+| Invoices | Invoice records |
+| Ground Truth | Expected relationships and scenario labels |
+
+### Default Configuration
+
+- Payment count: 500
+- Seed: 42
+- Date range: 2026-07-01 to 2026-08-31
+- Currency: INR
+- Amount range: ₹100 – ₹100,000
+
+### Generation
+
+```bash
+cd server
+npm run generate:data
+```
+
+With custom parameters:
+
+```bash
+node utils/dataGenerator/generateData.js --count=1000 --seed=99
+```
+
+### Scenario Distribution
+
+| Scenario | Approximate % | Description |
+|----------|---------------|-------------|
+| EXACT_MATCH | 70% | All three sources agree |
+| AMOUNT_MISMATCH | 10% | Payment and bank amounts differ |
+| MISSING_BANK_TRANSACTION | 5% | Bank transaction is absent |
+| DUPLICATE_BANK_TRANSACTION | 5% | Duplicate bank settlement |
+| DATE_MISMATCH | 5% | Bank transaction date is delayed |
+| UNMATCHED_BANK_TRANSACTION | 5% | Orphaned bank transaction |
+
+### Output Files
+
+Generated in `data/generated/`:
+- `payments.json` / `payments.csv`
+- `bank-transactions.json` / `bank-transactions.csv`
+- `invoices.json` / `invoices.csv`
+- `ground-truth.json`
+- `dataset-summary.json`
+
+### Seeded Generation
+
+The generator uses a seeded pseudo-random number generator. The same seed always produces the same dataset, ensuring reproducible evaluation.
+
+### Validation
+
+The generator validates all generated data before writing files:
+- Unique IDs across all datasets
+- Valid amounts (positive, numeric)
+- Correct currency (INR)
+- Ground truth references valid records
+- Scenario counts match payment count
+- Relationship consistency for each scenario
 
 ## Frontend Routes
 

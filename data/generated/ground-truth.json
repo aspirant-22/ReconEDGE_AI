@@ -1,0 +1,3002 @@
+[
+  {
+    "paymentId": "PAY-100001",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900001",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100002",
+    "expectedBankTransactionId": "BANK-700002",
+    "expectedInvoiceId": "INV-900002",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100003",
+    "expectedBankTransactionId": "BANK-700003",
+    "expectedInvoiceId": "INV-900003",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100004",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900004",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100005",
+    "expectedBankTransactionId": "BANK-700005",
+    "expectedInvoiceId": "INV-900005",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100006",
+    "expectedBankTransactionId": "BANK-700006",
+    "expectedInvoiceId": "INV-900006",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100007",
+    "expectedBankTransactionId": "BANK-700007",
+    "expectedInvoiceId": "INV-900007",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100008",
+    "expectedBankTransactionId": "BANK-700008",
+    "expectedInvoiceId": "INV-900008",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100009",
+    "expectedBankTransactionId": "BANK-700009",
+    "expectedInvoiceId": "INV-900009",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100010",
+    "expectedBankTransactionId": "BANK-700010",
+    "expectedInvoiceId": "INV-900010",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100011",
+    "expectedBankTransactionId": "BANK-700011",
+    "expectedInvoiceId": "INV-900011",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100012",
+    "expectedBankTransactionId": "BANK-700012",
+    "expectedInvoiceId": "INV-900012",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100013",
+    "expectedBankTransactionId": "BANK-700013",
+    "expectedInvoiceId": "INV-900013",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100014",
+    "expectedBankTransactionId": "BANK-700014",
+    "expectedInvoiceId": "INV-900014",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100015",
+    "expectedBankTransactionId": "BANK-700015",
+    "expectedInvoiceId": "INV-900015",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100016",
+    "expectedBankTransactionId": "BANK-700016",
+    "expectedInvoiceId": "INV-900016",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100017",
+    "expectedBankTransactionId": "BANK-700017",
+    "expectedInvoiceId": "INV-900017",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100018",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900018",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100019",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900019",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100020",
+    "expectedBankTransactionId": "BANK-700020",
+    "expectedInvoiceId": "INV-900020",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100021",
+    "expectedBankTransactionId": "BANK-700021",
+    "expectedInvoiceId": "INV-900021",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100022",
+    "expectedBankTransactionId": "BANK-700022",
+    "expectedInvoiceId": "INV-900022",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100023",
+    "expectedBankTransactionId": "BANK-700023",
+    "expectedInvoiceId": "INV-900023",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100024",
+    "expectedBankTransactionId": "BANK-700024",
+    "expectedInvoiceId": "INV-900024",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100025",
+    "expectedBankTransactionId": "BANK-700025",
+    "expectedInvoiceId": "INV-900025",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100026",
+    "expectedBankTransactionId": "BANK-700026",
+    "expectedInvoiceId": "INV-900026",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100027",
+    "expectedBankTransactionId": "BANK-700027",
+    "expectedInvoiceId": "INV-900027",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100028",
+    "expectedBankTransactionId": "BANK-700028",
+    "expectedInvoiceId": "INV-900028",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100029",
+    "expectedBankTransactionId": "BANK-700029",
+    "expectedInvoiceId": "INV-900029",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100030",
+    "expectedBankTransactionId": "BANK-700030",
+    "expectedInvoiceId": "INV-900030",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100031",
+    "expectedBankTransactionId": "BANK-700031",
+    "expectedInvoiceId": "INV-900031",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100032",
+    "expectedBankTransactionId": "BANK-700032",
+    "expectedInvoiceId": "INV-900032",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100033",
+    "expectedBankTransactionId": "BANK-700033",
+    "expectedInvoiceId": "INV-900033",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100034",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900034",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100035",
+    "expectedBankTransactionId": "BANK-700035",
+    "expectedInvoiceId": "INV-900035",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100036",
+    "expectedBankTransactionId": "BANK-700036",
+    "expectedInvoiceId": "INV-900036",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100037",
+    "expectedBankTransactionId": "BANK-700037",
+    "expectedInvoiceId": "INV-900037",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100038",
+    "expectedBankTransactionId": "BANK-700038",
+    "expectedInvoiceId": "INV-900038",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100039",
+    "expectedBankTransactionId": "BANK-700039",
+    "expectedInvoiceId": "INV-900039",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100040",
+    "expectedBankTransactionId": "BANK-700040",
+    "expectedInvoiceId": "INV-900040",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100041",
+    "expectedBankTransactionId": "BANK-700041",
+    "expectedInvoiceId": "INV-900041",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100042",
+    "expectedBankTransactionId": "BANK-700042",
+    "expectedInvoiceId": "INV-900042",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100043",
+    "expectedBankTransactionId": "BANK-700043",
+    "expectedInvoiceId": "INV-900043",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100044",
+    "expectedBankTransactionId": "BANK-700044",
+    "expectedInvoiceId": "INV-900044",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100045",
+    "expectedBankTransactionId": "BANK-700045",
+    "expectedInvoiceId": "INV-900045",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100046",
+    "expectedBankTransactionId": "BANK-700046",
+    "expectedInvoiceId": "INV-900046",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100047",
+    "expectedBankTransactionId": "BANK-700047",
+    "expectedInvoiceId": "INV-900047",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100048",
+    "expectedBankTransactionId": "BANK-700048",
+    "expectedInvoiceId": "INV-900048",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100049",
+    "expectedBankTransactionId": "BANK-700049",
+    "expectedInvoiceId": "INV-900049",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100050",
+    "expectedBankTransactionId": "BANK-700050",
+    "expectedInvoiceId": "INV-900050",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100051",
+    "expectedBankTransactionId": "BANK-700051",
+    "expectedInvoiceId": "INV-900051",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100052",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900052",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100053",
+    "expectedBankTransactionId": "BANK-700053",
+    "expectedInvoiceId": "INV-900053",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100054",
+    "expectedBankTransactionId": "BANK-700054",
+    "expectedInvoiceId": "INV-900054",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100055",
+    "expectedBankTransactionId": "BANK-700055",
+    "expectedInvoiceId": "INV-900055",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100056",
+    "expectedBankTransactionId": "BANK-700056",
+    "expectedInvoiceId": "INV-900056",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100057",
+    "expectedBankTransactionId": "BANK-700057",
+    "expectedInvoiceId": "INV-900057",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100058",
+    "expectedBankTransactionId": "BANK-700058",
+    "expectedInvoiceId": "INV-900058",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100059",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900059",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100060",
+    "expectedBankTransactionId": "BANK-700060",
+    "expectedInvoiceId": "INV-900060",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100061",
+    "expectedBankTransactionId": "BANK-700061",
+    "expectedInvoiceId": "INV-900061",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100062",
+    "expectedBankTransactionId": "BANK-700062",
+    "expectedInvoiceId": "INV-900062",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100063",
+    "expectedBankTransactionId": "BANK-700063",
+    "expectedInvoiceId": "INV-900063",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100064",
+    "expectedBankTransactionId": "BANK-700064",
+    "expectedInvoiceId": "INV-900064",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100065",
+    "expectedBankTransactionId": "BANK-700065",
+    "expectedInvoiceId": "INV-900065",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100066",
+    "expectedBankTransactionId": "BANK-700066",
+    "expectedInvoiceId": "INV-900066",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100067",
+    "expectedBankTransactionId": "BANK-700067",
+    "expectedInvoiceId": "INV-900067",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100068",
+    "expectedBankTransactionId": "BANK-700068",
+    "expectedInvoiceId": "INV-900068",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100069",
+    "expectedBankTransactionId": "BANK-700069",
+    "expectedInvoiceId": "INV-900069",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100070",
+    "expectedBankTransactionId": "BANK-700070",
+    "expectedInvoiceId": "INV-900070",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100071",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900071",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100072",
+    "expectedBankTransactionId": "BANK-700072",
+    "expectedInvoiceId": "INV-900072",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100073",
+    "expectedBankTransactionId": "BANK-700073",
+    "expectedInvoiceId": "INV-900073",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100074",
+    "expectedBankTransactionId": "BANK-700074",
+    "expectedInvoiceId": "INV-900074",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100075",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900075",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100076",
+    "expectedBankTransactionId": "BANK-700076",
+    "expectedInvoiceId": "INV-900076",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100077",
+    "expectedBankTransactionId": "BANK-700077",
+    "expectedInvoiceId": "INV-900077",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100078",
+    "expectedBankTransactionId": "BANK-700078",
+    "expectedInvoiceId": "INV-900078",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100079",
+    "expectedBankTransactionId": "BANK-700079",
+    "expectedInvoiceId": "INV-900079",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100080",
+    "expectedBankTransactionId": "BANK-700080",
+    "expectedInvoiceId": "INV-900080",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100081",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900081",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100082",
+    "expectedBankTransactionId": "BANK-700082",
+    "expectedInvoiceId": "INV-900082",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100083",
+    "expectedBankTransactionId": "BANK-700083",
+    "expectedInvoiceId": "INV-900083",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100084",
+    "expectedBankTransactionId": "BANK-700084",
+    "expectedInvoiceId": "INV-900084",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100085",
+    "expectedBankTransactionId": "BANK-700085",
+    "expectedInvoiceId": "INV-900085",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100086",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900086",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100087",
+    "expectedBankTransactionId": "BANK-700087",
+    "expectedInvoiceId": "INV-900087",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100088",
+    "expectedBankTransactionId": "BANK-700088",
+    "expectedInvoiceId": "INV-900088",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100089",
+    "expectedBankTransactionId": "BANK-700089",
+    "expectedInvoiceId": "INV-900089",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100090",
+    "expectedBankTransactionId": "BANK-700090",
+    "expectedInvoiceId": "INV-900090",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100091",
+    "expectedBankTransactionId": "BANK-700091",
+    "expectedInvoiceId": "INV-900091",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100092",
+    "expectedBankTransactionId": "BANK-700092",
+    "expectedInvoiceId": "INV-900092",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100093",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900093",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100094",
+    "expectedBankTransactionId": "BANK-700094",
+    "expectedInvoiceId": "INV-900094",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100095",
+    "expectedBankTransactionId": "BANK-700095",
+    "expectedInvoiceId": "INV-900095",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100096",
+    "expectedBankTransactionId": "BANK-700096",
+    "expectedInvoiceId": "INV-900096",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100097",
+    "expectedBankTransactionId": "BANK-700097",
+    "expectedInvoiceId": "INV-900097",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100098",
+    "expectedBankTransactionId": "BANK-700098",
+    "expectedInvoiceId": "INV-900098",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100099",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900099",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100100",
+    "expectedBankTransactionId": "BANK-700100",
+    "expectedInvoiceId": "INV-900100",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100101",
+    "expectedBankTransactionId": "BANK-700101",
+    "expectedInvoiceId": "INV-900101",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100102",
+    "expectedBankTransactionId": "BANK-700102",
+    "expectedInvoiceId": "INV-900102",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100103",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900103",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100104",
+    "expectedBankTransactionId": "BANK-700104",
+    "expectedInvoiceId": "INV-900104",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100105",
+    "expectedBankTransactionId": "BANK-700105",
+    "expectedInvoiceId": "INV-900105",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100106",
+    "expectedBankTransactionId": "BANK-700106",
+    "expectedInvoiceId": "INV-900106",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100107",
+    "expectedBankTransactionId": "BANK-700107",
+    "expectedInvoiceId": "INV-900107",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100108",
+    "expectedBankTransactionId": "BANK-700108",
+    "expectedInvoiceId": "INV-900108",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100109",
+    "expectedBankTransactionId": "BANK-700109",
+    "expectedInvoiceId": "INV-900109",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100110",
+    "expectedBankTransactionId": "BANK-700110",
+    "expectedInvoiceId": "INV-900110",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100111",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900111",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100112",
+    "expectedBankTransactionId": "BANK-700112",
+    "expectedInvoiceId": "INV-900112",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100113",
+    "expectedBankTransactionId": "BANK-700113",
+    "expectedInvoiceId": "INV-900113",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100114",
+    "expectedBankTransactionId": "BANK-700114",
+    "expectedInvoiceId": "INV-900114",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100115",
+    "expectedBankTransactionId": "BANK-700115",
+    "expectedInvoiceId": "INV-900115",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100116",
+    "expectedBankTransactionId": "BANK-700116",
+    "expectedInvoiceId": "INV-900116",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100117",
+    "expectedBankTransactionId": "BANK-700117",
+    "expectedInvoiceId": "INV-900117",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100118",
+    "expectedBankTransactionId": "BANK-700118",
+    "expectedInvoiceId": "INV-900118",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100119",
+    "expectedBankTransactionId": "BANK-700119",
+    "expectedInvoiceId": "INV-900119",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100120",
+    "expectedBankTransactionId": "BANK-700120",
+    "expectedInvoiceId": "INV-900120",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100121",
+    "expectedBankTransactionId": "BANK-700121",
+    "expectedInvoiceId": "INV-900121",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100122",
+    "expectedBankTransactionId": "BANK-700122",
+    "expectedInvoiceId": "INV-900122",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100123",
+    "expectedBankTransactionId": "BANK-700123",
+    "expectedInvoiceId": "INV-900123",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100124",
+    "expectedBankTransactionId": "BANK-700124",
+    "expectedInvoiceId": "INV-900124",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100125",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900125",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100126",
+    "expectedBankTransactionId": "BANK-700126",
+    "expectedInvoiceId": "INV-900126",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100127",
+    "expectedBankTransactionId": "BANK-700127",
+    "expectedInvoiceId": "INV-900127",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100128",
+    "expectedBankTransactionId": "BANK-700128",
+    "expectedInvoiceId": "INV-900128",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100129",
+    "expectedBankTransactionId": "BANK-700129",
+    "expectedInvoiceId": "INV-900129",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100130",
+    "expectedBankTransactionId": "BANK-700130",
+    "expectedInvoiceId": "INV-900130",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100131",
+    "expectedBankTransactionId": "BANK-700131",
+    "expectedInvoiceId": "INV-900131",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100132",
+    "expectedBankTransactionId": "BANK-700132",
+    "expectedInvoiceId": "INV-900132",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100133",
+    "expectedBankTransactionId": "BANK-700133",
+    "expectedInvoiceId": "INV-900133",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100134",
+    "expectedBankTransactionId": "BANK-700134",
+    "expectedInvoiceId": "INV-900134",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100135",
+    "expectedBankTransactionId": "BANK-700135",
+    "expectedInvoiceId": "INV-900135",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100136",
+    "expectedBankTransactionId": "BANK-700136",
+    "expectedInvoiceId": "INV-900136",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100137",
+    "expectedBankTransactionId": "BANK-700137",
+    "expectedInvoiceId": "INV-900137",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100138",
+    "expectedBankTransactionId": "BANK-700138",
+    "expectedInvoiceId": "INV-900138",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100139",
+    "expectedBankTransactionId": "BANK-700139",
+    "expectedInvoiceId": "INV-900139",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100140",
+    "expectedBankTransactionId": "BANK-700140",
+    "expectedInvoiceId": "INV-900140",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100141",
+    "expectedBankTransactionId": "BANK-700141",
+    "expectedInvoiceId": "INV-900141",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100142",
+    "expectedBankTransactionId": "BANK-700142",
+    "expectedInvoiceId": "INV-900142",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100143",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900143",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100144",
+    "expectedBankTransactionId": "BANK-700144",
+    "expectedInvoiceId": "INV-900144",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100145",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900145",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100146",
+    "expectedBankTransactionId": "BANK-700146",
+    "expectedInvoiceId": "INV-900146",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100147",
+    "expectedBankTransactionId": "BANK-700147",
+    "expectedInvoiceId": "INV-900147",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100148",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900148",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100149",
+    "expectedBankTransactionId": "BANK-700149",
+    "expectedInvoiceId": "INV-900149",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100150",
+    "expectedBankTransactionId": "BANK-700150",
+    "expectedInvoiceId": "INV-900150",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100151",
+    "expectedBankTransactionId": "BANK-700151",
+    "expectedInvoiceId": "INV-900151",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100152",
+    "expectedBankTransactionId": "BANK-700152",
+    "expectedInvoiceId": "INV-900152",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100153",
+    "expectedBankTransactionId": "BANK-700153",
+    "expectedInvoiceId": "INV-900153",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100154",
+    "expectedBankTransactionId": "BANK-700154",
+    "expectedInvoiceId": "INV-900154",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100155",
+    "expectedBankTransactionId": "BANK-700155",
+    "expectedInvoiceId": "INV-900155",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100156",
+    "expectedBankTransactionId": "BANK-700156",
+    "expectedInvoiceId": "INV-900156",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100157",
+    "expectedBankTransactionId": "BANK-700157",
+    "expectedInvoiceId": "INV-900157",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100158",
+    "expectedBankTransactionId": "BANK-700158",
+    "expectedInvoiceId": "INV-900158",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100159",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900159",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100160",
+    "expectedBankTransactionId": "BANK-700160",
+    "expectedInvoiceId": "INV-900160",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100161",
+    "expectedBankTransactionId": "BANK-700161",
+    "expectedInvoiceId": "INV-900161",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100162",
+    "expectedBankTransactionId": "BANK-700162",
+    "expectedInvoiceId": "INV-900162",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100163",
+    "expectedBankTransactionId": "BANK-700163",
+    "expectedInvoiceId": "INV-900163",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100164",
+    "expectedBankTransactionId": "BANK-700164",
+    "expectedInvoiceId": "INV-900164",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100165",
+    "expectedBankTransactionId": "BANK-700165",
+    "expectedInvoiceId": "INV-900165",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100166",
+    "expectedBankTransactionId": "BANK-700166",
+    "expectedInvoiceId": "INV-900166",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100167",
+    "expectedBankTransactionId": "BANK-700167",
+    "expectedInvoiceId": "INV-900167",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100168",
+    "expectedBankTransactionId": "BANK-700168",
+    "expectedInvoiceId": "INV-900168",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100169",
+    "expectedBankTransactionId": "BANK-700169",
+    "expectedInvoiceId": "INV-900169",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100170",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900170",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100171",
+    "expectedBankTransactionId": "BANK-700171",
+    "expectedInvoiceId": "INV-900171",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100172",
+    "expectedBankTransactionId": "BANK-700172",
+    "expectedInvoiceId": "INV-900172",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100173",
+    "expectedBankTransactionId": "BANK-700173",
+    "expectedInvoiceId": "INV-900173",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100174",
+    "expectedBankTransactionId": "BANK-700174",
+    "expectedInvoiceId": "INV-900174",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100175",
+    "expectedBankTransactionId": "BANK-700175",
+    "expectedInvoiceId": "INV-900175",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100176",
+    "expectedBankTransactionId": "BANK-700176",
+    "expectedInvoiceId": "INV-900176",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100177",
+    "expectedBankTransactionId": "BANK-700177",
+    "expectedInvoiceId": "INV-900177",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100178",
+    "expectedBankTransactionId": "BANK-700178",
+    "expectedInvoiceId": "INV-900178",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100179",
+    "expectedBankTransactionId": "BANK-700179",
+    "expectedInvoiceId": "INV-900179",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100180",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900180",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100181",
+    "expectedBankTransactionId": "BANK-700181",
+    "expectedInvoiceId": "INV-900181",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100182",
+    "expectedBankTransactionId": "BANK-700182",
+    "expectedInvoiceId": "INV-900182",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100183",
+    "expectedBankTransactionId": "BANK-700183",
+    "expectedInvoiceId": "INV-900183",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100184",
+    "expectedBankTransactionId": "BANK-700184",
+    "expectedInvoiceId": "INV-900184",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100185",
+    "expectedBankTransactionId": "BANK-700185",
+    "expectedInvoiceId": "INV-900185",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100186",
+    "expectedBankTransactionId": "BANK-700186",
+    "expectedInvoiceId": "INV-900186",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100187",
+    "expectedBankTransactionId": "BANK-700187",
+    "expectedInvoiceId": "INV-900187",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100188",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900188",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100189",
+    "expectedBankTransactionId": "BANK-700189",
+    "expectedInvoiceId": "INV-900189",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100190",
+    "expectedBankTransactionId": "BANK-700190",
+    "expectedInvoiceId": "INV-900190",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100191",
+    "expectedBankTransactionId": "BANK-700191",
+    "expectedInvoiceId": "INV-900191",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100192",
+    "expectedBankTransactionId": "BANK-700192",
+    "expectedInvoiceId": "INV-900192",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100193",
+    "expectedBankTransactionId": "BANK-700193",
+    "expectedInvoiceId": "INV-900193",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100194",
+    "expectedBankTransactionId": "BANK-700194",
+    "expectedInvoiceId": "INV-900194",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100195",
+    "expectedBankTransactionId": "BANK-700195",
+    "expectedInvoiceId": "INV-900195",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100196",
+    "expectedBankTransactionId": "BANK-700196",
+    "expectedInvoiceId": "INV-900196",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100197",
+    "expectedBankTransactionId": "BANK-700197",
+    "expectedInvoiceId": "INV-900197",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100198",
+    "expectedBankTransactionId": "BANK-700198",
+    "expectedInvoiceId": "INV-900198",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100199",
+    "expectedBankTransactionId": "BANK-700199",
+    "expectedInvoiceId": "INV-900199",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100200",
+    "expectedBankTransactionId": "BANK-700200",
+    "expectedInvoiceId": "INV-900200",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100201",
+    "expectedBankTransactionId": "BANK-700201",
+    "expectedInvoiceId": "INV-900201",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100202",
+    "expectedBankTransactionId": "BANK-700202",
+    "expectedInvoiceId": "INV-900202",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100203",
+    "expectedBankTransactionId": "BANK-700203",
+    "expectedInvoiceId": "INV-900203",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100204",
+    "expectedBankTransactionId": "BANK-700204",
+    "expectedInvoiceId": "INV-900204",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100205",
+    "expectedBankTransactionId": "BANK-700205",
+    "expectedInvoiceId": "INV-900205",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100206",
+    "expectedBankTransactionId": "BANK-700206",
+    "expectedInvoiceId": "INV-900206",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100207",
+    "expectedBankTransactionId": "BANK-700207",
+    "expectedInvoiceId": "INV-900207",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100208",
+    "expectedBankTransactionId": "BANK-700208",
+    "expectedInvoiceId": "INV-900208",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100209",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900209",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100210",
+    "expectedBankTransactionId": "BANK-700210",
+    "expectedInvoiceId": "INV-900210",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100211",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900211",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100212",
+    "expectedBankTransactionId": "BANK-700212",
+    "expectedInvoiceId": "INV-900212",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100213",
+    "expectedBankTransactionId": "BANK-700213",
+    "expectedInvoiceId": "INV-900213",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100214",
+    "expectedBankTransactionId": "BANK-700214",
+    "expectedInvoiceId": "INV-900214",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100215",
+    "expectedBankTransactionId": "BANK-700215",
+    "expectedInvoiceId": "INV-900215",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100216",
+    "expectedBankTransactionId": "BANK-700216",
+    "expectedInvoiceId": "INV-900216",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100217",
+    "expectedBankTransactionId": "BANK-700217",
+    "expectedInvoiceId": "INV-900217",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100218",
+    "expectedBankTransactionId": "BANK-700218",
+    "expectedInvoiceId": "INV-900218",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100219",
+    "expectedBankTransactionId": "BANK-700219",
+    "expectedInvoiceId": "INV-900219",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100220",
+    "expectedBankTransactionId": "BANK-700220",
+    "expectedInvoiceId": "INV-900220",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100221",
+    "expectedBankTransactionId": "BANK-700221",
+    "expectedInvoiceId": "INV-900221",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100222",
+    "expectedBankTransactionId": "BANK-700222",
+    "expectedInvoiceId": "INV-900222",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100223",
+    "expectedBankTransactionId": "BANK-700223",
+    "expectedInvoiceId": "INV-900223",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100224",
+    "expectedBankTransactionId": "BANK-700224",
+    "expectedInvoiceId": "INV-900224",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100225",
+    "expectedBankTransactionId": "BANK-700225",
+    "expectedInvoiceId": "INV-900225",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100226",
+    "expectedBankTransactionId": "BANK-700226",
+    "expectedInvoiceId": "INV-900226",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100227",
+    "expectedBankTransactionId": "BANK-700227",
+    "expectedInvoiceId": "INV-900227",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100228",
+    "expectedBankTransactionId": "BANK-700228",
+    "expectedInvoiceId": "INV-900228",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100229",
+    "expectedBankTransactionId": "BANK-700229",
+    "expectedInvoiceId": "INV-900229",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100230",
+    "expectedBankTransactionId": "BANK-700230",
+    "expectedInvoiceId": "INV-900230",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100231",
+    "expectedBankTransactionId": "BANK-700231",
+    "expectedInvoiceId": "INV-900231",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100232",
+    "expectedBankTransactionId": "BANK-700232",
+    "expectedInvoiceId": "INV-900232",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100233",
+    "expectedBankTransactionId": "BANK-700233",
+    "expectedInvoiceId": "INV-900233",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100234",
+    "expectedBankTransactionId": "BANK-700234",
+    "expectedInvoiceId": "INV-900234",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100235",
+    "expectedBankTransactionId": "BANK-700235",
+    "expectedInvoiceId": "INV-900235",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100236",
+    "expectedBankTransactionId": "BANK-700236",
+    "expectedInvoiceId": "INV-900236",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100237",
+    "expectedBankTransactionId": "BANK-700237",
+    "expectedInvoiceId": "INV-900237",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100238",
+    "expectedBankTransactionId": "BANK-700238",
+    "expectedInvoiceId": "INV-900238",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100239",
+    "expectedBankTransactionId": "BANK-700239",
+    "expectedInvoiceId": "INV-900239",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100240",
+    "expectedBankTransactionId": "BANK-700240",
+    "expectedInvoiceId": "INV-900240",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100241",
+    "expectedBankTransactionId": "BANK-700241",
+    "expectedInvoiceId": "INV-900241",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100242",
+    "expectedBankTransactionId": "BANK-700242",
+    "expectedInvoiceId": "INV-900242",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100243",
+    "expectedBankTransactionId": "BANK-700243",
+    "expectedInvoiceId": "INV-900243",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100244",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900244",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100245",
+    "expectedBankTransactionId": "BANK-700245",
+    "expectedInvoiceId": "INV-900245",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100246",
+    "expectedBankTransactionId": "BANK-700246",
+    "expectedInvoiceId": "INV-900246",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100247",
+    "expectedBankTransactionId": "BANK-700247",
+    "expectedInvoiceId": "INV-900247",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100248",
+    "expectedBankTransactionId": "BANK-700248",
+    "expectedInvoiceId": "INV-900248",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100249",
+    "expectedBankTransactionId": "BANK-700249",
+    "expectedInvoiceId": "INV-900249",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100250",
+    "expectedBankTransactionId": "BANK-700250",
+    "expectedInvoiceId": "INV-900250",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100251",
+    "expectedBankTransactionId": "BANK-700251",
+    "expectedInvoiceId": "INV-900251",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100252",
+    "expectedBankTransactionId": "BANK-700252",
+    "expectedInvoiceId": "INV-900252",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100253",
+    "expectedBankTransactionId": "BANK-700253",
+    "expectedInvoiceId": "INV-900253",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100254",
+    "expectedBankTransactionId": "BANK-700254",
+    "expectedInvoiceId": "INV-900254",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100255",
+    "expectedBankTransactionId": "BANK-700255",
+    "expectedInvoiceId": "INV-900255",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100256",
+    "expectedBankTransactionId": "BANK-700256",
+    "expectedInvoiceId": "INV-900256",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100257",
+    "expectedBankTransactionId": "BANK-700257",
+    "expectedInvoiceId": "INV-900257",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100258",
+    "expectedBankTransactionId": "BANK-700258",
+    "expectedInvoiceId": "INV-900258",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100259",
+    "expectedBankTransactionId": "BANK-700259",
+    "expectedInvoiceId": "INV-900259",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100260",
+    "expectedBankTransactionId": "BANK-700260",
+    "expectedInvoiceId": "INV-900260",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100261",
+    "expectedBankTransactionId": "BANK-700261",
+    "expectedInvoiceId": "INV-900261",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100262",
+    "expectedBankTransactionId": "BANK-700262",
+    "expectedInvoiceId": "INV-900262",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100263",
+    "expectedBankTransactionId": "BANK-700263",
+    "expectedInvoiceId": "INV-900263",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100264",
+    "expectedBankTransactionId": "BANK-700264",
+    "expectedInvoiceId": "INV-900264",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100265",
+    "expectedBankTransactionId": "BANK-700265",
+    "expectedInvoiceId": "INV-900265",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100266",
+    "expectedBankTransactionId": "BANK-700266",
+    "expectedInvoiceId": "INV-900266",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100267",
+    "expectedBankTransactionId": "BANK-700267",
+    "expectedInvoiceId": "INV-900267",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100268",
+    "expectedBankTransactionId": "BANK-700268",
+    "expectedInvoiceId": "INV-900268",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100269",
+    "expectedBankTransactionId": "BANK-700269",
+    "expectedInvoiceId": "INV-900269",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100270",
+    "expectedBankTransactionId": "BANK-700270",
+    "expectedInvoiceId": "INV-900270",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100271",
+    "expectedBankTransactionId": "BANK-700271",
+    "expectedInvoiceId": "INV-900271",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100272",
+    "expectedBankTransactionId": "BANK-700272",
+    "expectedInvoiceId": "INV-900272",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100273",
+    "expectedBankTransactionId": "BANK-700273",
+    "expectedInvoiceId": "INV-900273",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100274",
+    "expectedBankTransactionId": "BANK-700274",
+    "expectedInvoiceId": "INV-900274",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100275",
+    "expectedBankTransactionId": "BANK-700275",
+    "expectedInvoiceId": "INV-900275",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100276",
+    "expectedBankTransactionId": "BANK-700276",
+    "expectedInvoiceId": "INV-900276",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100277",
+    "expectedBankTransactionId": "BANK-700277",
+    "expectedInvoiceId": "INV-900277",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100278",
+    "expectedBankTransactionId": "BANK-700278",
+    "expectedInvoiceId": "INV-900278",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100279",
+    "expectedBankTransactionId": "BANK-700279",
+    "expectedInvoiceId": "INV-900279",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100280",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900280",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100281",
+    "expectedBankTransactionId": "BANK-700281",
+    "expectedInvoiceId": "INV-900281",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100282",
+    "expectedBankTransactionId": "BANK-700282",
+    "expectedInvoiceId": "INV-900282",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100283",
+    "expectedBankTransactionId": "BANK-700283",
+    "expectedInvoiceId": "INV-900283",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100284",
+    "expectedBankTransactionId": "BANK-700284",
+    "expectedInvoiceId": "INV-900284",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100285",
+    "expectedBankTransactionId": "BANK-700285",
+    "expectedInvoiceId": "INV-900285",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100286",
+    "expectedBankTransactionId": "BANK-700286",
+    "expectedInvoiceId": "INV-900286",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100287",
+    "expectedBankTransactionId": "BANK-700287",
+    "expectedInvoiceId": "INV-900287",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100288",
+    "expectedBankTransactionId": "BANK-700288",
+    "expectedInvoiceId": "INV-900288",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100289",
+    "expectedBankTransactionId": "BANK-700289",
+    "expectedInvoiceId": "INV-900289",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100290",
+    "expectedBankTransactionId": "BANK-700290",
+    "expectedInvoiceId": "INV-900290",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100291",
+    "expectedBankTransactionId": "BANK-700291",
+    "expectedInvoiceId": "INV-900291",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100292",
+    "expectedBankTransactionId": "BANK-700292",
+    "expectedInvoiceId": "INV-900292",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100293",
+    "expectedBankTransactionId": "BANK-700293",
+    "expectedInvoiceId": "INV-900293",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100294",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900294",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100295",
+    "expectedBankTransactionId": "BANK-700295",
+    "expectedInvoiceId": "INV-900295",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100296",
+    "expectedBankTransactionId": "BANK-700296",
+    "expectedInvoiceId": "INV-900296",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100297",
+    "expectedBankTransactionId": "BANK-700297",
+    "expectedInvoiceId": "INV-900297",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100298",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900298",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100299",
+    "expectedBankTransactionId": "BANK-700299",
+    "expectedInvoiceId": "INV-900299",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100300",
+    "expectedBankTransactionId": "BANK-700300",
+    "expectedInvoiceId": "INV-900300",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100301",
+    "expectedBankTransactionId": "BANK-700301",
+    "expectedInvoiceId": "INV-900301",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100302",
+    "expectedBankTransactionId": "BANK-700302",
+    "expectedInvoiceId": "INV-900302",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100303",
+    "expectedBankTransactionId": "BANK-700303",
+    "expectedInvoiceId": "INV-900303",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100304",
+    "expectedBankTransactionId": "BANK-700304",
+    "expectedInvoiceId": "INV-900304",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100305",
+    "expectedBankTransactionId": "BANK-700305",
+    "expectedInvoiceId": "INV-900305",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100306",
+    "expectedBankTransactionId": "BANK-700306",
+    "expectedInvoiceId": "INV-900306",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100307",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900307",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100308",
+    "expectedBankTransactionId": "BANK-700308",
+    "expectedInvoiceId": "INV-900308",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100309",
+    "expectedBankTransactionId": "BANK-700309",
+    "expectedInvoiceId": "INV-900309",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100310",
+    "expectedBankTransactionId": "BANK-700310",
+    "expectedInvoiceId": "INV-900310",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100311",
+    "expectedBankTransactionId": "BANK-700311",
+    "expectedInvoiceId": "INV-900311",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100312",
+    "expectedBankTransactionId": "BANK-700312",
+    "expectedInvoiceId": "INV-900312",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100313",
+    "expectedBankTransactionId": "BANK-700313",
+    "expectedInvoiceId": "INV-900313",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100314",
+    "expectedBankTransactionId": "BANK-700314",
+    "expectedInvoiceId": "INV-900314",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100315",
+    "expectedBankTransactionId": "BANK-700315",
+    "expectedInvoiceId": "INV-900315",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100316",
+    "expectedBankTransactionId": "BANK-700316",
+    "expectedInvoiceId": "INV-900316",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100317",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900317",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100318",
+    "expectedBankTransactionId": "BANK-700318",
+    "expectedInvoiceId": "INV-900318",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100319",
+    "expectedBankTransactionId": "BANK-700319",
+    "expectedInvoiceId": "INV-900319",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100320",
+    "expectedBankTransactionId": "BANK-700320",
+    "expectedInvoiceId": "INV-900320",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100321",
+    "expectedBankTransactionId": "BANK-700321",
+    "expectedInvoiceId": "INV-900321",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100322",
+    "expectedBankTransactionId": "BANK-700322",
+    "expectedInvoiceId": "INV-900322",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100323",
+    "expectedBankTransactionId": "BANK-700323",
+    "expectedInvoiceId": "INV-900323",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100324",
+    "expectedBankTransactionId": "BANK-700324",
+    "expectedInvoiceId": "INV-900324",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100325",
+    "expectedBankTransactionId": "BANK-700325",
+    "expectedInvoiceId": "INV-900325",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100326",
+    "expectedBankTransactionId": "BANK-700326",
+    "expectedInvoiceId": "INV-900326",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100327",
+    "expectedBankTransactionId": "BANK-700327",
+    "expectedInvoiceId": "INV-900327",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100328",
+    "expectedBankTransactionId": "BANK-700328",
+    "expectedInvoiceId": "INV-900328",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100329",
+    "expectedBankTransactionId": "BANK-700329",
+    "expectedInvoiceId": "INV-900329",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100330",
+    "expectedBankTransactionId": "BANK-700330",
+    "expectedInvoiceId": "INV-900330",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100331",
+    "expectedBankTransactionId": "BANK-700331",
+    "expectedInvoiceId": "INV-900331",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100332",
+    "expectedBankTransactionId": "BANK-700332",
+    "expectedInvoiceId": "INV-900332",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100333",
+    "expectedBankTransactionId": "BANK-700333",
+    "expectedInvoiceId": "INV-900333",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100334",
+    "expectedBankTransactionId": "BANK-700334",
+    "expectedInvoiceId": "INV-900334",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100335",
+    "expectedBankTransactionId": "BANK-700335",
+    "expectedInvoiceId": "INV-900335",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100336",
+    "expectedBankTransactionId": "BANK-700336",
+    "expectedInvoiceId": "INV-900336",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100337",
+    "expectedBankTransactionId": "BANK-700337",
+    "expectedInvoiceId": "INV-900337",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100338",
+    "expectedBankTransactionId": "BANK-700338",
+    "expectedInvoiceId": "INV-900338",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100339",
+    "expectedBankTransactionId": "BANK-700339",
+    "expectedInvoiceId": "INV-900339",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100340",
+    "expectedBankTransactionId": "BANK-700340",
+    "expectedInvoiceId": "INV-900340",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100341",
+    "expectedBankTransactionId": "BANK-700341",
+    "expectedInvoiceId": "INV-900341",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100342",
+    "expectedBankTransactionId": "BANK-700342",
+    "expectedInvoiceId": "INV-900342",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100343",
+    "expectedBankTransactionId": "BANK-700343",
+    "expectedInvoiceId": "INV-900343",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100344",
+    "expectedBankTransactionId": "BANK-700344",
+    "expectedInvoiceId": "INV-900344",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100345",
+    "expectedBankTransactionId": "BANK-700345",
+    "expectedInvoiceId": "INV-900345",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100346",
+    "expectedBankTransactionId": "BANK-700346",
+    "expectedInvoiceId": "INV-900346",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100347",
+    "expectedBankTransactionId": "BANK-700347",
+    "expectedInvoiceId": "INV-900347",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100348",
+    "expectedBankTransactionId": "BANK-700348",
+    "expectedInvoiceId": "INV-900348",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100349",
+    "expectedBankTransactionId": "BANK-700349",
+    "expectedInvoiceId": "INV-900349",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100350",
+    "expectedBankTransactionId": "BANK-700350",
+    "expectedInvoiceId": "INV-900350",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100351",
+    "expectedBankTransactionId": "BANK-700351",
+    "expectedInvoiceId": "INV-900351",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100352",
+    "expectedBankTransactionId": "BANK-700352",
+    "expectedInvoiceId": "INV-900352",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100353",
+    "expectedBankTransactionId": "BANK-700353",
+    "expectedInvoiceId": "INV-900353",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100354",
+    "expectedBankTransactionId": "BANK-700354",
+    "expectedInvoiceId": "INV-900354",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100355",
+    "expectedBankTransactionId": "BANK-700355",
+    "expectedInvoiceId": "INV-900355",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100356",
+    "expectedBankTransactionId": "BANK-700356",
+    "expectedInvoiceId": "INV-900356",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100357",
+    "expectedBankTransactionId": "BANK-700357",
+    "expectedInvoiceId": "INV-900357",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100358",
+    "expectedBankTransactionId": "BANK-700358",
+    "expectedInvoiceId": "INV-900358",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100359",
+    "expectedBankTransactionId": "BANK-700359",
+    "expectedInvoiceId": "INV-900359",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100360",
+    "expectedBankTransactionId": "BANK-700360",
+    "expectedInvoiceId": "INV-900360",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100361",
+    "expectedBankTransactionId": "BANK-700361",
+    "expectedInvoiceId": "INV-900361",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100362",
+    "expectedBankTransactionId": "BANK-700362",
+    "expectedInvoiceId": "INV-900362",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100363",
+    "expectedBankTransactionId": "BANK-700363",
+    "expectedInvoiceId": "INV-900363",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100364",
+    "expectedBankTransactionId": "BANK-700364",
+    "expectedInvoiceId": "INV-900364",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100365",
+    "expectedBankTransactionId": "BANK-700365",
+    "expectedInvoiceId": "INV-900365",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100366",
+    "expectedBankTransactionId": "BANK-700366",
+    "expectedInvoiceId": "INV-900366",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100367",
+    "expectedBankTransactionId": "BANK-700367",
+    "expectedInvoiceId": "INV-900367",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100368",
+    "expectedBankTransactionId": "BANK-700368",
+    "expectedInvoiceId": "INV-900368",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100369",
+    "expectedBankTransactionId": "BANK-700369",
+    "expectedInvoiceId": "INV-900369",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100370",
+    "expectedBankTransactionId": "BANK-700370",
+    "expectedInvoiceId": "INV-900370",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100371",
+    "expectedBankTransactionId": "BANK-700371",
+    "expectedInvoiceId": "INV-900371",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100372",
+    "expectedBankTransactionId": "BANK-700372",
+    "expectedInvoiceId": "INV-900372",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100373",
+    "expectedBankTransactionId": "BANK-700373",
+    "expectedInvoiceId": "INV-900373",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100374",
+    "expectedBankTransactionId": "BANK-700374",
+    "expectedInvoiceId": "INV-900374",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100375",
+    "expectedBankTransactionId": "BANK-700375",
+    "expectedInvoiceId": "INV-900375",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100376",
+    "expectedBankTransactionId": "BANK-700376",
+    "expectedInvoiceId": "INV-900376",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100377",
+    "expectedBankTransactionId": "BANK-700377",
+    "expectedInvoiceId": "INV-900377",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100378",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900378",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100379",
+    "expectedBankTransactionId": "BANK-700379",
+    "expectedInvoiceId": "INV-900379",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100380",
+    "expectedBankTransactionId": "BANK-700380",
+    "expectedInvoiceId": "INV-900380",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100381",
+    "expectedBankTransactionId": "BANK-700381",
+    "expectedInvoiceId": "INV-900381",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100382",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900382",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100383",
+    "expectedBankTransactionId": "BANK-700383",
+    "expectedInvoiceId": "INV-900383",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100384",
+    "expectedBankTransactionId": "BANK-700384",
+    "expectedInvoiceId": "INV-900384",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100385",
+    "expectedBankTransactionId": "BANK-700385",
+    "expectedInvoiceId": "INV-900385",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100386",
+    "expectedBankTransactionId": "BANK-700386",
+    "expectedInvoiceId": "INV-900386",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100387",
+    "expectedBankTransactionId": "BANK-700387",
+    "expectedInvoiceId": "INV-900387",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100388",
+    "expectedBankTransactionId": "BANK-700388",
+    "expectedInvoiceId": "INV-900388",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100389",
+    "expectedBankTransactionId": "BANK-700389",
+    "expectedInvoiceId": "INV-900389",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100390",
+    "expectedBankTransactionId": "BANK-700390",
+    "expectedInvoiceId": "INV-900390",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100391",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900391",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100392",
+    "expectedBankTransactionId": "BANK-700392",
+    "expectedInvoiceId": "INV-900392",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100393",
+    "expectedBankTransactionId": "BANK-700393",
+    "expectedInvoiceId": "INV-900393",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100394",
+    "expectedBankTransactionId": "BANK-700394",
+    "expectedInvoiceId": "INV-900394",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100395",
+    "expectedBankTransactionId": "BANK-700395",
+    "expectedInvoiceId": "INV-900395",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100396",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900396",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100397",
+    "expectedBankTransactionId": "BANK-700397",
+    "expectedInvoiceId": "INV-900397",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100398",
+    "expectedBankTransactionId": "BANK-700398",
+    "expectedInvoiceId": "INV-900398",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100399",
+    "expectedBankTransactionId": "BANK-700399",
+    "expectedInvoiceId": "INV-900399",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100400",
+    "expectedBankTransactionId": "BANK-700400",
+    "expectedInvoiceId": "INV-900400",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100401",
+    "expectedBankTransactionId": "BANK-700401",
+    "expectedInvoiceId": "INV-900401",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100402",
+    "expectedBankTransactionId": "BANK-700402",
+    "expectedInvoiceId": "INV-900402",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100403",
+    "expectedBankTransactionId": "BANK-700403",
+    "expectedInvoiceId": "INV-900403",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100404",
+    "expectedBankTransactionId": "BANK-700404",
+    "expectedInvoiceId": "INV-900404",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100405",
+    "expectedBankTransactionId": "BANK-700405",
+    "expectedInvoiceId": "INV-900405",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100406",
+    "expectedBankTransactionId": "BANK-700406",
+    "expectedInvoiceId": "INV-900406",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100407",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900407",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100408",
+    "expectedBankTransactionId": "BANK-700408",
+    "expectedInvoiceId": "INV-900408",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100409",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900409",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100410",
+    "expectedBankTransactionId": "BANK-700410",
+    "expectedInvoiceId": "INV-900410",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100411",
+    "expectedBankTransactionId": "BANK-700411",
+    "expectedInvoiceId": "INV-900411",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100412",
+    "expectedBankTransactionId": "BANK-700412",
+    "expectedInvoiceId": "INV-900412",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100413",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900413",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100414",
+    "expectedBankTransactionId": "BANK-700414",
+    "expectedInvoiceId": "INV-900414",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100415",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900415",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100416",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900416",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100417",
+    "expectedBankTransactionId": "BANK-700417",
+    "expectedInvoiceId": "INV-900417",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100418",
+    "expectedBankTransactionId": "BANK-700418",
+    "expectedInvoiceId": "INV-900418",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100419",
+    "expectedBankTransactionId": "BANK-700419",
+    "expectedInvoiceId": "INV-900419",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100420",
+    "expectedBankTransactionId": "BANK-700420",
+    "expectedInvoiceId": "INV-900420",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100421",
+    "expectedBankTransactionId": "BANK-700421",
+    "expectedInvoiceId": "INV-900421",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100422",
+    "expectedBankTransactionId": "BANK-700422",
+    "expectedInvoiceId": "INV-900422",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100423",
+    "expectedBankTransactionId": "BANK-700423",
+    "expectedInvoiceId": "INV-900423",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100424",
+    "expectedBankTransactionId": "BANK-700424",
+    "expectedInvoiceId": "INV-900424",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100425",
+    "expectedBankTransactionId": "BANK-700425",
+    "expectedInvoiceId": "INV-900425",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100426",
+    "expectedBankTransactionId": "BANK-700426",
+    "expectedInvoiceId": "INV-900426",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100427",
+    "expectedBankTransactionId": "BANK-700427",
+    "expectedInvoiceId": "INV-900427",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100428",
+    "expectedBankTransactionId": "BANK-700428",
+    "expectedInvoiceId": "INV-900428",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100429",
+    "expectedBankTransactionId": "BANK-700429",
+    "expectedInvoiceId": "INV-900429",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100430",
+    "expectedBankTransactionId": "BANK-700430",
+    "expectedInvoiceId": "INV-900430",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100431",
+    "expectedBankTransactionId": "BANK-700431",
+    "expectedInvoiceId": "INV-900431",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100432",
+    "expectedBankTransactionId": "BANK-700432",
+    "expectedInvoiceId": "INV-900432",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100433",
+    "expectedBankTransactionId": "BANK-700433",
+    "expectedInvoiceId": "INV-900433",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100434",
+    "expectedBankTransactionId": "BANK-700434",
+    "expectedInvoiceId": "INV-900434",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100435",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900435",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100436",
+    "expectedBankTransactionId": "BANK-700436",
+    "expectedInvoiceId": "INV-900436",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100437",
+    "expectedBankTransactionId": "BANK-700437",
+    "expectedInvoiceId": "INV-900437",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100438",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900438",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100439",
+    "expectedBankTransactionId": "BANK-700439",
+    "expectedInvoiceId": "INV-900439",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100440",
+    "expectedBankTransactionId": "BANK-700440",
+    "expectedInvoiceId": "INV-900440",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100441",
+    "expectedBankTransactionId": "BANK-700441",
+    "expectedInvoiceId": "INV-900441",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100442",
+    "expectedBankTransactionId": "BANK-700442",
+    "expectedInvoiceId": "INV-900442",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100443",
+    "expectedBankTransactionId": "BANK-700443",
+    "expectedInvoiceId": "INV-900443",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100444",
+    "expectedBankTransactionId": "BANK-700444",
+    "expectedInvoiceId": "INV-900444",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100445",
+    "expectedBankTransactionId": "BANK-700445",
+    "expectedInvoiceId": "INV-900445",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100446",
+    "expectedBankTransactionId": "BANK-700446",
+    "expectedInvoiceId": "INV-900446",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100447",
+    "expectedBankTransactionId": "BANK-700447",
+    "expectedInvoiceId": "INV-900447",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100448",
+    "expectedBankTransactionId": "BANK-700448",
+    "expectedInvoiceId": "INV-900448",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100449",
+    "expectedBankTransactionId": "BANK-700449",
+    "expectedInvoiceId": "INV-900449",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100450",
+    "expectedBankTransactionId": "BANK-700450",
+    "expectedInvoiceId": "INV-900450",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100451",
+    "expectedBankTransactionId": "BANK-700451",
+    "expectedInvoiceId": "INV-900451",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100452",
+    "expectedBankTransactionId": "BANK-700452",
+    "expectedInvoiceId": "INV-900452",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100453",
+    "expectedBankTransactionId": "BANK-700453",
+    "expectedInvoiceId": "INV-900453",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100454",
+    "expectedBankTransactionId": "BANK-700454",
+    "expectedInvoiceId": "INV-900454",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100455",
+    "expectedBankTransactionId": "BANK-700455",
+    "expectedInvoiceId": "INV-900455",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100456",
+    "expectedBankTransactionId": "BANK-700456",
+    "expectedInvoiceId": "INV-900456",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100457",
+    "expectedBankTransactionId": "BANK-700457",
+    "expectedInvoiceId": "INV-900457",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100458",
+    "expectedBankTransactionId": "BANK-700458",
+    "expectedInvoiceId": "INV-900458",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100459",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900459",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100460",
+    "expectedBankTransactionId": "BANK-700460",
+    "expectedInvoiceId": "INV-900460",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100461",
+    "expectedBankTransactionId": "BANK-700461",
+    "expectedInvoiceId": "INV-900461",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100462",
+    "expectedBankTransactionId": "BANK-700462",
+    "expectedInvoiceId": "INV-900462",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100463",
+    "expectedBankTransactionId": "BANK-700463",
+    "expectedInvoiceId": "INV-900463",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100464",
+    "expectedBankTransactionId": "BANK-700464",
+    "expectedInvoiceId": "INV-900464",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100465",
+    "expectedBankTransactionId": "BANK-700465",
+    "expectedInvoiceId": "INV-900465",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100466",
+    "expectedBankTransactionId": "BANK-700466",
+    "expectedInvoiceId": "INV-900466",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100467",
+    "expectedBankTransactionId": "BANK-700467",
+    "expectedInvoiceId": "INV-900467",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100468",
+    "expectedBankTransactionId": "BANK-700468",
+    "expectedInvoiceId": "INV-900468",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100469",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900469",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100470",
+    "expectedBankTransactionId": "BANK-700470",
+    "expectedInvoiceId": "INV-900470",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100471",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900471",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100472",
+    "expectedBankTransactionId": "BANK-700472",
+    "expectedInvoiceId": "INV-900472",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100473",
+    "expectedBankTransactionId": "BANK-700473",
+    "expectedInvoiceId": "INV-900473",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100474",
+    "expectedBankTransactionId": "BANK-700474",
+    "expectedInvoiceId": "INV-900474",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100475",
+    "expectedBankTransactionId": "BANK-700475",
+    "expectedInvoiceId": "INV-900475",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100476",
+    "expectedBankTransactionId": "BANK-700476",
+    "expectedInvoiceId": "INV-900476",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100477",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900477",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100478",
+    "expectedBankTransactionId": "BANK-700478",
+    "expectedInvoiceId": "INV-900478",
+    "scenario": "DUPLICATE_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100479",
+    "expectedBankTransactionId": "BANK-700479",
+    "expectedInvoiceId": "INV-900479",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100480",
+    "expectedBankTransactionId": "BANK-700480",
+    "expectedInvoiceId": "INV-900480",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100481",
+    "expectedBankTransactionId": "BANK-700481",
+    "expectedInvoiceId": "INV-900481",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100482",
+    "expectedBankTransactionId": "BANK-700482",
+    "expectedInvoiceId": "INV-900482",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100483",
+    "expectedBankTransactionId": "BANK-700483",
+    "expectedInvoiceId": "INV-900483",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100484",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900484",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100485",
+    "expectedBankTransactionId": "BANK-700485",
+    "expectedInvoiceId": "INV-900485",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100486",
+    "expectedBankTransactionId": "BANK-700486",
+    "expectedInvoiceId": "INV-900486",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100487",
+    "expectedBankTransactionId": "BANK-700487",
+    "expectedInvoiceId": "INV-900487",
+    "scenario": "AMOUNT_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100488",
+    "expectedBankTransactionId": "BANK-700488",
+    "expectedInvoiceId": "INV-900488",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100489",
+    "expectedBankTransactionId": "BANK-700489",
+    "expectedInvoiceId": "INV-900489",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100490",
+    "expectedBankTransactionId": "BANK-700490",
+    "expectedInvoiceId": "INV-900490",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100491",
+    "expectedBankTransactionId": "BANK-700491",
+    "expectedInvoiceId": "INV-900491",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100492",
+    "expectedBankTransactionId": "BANK-700492",
+    "expectedInvoiceId": "INV-900492",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100493",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900493",
+    "scenario": "UNMATCHED"
+  },
+  {
+    "paymentId": "PAY-100494",
+    "expectedBankTransactionId": "BANK-700494",
+    "expectedInvoiceId": "INV-900494",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100495",
+    "expectedBankTransactionId": "BANK-700495",
+    "expectedInvoiceId": "INV-900495",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100496",
+    "expectedBankTransactionId": "BANK-700496",
+    "expectedInvoiceId": "INV-900496",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100497",
+    "expectedBankTransactionId": "BANK-700497",
+    "expectedInvoiceId": "INV-900497",
+    "scenario": "EXACT_MATCH"
+  },
+  {
+    "paymentId": "PAY-100498",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900498",
+    "scenario": "MISSING_BANK_TRANSACTION"
+  },
+  {
+    "paymentId": "PAY-100499",
+    "expectedBankTransactionId": "BANK-700499",
+    "expectedInvoiceId": "INV-900499",
+    "scenario": "DATE_MISMATCH"
+  },
+  {
+    "paymentId": "PAY-100500",
+    "expectedBankTransactionId": null,
+    "expectedInvoiceId": "INV-900500",
+    "scenario": "UNMATCHED"
+  }
+]

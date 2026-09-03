@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "generate:data": "node utils/dataGenerator/generateData.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

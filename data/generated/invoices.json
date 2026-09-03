@@ -1,0 +1,5002 @@
+[
+  {
+    "invoiceId": "INV-900001",
+    "orderId": "ORD-500001",
+    "customerId": "CUS-200001",
+    "invoiceAmount": 25309.28,
+    "invoiceDate": "2026-08-05T01:08:22.827Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500001"
+  },
+  {
+    "invoiceId": "INV-900002",
+    "orderId": "ORD-500002",
+    "customerId": "CUS-200002",
+    "invoiceAmount": 2663.82,
+    "invoiceDate": "2026-07-07T06:25:31.603Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500002"
+  },
+  {
+    "invoiceId": "INV-900003",
+    "orderId": "ORD-500003",
+    "customerId": "CUS-200003",
+    "invoiceAmount": 85334.95,
+    "invoiceDate": "2026-08-08T05:53:21.788Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500003"
+  },
+  {
+    "invoiceId": "INV-900004",
+    "orderId": "ORD-500004",
+    "customerId": "CUS-200004",
+    "invoiceAmount": 9165.94,
+    "invoiceDate": "2026-08-27T07:55:45.253Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500004"
+  },
+  {
+    "invoiceId": "INV-900005",
+    "orderId": "ORD-500005",
+    "customerId": "CUS-200005",
+    "invoiceAmount": 55095.79,
+    "invoiceDate": "2026-08-02T14:19:30.480Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500005"
+  },
+  {
+    "invoiceId": "INV-900006",
+    "orderId": "ORD-500006",
+    "customerId": "CUS-200006",
+    "invoiceAmount": 82167.95,
+    "invoiceDate": "2026-08-19T18:14:01.884Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500006"
+  },
+  {
+    "invoiceId": "INV-900007",
+    "orderId": "ORD-500007",
+    "customerId": "CUS-200007",
+    "invoiceAmount": 2343.28,
+    "invoiceDate": "2026-08-19T23:03:42.579Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500007"
+  },
+  {
+    "invoiceId": "INV-900008",
+    "orderId": "ORD-500008",
+    "customerId": "CUS-200008",
+    "invoiceAmount": 38137.73,
+    "invoiceDate": "2026-08-12T05:31:31.569Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500008"
+  },
+  {
+    "invoiceId": "INV-900009",
+    "orderId": "ORD-500009",
+    "customerId": "CUS-200009",
+    "invoiceAmount": 99029.72,
+    "invoiceDate": "2026-07-06T08:21:51.344Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500009"
+  },
+  {
+    "invoiceId": "INV-900010",
+    "orderId": "ORD-500010",
+    "customerId": "CUS-200010",
+    "invoiceAmount": 12787.41,
+    "invoiceDate": "2026-08-05T08:12:24.376Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500010"
+  },
+  {
+    "invoiceId": "INV-900011",
+    "orderId": "ORD-500011",
+    "customerId": "CUS-200011",
+    "invoiceAmount": 21655.33,
+    "invoiceDate": "2026-07-01T14:56:24.261Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500011"
+  },
+  {
+    "invoiceId": "INV-900012",
+    "orderId": "ORD-500012",
+    "customerId": "CUS-200012",
+    "invoiceAmount": 88298.32,
+    "invoiceDate": "2026-07-12T11:06:38.695Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500012"
+  },
+  {
+    "invoiceId": "INV-900013",
+    "orderId": "ORD-500013",
+    "customerId": "CUS-200013",
+    "invoiceAmount": 33734.44,
+    "invoiceDate": "2026-07-08T20:22:55.112Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500013"
+  },
+  {
+    "invoiceId": "INV-900014",
+    "orderId": "ORD-500014",
+    "customerId": "CUS-200014",
+    "invoiceAmount": 92159.22,
+    "invoiceDate": "2026-07-27T01:50:52.531Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500014"
+  },
+  {
+    "invoiceId": "INV-900015",
+    "orderId": "ORD-500015",
+    "customerId": "CUS-200015",
+    "invoiceAmount": 11947.46,
+    "invoiceDate": "2026-07-07T19:50:11.254Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500015"
+  },
+  {
+    "invoiceId": "INV-900016",
+    "orderId": "ORD-500016",
+    "customerId": "CUS-200016",
+    "invoiceAmount": 69812.66,
+    "invoiceDate": "2026-07-13T13:57:47.041Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500016"
+  },
+  {
+    "invoiceId": "INV-900017",
+    "orderId": "ORD-500017",
+    "customerId": "CUS-200017",
+    "invoiceAmount": 88194.01,
+    "invoiceDate": "2026-08-11T20:39:20.681Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500017"
+  },
+  {
+    "invoiceId": "INV-900018",
+    "orderId": "ORD-500018",
+    "customerId": "CUS-200018",
+    "invoiceAmount": 15400.4,
+    "invoiceDate": "2026-08-02T17:17:11.011Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500018"
+  },
+  {
+    "invoiceId": "INV-900019",
+    "orderId": "ORD-500019",
+    "customerId": "CUS-200019",
+    "invoiceAmount": 42653.67,
+    "invoiceDate": "2026-07-26T13:54:25.364Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500019"
+  },
+  {
+    "invoiceId": "INV-900020",
+    "orderId": "ORD-500020",
+    "customerId": "CUS-200020",
+    "invoiceAmount": 82589.92,
+    "invoiceDate": "2026-08-18T15:45:49.298Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500020"
+  },
+  {
+    "invoiceId": "INV-900021",
+    "orderId": "ORD-500021",
+    "customerId": "CUS-200021",
+    "invoiceAmount": 28388.91,
+    "invoiceDate": "2026-08-21T05:10:04.240Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500021"
+  },
+  {
+    "invoiceId": "INV-900022",
+    "orderId": "ORD-500022",
+    "customerId": "CUS-200022",
+    "invoiceAmount": 31671.24,
+    "invoiceDate": "2026-07-16T11:38:07.674Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500022"
+  },
+  {
+    "invoiceId": "INV-900023",
+    "orderId": "ORD-500023",
+    "customerId": "CUS-200023",
+    "invoiceAmount": 64833.22,
+    "invoiceDate": "2026-07-29T11:31:41.060Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500023"
+  },
+  {
+    "invoiceId": "INV-900024",
+    "orderId": "ORD-500024",
+    "customerId": "CUS-200024",
+    "invoiceAmount": 70102.91,
+    "invoiceDate": "2026-08-06T18:36:30.867Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500024"
+  },
+  {
+    "invoiceId": "INV-900025",
+    "orderId": "ORD-500025",
+    "customerId": "CUS-200025",
+    "invoiceAmount": 41890.32,
+    "invoiceDate": "2026-07-14T16:38:59.233Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500025"
+  },
+  {
+    "invoiceId": "INV-900026",
+    "orderId": "ORD-500026",
+    "customerId": "CUS-200026",
+    "invoiceAmount": 57178.67,
+    "invoiceDate": "2026-07-02T07:07:29.951Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500026"
+  },
+  {
+    "invoiceId": "INV-900027",
+    "orderId": "ORD-500027",
+    "customerId": "CUS-200027",
+    "invoiceAmount": 50270.82,
+    "invoiceDate": "2026-08-29T06:36:07.625Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500027"
+  },
+  {
+    "invoiceId": "INV-900028",
+    "orderId": "ORD-500028",
+    "customerId": "CUS-200028",
+    "invoiceAmount": 30950.02,
+    "invoiceDate": "2026-08-11T16:28:49.670Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500028"
+  },
+  {
+    "invoiceId": "INV-900029",
+    "orderId": "ORD-500029",
+    "customerId": "CUS-200029",
+    "invoiceAmount": 46005.09,
+    "invoiceDate": "2026-08-28T16:29:38.193Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500029"
+  },
+  {
+    "invoiceId": "INV-900030",
+    "orderId": "ORD-500030",
+    "customerId": "CUS-200030",
+    "invoiceAmount": 30393.13,
+    "invoiceDate": "2026-08-09T18:52:55.579Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500030"
+  },
+  {
+    "invoiceId": "INV-900031",
+    "orderId": "ORD-500031",
+    "customerId": "CUS-200031",
+    "invoiceAmount": 72139.35,
+    "invoiceDate": "2026-07-02T20:10:08.175Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500031"
+  },
+  {
+    "invoiceId": "INV-900032",
+    "orderId": "ORD-500032",
+    "customerId": "CUS-200032",
+    "invoiceAmount": 90420.52,
+    "invoiceDate": "2026-08-01T21:03:25.324Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500032"
+  },
+  {
+    "invoiceId": "INV-900033",
+    "orderId": "ORD-500033",
+    "customerId": "CUS-200033",
+    "invoiceAmount": 62138.47,
+    "invoiceDate": "2026-07-03T16:54:26.452Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500033"
+  },
+  {
+    "invoiceId": "INV-900034",
+    "orderId": "ORD-500034",
+    "customerId": "CUS-200034",
+    "invoiceAmount": 25027.6,
+    "invoiceDate": "2026-07-01T13:14:07.723Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500034"
+  },
+  {
+    "invoiceId": "INV-900035",
+    "orderId": "ORD-500035",
+    "customerId": "CUS-200035",
+    "invoiceAmount": 35329.59,
+    "invoiceDate": "2026-08-04T08:41:45.563Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500035"
+  },
+  {
+    "invoiceId": "INV-900036",
+    "orderId": "ORD-500036",
+    "customerId": "CUS-200036",
+    "invoiceAmount": 58999.23,
+    "invoiceDate": "2026-07-08T23:43:47.697Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500036"
+  },
+  {
+    "invoiceId": "INV-900037",
+    "orderId": "ORD-500037",
+    "customerId": "CUS-200037",
+    "invoiceAmount": 28317.07,
+    "invoiceDate": "2026-07-26T22:40:57.731Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500037"
+  },
+  {
+    "invoiceId": "INV-900038",
+    "orderId": "ORD-500038",
+    "customerId": "CUS-200038",
+    "invoiceAmount": 59901.97,
+    "invoiceDate": "2026-08-12T13:25:04.471Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500038"
+  },
+  {
+    "invoiceId": "INV-900039",
+    "orderId": "ORD-500039",
+    "customerId": "CUS-200039",
+    "invoiceAmount": 88226.76,
+    "invoiceDate": "2026-08-09T17:25:25.147Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500039"
+  },
+  {
+    "invoiceId": "INV-900040",
+    "orderId": "ORD-500040",
+    "customerId": "CUS-200040",
+    "invoiceAmount": 27821.54,
+    "invoiceDate": "2026-07-14T06:42:34.840Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500040"
+  },
+  {
+    "invoiceId": "INV-900041",
+    "orderId": "ORD-500041",
+    "customerId": "CUS-200041",
+    "invoiceAmount": 44188.91,
+    "invoiceDate": "2026-08-08T17:57:41.597Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500041"
+  },
+  {
+    "invoiceId": "INV-900042",
+    "orderId": "ORD-500042",
+    "customerId": "CUS-200042",
+    "invoiceAmount": 69291.29,
+    "invoiceDate": "2026-07-22T11:32:32.691Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500042"
+  },
+  {
+    "invoiceId": "INV-900043",
+    "orderId": "ORD-500043",
+    "customerId": "CUS-200043",
+    "invoiceAmount": 75388.51,
+    "invoiceDate": "2026-07-17T10:08:24.441Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500043"
+  },
+  {
+    "invoiceId": "INV-900044",
+    "orderId": "ORD-500044",
+    "customerId": "CUS-200044",
+    "invoiceAmount": 79564.57,
+    "invoiceDate": "2026-07-10T04:05:30.288Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500044"
+  },
+  {
+    "invoiceId": "INV-900045",
+    "orderId": "ORD-500045",
+    "customerId": "CUS-200045",
+    "invoiceAmount": 69793.01,
+    "invoiceDate": "2026-07-27T02:21:52.797Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500045"
+  },
+  {
+    "invoiceId": "INV-900046",
+    "orderId": "ORD-500046",
+    "customerId": "CUS-200046",
+    "invoiceAmount": 22831.43,
+    "invoiceDate": "2026-08-29T04:43:36.287Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500046"
+  },
+  {
+    "invoiceId": "INV-900047",
+    "orderId": "ORD-500047",
+    "customerId": "CUS-200047",
+    "invoiceAmount": 11954.06,
+    "invoiceDate": "2026-08-04T13:45:39.641Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500047"
+  },
+  {
+    "invoiceId": "INV-900048",
+    "orderId": "ORD-500048",
+    "customerId": "CUS-200048",
+    "invoiceAmount": 15435.55,
+    "invoiceDate": "2026-08-28T15:45:29.742Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500048"
+  },
+  {
+    "invoiceId": "INV-900049",
+    "orderId": "ORD-500049",
+    "customerId": "CUS-200049",
+    "invoiceAmount": 22465.53,
+    "invoiceDate": "2026-08-22T14:51:52.476Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500049"
+  },
+  {
+    "invoiceId": "INV-900050",
+    "orderId": "ORD-500050",
+    "customerId": "CUS-200050",
+    "invoiceAmount": 9230.43,
+    "invoiceDate": "2026-08-26T01:14:28.803Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500050"
+  },
+  {
+    "invoiceId": "INV-900051",
+    "orderId": "ORD-500051",
+    "customerId": "CUS-200051",
+    "invoiceAmount": 89089.22,
+    "invoiceDate": "2026-08-15T05:05:19.016Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500051"
+  },
+  {
+    "invoiceId": "INV-900052",
+    "orderId": "ORD-500052",
+    "customerId": "CUS-200052",
+    "invoiceAmount": 23893.32,
+    "invoiceDate": "2026-08-06T04:59:27.123Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500052"
+  },
+  {
+    "invoiceId": "INV-900053",
+    "orderId": "ORD-500053",
+    "customerId": "CUS-200053",
+    "invoiceAmount": 42424.79,
+    "invoiceDate": "2026-08-17T21:46:31.258Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500053"
+  },
+  {
+    "invoiceId": "INV-900054",
+    "orderId": "ORD-500054",
+    "customerId": "CUS-200054",
+    "invoiceAmount": 23109.06,
+    "invoiceDate": "2026-08-19T01:33:20.425Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500054"
+  },
+  {
+    "invoiceId": "INV-900055",
+    "orderId": "ORD-500055",
+    "customerId": "CUS-200055",
+    "invoiceAmount": 43446.88,
+    "invoiceDate": "2026-07-07T02:07:33.188Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500055"
+  },
+  {
+    "invoiceId": "INV-900056",
+    "orderId": "ORD-500056",
+    "customerId": "CUS-200056",
+    "invoiceAmount": 44913.85,
+    "invoiceDate": "2026-07-22T09:40:10.003Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500056"
+  },
+  {
+    "invoiceId": "INV-900057",
+    "orderId": "ORD-500057",
+    "customerId": "CUS-200057",
+    "invoiceAmount": 23252.19,
+    "invoiceDate": "2026-08-15T18:14:04.207Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500057"
+  },
+  {
+    "invoiceId": "INV-900058",
+    "orderId": "ORD-500058",
+    "customerId": "CUS-200058",
+    "invoiceAmount": 18469.02,
+    "invoiceDate": "2026-07-20T17:09:29.343Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500058"
+  },
+  {
+    "invoiceId": "INV-900059",
+    "orderId": "ORD-500059",
+    "customerId": "CUS-200059",
+    "invoiceAmount": 46297.75,
+    "invoiceDate": "2026-08-17T11:19:12.281Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500059"
+  },
+  {
+    "invoiceId": "INV-900060",
+    "orderId": "ORD-500060",
+    "customerId": "CUS-200060",
+    "invoiceAmount": 4185.69,
+    "invoiceDate": "2026-07-06T12:55:54.407Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500060"
+  },
+  {
+    "invoiceId": "INV-900061",
+    "orderId": "ORD-500061",
+    "customerId": "CUS-200061",
+    "invoiceAmount": 25961.42,
+    "invoiceDate": "2026-08-12T00:33:07.665Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500061"
+  },
+  {
+    "invoiceId": "INV-900062",
+    "orderId": "ORD-500062",
+    "customerId": "CUS-200062",
+    "invoiceAmount": 18062.28,
+    "invoiceDate": "2026-08-14T19:01:27.496Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500062"
+  },
+  {
+    "invoiceId": "INV-900063",
+    "orderId": "ORD-500063",
+    "customerId": "CUS-200063",
+    "invoiceAmount": 98160.99,
+    "invoiceDate": "2026-07-27T10:06:39.938Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500063"
+  },
+  {
+    "invoiceId": "INV-900064",
+    "orderId": "ORD-500064",
+    "customerId": "CUS-200064",
+    "invoiceAmount": 19696.48,
+    "invoiceDate": "2026-08-01T00:10:08.996Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500064"
+  },
+  {
+    "invoiceId": "INV-900065",
+    "orderId": "ORD-500065",
+    "customerId": "CUS-200065",
+    "invoiceAmount": 23522.95,
+    "invoiceDate": "2026-08-22T14:48:07.961Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500065"
+  },
+  {
+    "invoiceId": "INV-900066",
+    "orderId": "ORD-500066",
+    "customerId": "CUS-200066",
+    "invoiceAmount": 92909.8,
+    "invoiceDate": "2026-08-10T01:36:30.684Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500066"
+  },
+  {
+    "invoiceId": "INV-900067",
+    "orderId": "ORD-500067",
+    "customerId": "CUS-200067",
+    "invoiceAmount": 34639.43,
+    "invoiceDate": "2026-08-16T12:09:34.228Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500067"
+  },
+  {
+    "invoiceId": "INV-900068",
+    "orderId": "ORD-500068",
+    "customerId": "CUS-200068",
+    "invoiceAmount": 7846.14,
+    "invoiceDate": "2026-08-22T15:13:58.619Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500068"
+  },
+  {
+    "invoiceId": "INV-900069",
+    "orderId": "ORD-500069",
+    "customerId": "CUS-200069",
+    "invoiceAmount": 45086.17,
+    "invoiceDate": "2026-07-08T11:01:51.996Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500069"
+  },
+  {
+    "invoiceId": "INV-900070",
+    "orderId": "ORD-500070",
+    "customerId": "CUS-200070",
+    "invoiceAmount": 51193.3,
+    "invoiceDate": "2026-07-14T06:14:03.067Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500070"
+  },
+  {
+    "invoiceId": "INV-900071",
+    "orderId": "ORD-500071",
+    "customerId": "CUS-200071",
+    "invoiceAmount": 76339.1,
+    "invoiceDate": "2026-07-29T06:37:45.408Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500071"
+  },
+  {
+    "invoiceId": "INV-900072",
+    "orderId": "ORD-500072",
+    "customerId": "CUS-200072",
+    "invoiceAmount": 39297.98,
+    "invoiceDate": "2026-08-22T09:43:37.243Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500072"
+  },
+  {
+    "invoiceId": "INV-900073",
+    "orderId": "ORD-500073",
+    "customerId": "CUS-200073",
+    "invoiceAmount": 15916.15,
+    "invoiceDate": "2026-07-13T03:27:29.711Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500073"
+  },
+  {
+    "invoiceId": "INV-900074",
+    "orderId": "ORD-500074",
+    "customerId": "CUS-200074",
+    "invoiceAmount": 99318.4,
+    "invoiceDate": "2026-08-17T00:45:26.031Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500074"
+  },
+  {
+    "invoiceId": "INV-900075",
+    "orderId": "ORD-500075",
+    "customerId": "CUS-200075",
+    "invoiceAmount": 82527.64,
+    "invoiceDate": "2026-07-24T17:54:00.585Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500075"
+  },
+  {
+    "invoiceId": "INV-900076",
+    "orderId": "ORD-500076",
+    "customerId": "CUS-200076",
+    "invoiceAmount": 22553.5,
+    "invoiceDate": "2026-07-19T16:15:40.259Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500076"
+  },
+  {
+    "invoiceId": "INV-900077",
+    "orderId": "ORD-500077",
+    "customerId": "CUS-200077",
+    "invoiceAmount": 12637.49,
+    "invoiceDate": "2026-08-17T17:02:38.413Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500077"
+  },
+  {
+    "invoiceId": "INV-900078",
+    "orderId": "ORD-500078",
+    "customerId": "CUS-200078",
+    "invoiceAmount": 66622.55,
+    "invoiceDate": "2026-08-19T02:22:41.423Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500078"
+  },
+  {
+    "invoiceId": "INV-900079",
+    "orderId": "ORD-500079",
+    "customerId": "CUS-200079",
+    "invoiceAmount": 88761.47,
+    "invoiceDate": "2026-08-11T12:05:05.231Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500079"
+  },
+  {
+    "invoiceId": "INV-900080",
+    "orderId": "ORD-500080",
+    "customerId": "CUS-200080",
+    "invoiceAmount": 15511.85,
+    "invoiceDate": "2026-07-03T11:32:26.162Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500080"
+  },
+  {
+    "invoiceId": "INV-900081",
+    "orderId": "ORD-500081",
+    "customerId": "CUS-200081",
+    "invoiceAmount": 79952.14,
+    "invoiceDate": "2026-08-09T05:47:58.990Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500081"
+  },
+  {
+    "invoiceId": "INV-900082",
+    "orderId": "ORD-500082",
+    "customerId": "CUS-200082",
+    "invoiceAmount": 4976.29,
+    "invoiceDate": "2026-08-14T02:28:39.177Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500082"
+  },
+  {
+    "invoiceId": "INV-900083",
+    "orderId": "ORD-500083",
+    "customerId": "CUS-200083",
+    "invoiceAmount": 38386.23,
+    "invoiceDate": "2026-07-17T17:43:31.579Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500083"
+  },
+  {
+    "invoiceId": "INV-900084",
+    "orderId": "ORD-500084",
+    "customerId": "CUS-200084",
+    "invoiceAmount": 92649.89,
+    "invoiceDate": "2026-07-19T13:09:57.604Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500084"
+  },
+  {
+    "invoiceId": "INV-900085",
+    "orderId": "ORD-500085",
+    "customerId": "CUS-200085",
+    "invoiceAmount": 78673.64,
+    "invoiceDate": "2026-08-09T11:12:54.001Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500085"
+  },
+  {
+    "invoiceId": "INV-900086",
+    "orderId": "ORD-500086",
+    "customerId": "CUS-200086",
+    "invoiceAmount": 4501.09,
+    "invoiceDate": "2026-08-01T06:20:59.302Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500086"
+  },
+  {
+    "invoiceId": "INV-900087",
+    "orderId": "ORD-500087",
+    "customerId": "CUS-200087",
+    "invoiceAmount": 39390.25,
+    "invoiceDate": "2026-07-08T19:02:43.906Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500087"
+  },
+  {
+    "invoiceId": "INV-900088",
+    "orderId": "ORD-500088",
+    "customerId": "CUS-200088",
+    "invoiceAmount": 19133.81,
+    "invoiceDate": "2026-07-18T22:01:11.823Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500088"
+  },
+  {
+    "invoiceId": "INV-900089",
+    "orderId": "ORD-500089",
+    "customerId": "CUS-200089",
+    "invoiceAmount": 59894.81,
+    "invoiceDate": "2026-07-04T02:10:37.630Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500089"
+  },
+  {
+    "invoiceId": "INV-900090",
+    "orderId": "ORD-500090",
+    "customerId": "CUS-200090",
+    "invoiceAmount": 88602.48,
+    "invoiceDate": "2026-08-08T23:42:38.251Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500090"
+  },
+  {
+    "invoiceId": "INV-900091",
+    "orderId": "ORD-500091",
+    "customerId": "CUS-200091",
+    "invoiceAmount": 5565.76,
+    "invoiceDate": "2026-08-17T01:07:50.675Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500091"
+  },
+  {
+    "invoiceId": "INV-900092",
+    "orderId": "ORD-500092",
+    "customerId": "CUS-200092",
+    "invoiceAmount": 7148.25,
+    "invoiceDate": "2026-08-04T01:06:50.452Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500092"
+  },
+  {
+    "invoiceId": "INV-900093",
+    "orderId": "ORD-500093",
+    "customerId": "CUS-200093",
+    "invoiceAmount": 86681.11,
+    "invoiceDate": "2026-08-29T07:45:27.530Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500093"
+  },
+  {
+    "invoiceId": "INV-900094",
+    "orderId": "ORD-500094",
+    "customerId": "CUS-200094",
+    "invoiceAmount": 77491.6,
+    "invoiceDate": "2026-08-04T01:51:09.660Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500094"
+  },
+  {
+    "invoiceId": "INV-900095",
+    "orderId": "ORD-500095",
+    "customerId": "CUS-200095",
+    "invoiceAmount": 63407.53,
+    "invoiceDate": "2026-07-28T21:24:53.554Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500095"
+  },
+  {
+    "invoiceId": "INV-900096",
+    "orderId": "ORD-500096",
+    "customerId": "CUS-200096",
+    "invoiceAmount": 58503.78,
+    "invoiceDate": "2026-08-25T13:46:18.693Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500096"
+  },
+  {
+    "invoiceId": "INV-900097",
+    "orderId": "ORD-500097",
+    "customerId": "CUS-200097",
+    "invoiceAmount": 48056.9,
+    "invoiceDate": "2026-08-22T23:14:28.523Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500097"
+  },
+  {
+    "invoiceId": "INV-900098",
+    "orderId": "ORD-500098",
+    "customerId": "CUS-200098",
+    "invoiceAmount": 33643.9,
+    "invoiceDate": "2026-08-19T04:19:29.469Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500098"
+  },
+  {
+    "invoiceId": "INV-900099",
+    "orderId": "ORD-500099",
+    "customerId": "CUS-200099",
+    "invoiceAmount": 34253.48,
+    "invoiceDate": "2026-08-12T01:50:43.328Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500099"
+  },
+  {
+    "invoiceId": "INV-900100",
+    "orderId": "ORD-500100",
+    "customerId": "CUS-200100",
+    "invoiceAmount": 17958.79,
+    "invoiceDate": "2026-07-30T13:01:23.875Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500100"
+  },
+  {
+    "invoiceId": "INV-900101",
+    "orderId": "ORD-500101",
+    "customerId": "CUS-200101",
+    "invoiceAmount": 35026.74,
+    "invoiceDate": "2026-08-27T22:46:18.198Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500101"
+  },
+  {
+    "invoiceId": "INV-900102",
+    "orderId": "ORD-500102",
+    "customerId": "CUS-200102",
+    "invoiceAmount": 29518.2,
+    "invoiceDate": "2026-07-24T07:00:35.409Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500102"
+  },
+  {
+    "invoiceId": "INV-900103",
+    "orderId": "ORD-500103",
+    "customerId": "CUS-200103",
+    "invoiceAmount": 22447.22,
+    "invoiceDate": "2026-08-30T12:06:12.659Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500103"
+  },
+  {
+    "invoiceId": "INV-900104",
+    "orderId": "ORD-500104",
+    "customerId": "CUS-200104",
+    "invoiceAmount": 89066.64,
+    "invoiceDate": "2026-07-25T11:05:03.384Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500104"
+  },
+  {
+    "invoiceId": "INV-900105",
+    "orderId": "ORD-500105",
+    "customerId": "CUS-200105",
+    "invoiceAmount": 75148.97,
+    "invoiceDate": "2026-07-15T01:59:24.361Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500105"
+  },
+  {
+    "invoiceId": "INV-900106",
+    "orderId": "ORD-500106",
+    "customerId": "CUS-200106",
+    "invoiceAmount": 834.63,
+    "invoiceDate": "2026-07-07T07:28:30.878Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500106"
+  },
+  {
+    "invoiceId": "INV-900107",
+    "orderId": "ORD-500107",
+    "customerId": "CUS-200107",
+    "invoiceAmount": 69376.96,
+    "invoiceDate": "2026-07-15T03:15:15.740Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500107"
+  },
+  {
+    "invoiceId": "INV-900108",
+    "orderId": "ORD-500108",
+    "customerId": "CUS-200108",
+    "invoiceAmount": 90834.06,
+    "invoiceDate": "2026-07-08T08:47:51.967Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500108"
+  },
+  {
+    "invoiceId": "INV-900109",
+    "orderId": "ORD-500109",
+    "customerId": "CUS-200109",
+    "invoiceAmount": 45153.65,
+    "invoiceDate": "2026-08-28T08:02:24.382Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500109"
+  },
+  {
+    "invoiceId": "INV-900110",
+    "orderId": "ORD-500110",
+    "customerId": "CUS-200110",
+    "invoiceAmount": 74085.01,
+    "invoiceDate": "2026-08-30T16:28:23.175Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500110"
+  },
+  {
+    "invoiceId": "INV-900111",
+    "orderId": "ORD-500111",
+    "customerId": "CUS-200111",
+    "invoiceAmount": 55020.61,
+    "invoiceDate": "2026-08-23T06:12:04.822Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500111"
+  },
+  {
+    "invoiceId": "INV-900112",
+    "orderId": "ORD-500112",
+    "customerId": "CUS-200112",
+    "invoiceAmount": 54151.71,
+    "invoiceDate": "2026-07-27T13:54:38.412Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500112"
+  },
+  {
+    "invoiceId": "INV-900113",
+    "orderId": "ORD-500113",
+    "customerId": "CUS-200113",
+    "invoiceAmount": 6672.21,
+    "invoiceDate": "2026-08-14T19:18:56.394Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500113"
+  },
+  {
+    "invoiceId": "INV-900114",
+    "orderId": "ORD-500114",
+    "customerId": "CUS-200114",
+    "invoiceAmount": 83623.8,
+    "invoiceDate": "2026-08-19T02:27:46.118Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500114"
+  },
+  {
+    "invoiceId": "INV-900115",
+    "orderId": "ORD-500115",
+    "customerId": "CUS-200115",
+    "invoiceAmount": 54601.67,
+    "invoiceDate": "2026-08-25T21:19:13.604Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500115"
+  },
+  {
+    "invoiceId": "INV-900116",
+    "orderId": "ORD-500116",
+    "customerId": "CUS-200116",
+    "invoiceAmount": 86632.84,
+    "invoiceDate": "2026-08-14T05:03:41.601Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500116"
+  },
+  {
+    "invoiceId": "INV-900117",
+    "orderId": "ORD-500117",
+    "customerId": "CUS-200117",
+    "invoiceAmount": 36320.85,
+    "invoiceDate": "2026-07-16T12:19:32.389Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500117"
+  },
+  {
+    "invoiceId": "INV-900118",
+    "orderId": "ORD-500118",
+    "customerId": "CUS-200118",
+    "invoiceAmount": 15663.46,
+    "invoiceDate": "2026-08-07T11:01:57.042Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500118"
+  },
+  {
+    "invoiceId": "INV-900119",
+    "orderId": "ORD-500119",
+    "customerId": "CUS-200119",
+    "invoiceAmount": 84235.72,
+    "invoiceDate": "2026-07-20T23:38:57.513Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500119"
+  },
+  {
+    "invoiceId": "INV-900120",
+    "orderId": "ORD-500120",
+    "customerId": "CUS-200120",
+    "invoiceAmount": 56870.99,
+    "invoiceDate": "2026-08-14T16:21:15.939Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500120"
+  },
+  {
+    "invoiceId": "INV-900121",
+    "orderId": "ORD-500121",
+    "customerId": "CUS-200121",
+    "invoiceAmount": 44954.95,
+    "invoiceDate": "2026-08-14T05:03:03.175Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500121"
+  },
+  {
+    "invoiceId": "INV-900122",
+    "orderId": "ORD-500122",
+    "customerId": "CUS-200122",
+    "invoiceAmount": 44572.27,
+    "invoiceDate": "2026-08-06T07:05:38.160Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500122"
+  },
+  {
+    "invoiceId": "INV-900123",
+    "orderId": "ORD-500123",
+    "customerId": "CUS-200123",
+    "invoiceAmount": 92522.07,
+    "invoiceDate": "2026-08-02T02:00:20.852Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500123"
+  },
+  {
+    "invoiceId": "INV-900124",
+    "orderId": "ORD-500124",
+    "customerId": "CUS-200124",
+    "invoiceAmount": 73702.72,
+    "invoiceDate": "2026-07-18T00:23:36.164Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500124"
+  },
+  {
+    "invoiceId": "INV-900125",
+    "orderId": "ORD-500125",
+    "customerId": "CUS-200125",
+    "invoiceAmount": 5986.67,
+    "invoiceDate": "2026-07-20T04:10:05.208Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500125"
+  },
+  {
+    "invoiceId": "INV-900126",
+    "orderId": "ORD-500126",
+    "customerId": "CUS-200126",
+    "invoiceAmount": 50648.34,
+    "invoiceDate": "2026-08-12T10:43:32.308Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500126"
+  },
+  {
+    "invoiceId": "INV-900127",
+    "orderId": "ORD-500127",
+    "customerId": "CUS-200127",
+    "invoiceAmount": 81010.36,
+    "invoiceDate": "2026-08-21T05:24:40.820Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500127"
+  },
+  {
+    "invoiceId": "INV-900128",
+    "orderId": "ORD-500128",
+    "customerId": "CUS-200128",
+    "invoiceAmount": 63736.16,
+    "invoiceDate": "2026-08-02T14:39:11.523Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500128"
+  },
+  {
+    "invoiceId": "INV-900129",
+    "orderId": "ORD-500129",
+    "customerId": "CUS-200129",
+    "invoiceAmount": 38632.93,
+    "invoiceDate": "2026-07-10T17:30:59.311Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500129"
+  },
+  {
+    "invoiceId": "INV-900130",
+    "orderId": "ORD-500130",
+    "customerId": "CUS-200130",
+    "invoiceAmount": 32018.08,
+    "invoiceDate": "2026-08-27T02:32:23.062Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500130"
+  },
+  {
+    "invoiceId": "INV-900131",
+    "orderId": "ORD-500131",
+    "customerId": "CUS-200131",
+    "invoiceAmount": 61646.66,
+    "invoiceDate": "2026-07-13T06:11:38.411Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500131"
+  },
+  {
+    "invoiceId": "INV-900132",
+    "orderId": "ORD-500132",
+    "customerId": "CUS-200132",
+    "invoiceAmount": 72081.52,
+    "invoiceDate": "2026-08-12T16:03:39.326Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500132"
+  },
+  {
+    "invoiceId": "INV-900133",
+    "orderId": "ORD-500133",
+    "customerId": "CUS-200133",
+    "invoiceAmount": 16735.91,
+    "invoiceDate": "2026-08-15T22:10:51.255Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500133"
+  },
+  {
+    "invoiceId": "INV-900134",
+    "orderId": "ORD-500134",
+    "customerId": "CUS-200134",
+    "invoiceAmount": 51082.61,
+    "invoiceDate": "2026-07-11T00:26:49.229Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500134"
+  },
+  {
+    "invoiceId": "INV-900135",
+    "orderId": "ORD-500135",
+    "customerId": "CUS-200135",
+    "invoiceAmount": 83779,
+    "invoiceDate": "2026-08-05T03:08:46.195Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500135"
+  },
+  {
+    "invoiceId": "INV-900136",
+    "orderId": "ORD-500136",
+    "customerId": "CUS-200136",
+    "invoiceAmount": 39094.31,
+    "invoiceDate": "2026-07-12T04:39:47.875Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500136"
+  },
+  {
+    "invoiceId": "INV-900137",
+    "orderId": "ORD-500137",
+    "customerId": "CUS-200137",
+    "invoiceAmount": 97073.34,
+    "invoiceDate": "2026-08-29T22:34:04.218Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500137"
+  },
+  {
+    "invoiceId": "INV-900138",
+    "orderId": "ORD-500138",
+    "customerId": "CUS-200138",
+    "invoiceAmount": 79210.6,
+    "invoiceDate": "2026-08-21T10:41:43.719Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500138"
+  },
+  {
+    "invoiceId": "INV-900139",
+    "orderId": "ORD-500139",
+    "customerId": "CUS-200139",
+    "invoiceAmount": 88776.66,
+    "invoiceDate": "2026-08-06T01:06:42.952Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500139"
+  },
+  {
+    "invoiceId": "INV-900140",
+    "orderId": "ORD-500140",
+    "customerId": "CUS-200140",
+    "invoiceAmount": 28717.37,
+    "invoiceDate": "2026-08-27T12:15:18.774Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500140"
+  },
+  {
+    "invoiceId": "INV-900141",
+    "orderId": "ORD-500141",
+    "customerId": "CUS-200141",
+    "invoiceAmount": 89550.71,
+    "invoiceDate": "2026-08-14T12:50:53.126Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500141"
+  },
+  {
+    "invoiceId": "INV-900142",
+    "orderId": "ORD-500142",
+    "customerId": "CUS-200142",
+    "invoiceAmount": 28450.91,
+    "invoiceDate": "2026-07-02T18:03:26.776Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500142"
+  },
+  {
+    "invoiceId": "INV-900143",
+    "orderId": "ORD-500143",
+    "customerId": "CUS-200143",
+    "invoiceAmount": 74593.33,
+    "invoiceDate": "2026-08-16T03:22:45.210Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500143"
+  },
+  {
+    "invoiceId": "INV-900144",
+    "orderId": "ORD-500144",
+    "customerId": "CUS-200144",
+    "invoiceAmount": 10882.46,
+    "invoiceDate": "2026-07-15T10:50:38.601Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500144"
+  },
+  {
+    "invoiceId": "INV-900145",
+    "orderId": "ORD-500145",
+    "customerId": "CUS-200145",
+    "invoiceAmount": 12242.58,
+    "invoiceDate": "2026-07-09T04:08:30.860Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500145"
+  },
+  {
+    "invoiceId": "INV-900146",
+    "orderId": "ORD-500146",
+    "customerId": "CUS-200146",
+    "invoiceAmount": 84213.48,
+    "invoiceDate": "2026-08-16T04:02:23.610Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500146"
+  },
+  {
+    "invoiceId": "INV-900147",
+    "orderId": "ORD-500147",
+    "customerId": "CUS-200147",
+    "invoiceAmount": 78578.45,
+    "invoiceDate": "2026-08-28T09:15:05.635Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500147"
+  },
+  {
+    "invoiceId": "INV-900148",
+    "orderId": "ORD-500148",
+    "customerId": "CUS-200148",
+    "invoiceAmount": 23707.59,
+    "invoiceDate": "2026-08-27T17:49:29.971Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500148"
+  },
+  {
+    "invoiceId": "INV-900149",
+    "orderId": "ORD-500149",
+    "customerId": "CUS-200149",
+    "invoiceAmount": 3425.23,
+    "invoiceDate": "2026-08-27T12:49:16.347Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500149"
+  },
+  {
+    "invoiceId": "INV-900150",
+    "orderId": "ORD-500150",
+    "customerId": "CUS-200150",
+    "invoiceAmount": 79241.95,
+    "invoiceDate": "2026-07-17T21:59:36.377Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500150"
+  },
+  {
+    "invoiceId": "INV-900151",
+    "orderId": "ORD-500151",
+    "customerId": "CUS-200151",
+    "invoiceAmount": 11316.63,
+    "invoiceDate": "2026-07-09T16:10:28.303Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500151"
+  },
+  {
+    "invoiceId": "INV-900152",
+    "orderId": "ORD-500152",
+    "customerId": "CUS-200152",
+    "invoiceAmount": 67700.77,
+    "invoiceDate": "2026-08-04T19:44:31.958Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500152"
+  },
+  {
+    "invoiceId": "INV-900153",
+    "orderId": "ORD-500153",
+    "customerId": "CUS-200153",
+    "invoiceAmount": 85417.79,
+    "invoiceDate": "2026-07-09T10:18:14.511Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500153"
+  },
+  {
+    "invoiceId": "INV-900154",
+    "orderId": "ORD-500154",
+    "customerId": "CUS-200154",
+    "invoiceAmount": 70776.35,
+    "invoiceDate": "2026-08-29T17:59:40.553Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500154"
+  },
+  {
+    "invoiceId": "INV-900155",
+    "orderId": "ORD-500155",
+    "customerId": "CUS-200155",
+    "invoiceAmount": 98549.81,
+    "invoiceDate": "2026-07-31T09:47:30.860Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500155"
+  },
+  {
+    "invoiceId": "INV-900156",
+    "orderId": "ORD-500156",
+    "customerId": "CUS-200156",
+    "invoiceAmount": 8256.31,
+    "invoiceDate": "2026-07-15T02:30:39.903Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500156"
+  },
+  {
+    "invoiceId": "INV-900157",
+    "orderId": "ORD-500157",
+    "customerId": "CUS-200157",
+    "invoiceAmount": 324.03,
+    "invoiceDate": "2026-07-17T23:42:58.123Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500157"
+  },
+  {
+    "invoiceId": "INV-900158",
+    "orderId": "ORD-500158",
+    "customerId": "CUS-200158",
+    "invoiceAmount": 12079.48,
+    "invoiceDate": "2026-07-07T13:22:35.672Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500158"
+  },
+  {
+    "invoiceId": "INV-900159",
+    "orderId": "ORD-500159",
+    "customerId": "CUS-200159",
+    "invoiceAmount": 15911.79,
+    "invoiceDate": "2026-07-30T06:18:23.531Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500159"
+  },
+  {
+    "invoiceId": "INV-900160",
+    "orderId": "ORD-500160",
+    "customerId": "CUS-200160",
+    "invoiceAmount": 87404.54,
+    "invoiceDate": "2026-07-15T20:58:34.597Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500160"
+  },
+  {
+    "invoiceId": "INV-900161",
+    "orderId": "ORD-500161",
+    "customerId": "CUS-200161",
+    "invoiceAmount": 62042.09,
+    "invoiceDate": "2026-07-06T13:47:41.499Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500161"
+  },
+  {
+    "invoiceId": "INV-900162",
+    "orderId": "ORD-500162",
+    "customerId": "CUS-200162",
+    "invoiceAmount": 30875.19,
+    "invoiceDate": "2026-07-15T18:47:00.448Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500162"
+  },
+  {
+    "invoiceId": "INV-900163",
+    "orderId": "ORD-500163",
+    "customerId": "CUS-200163",
+    "invoiceAmount": 20979.87,
+    "invoiceDate": "2026-08-04T03:31:15.026Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500163"
+  },
+  {
+    "invoiceId": "INV-900164",
+    "orderId": "ORD-500164",
+    "customerId": "CUS-200164",
+    "invoiceAmount": 73350.83,
+    "invoiceDate": "2026-07-30T19:40:50.831Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500164"
+  },
+  {
+    "invoiceId": "INV-900165",
+    "orderId": "ORD-500165",
+    "customerId": "CUS-200165",
+    "invoiceAmount": 97784.21,
+    "invoiceDate": "2026-08-23T18:24:36.092Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500165"
+  },
+  {
+    "invoiceId": "INV-900166",
+    "orderId": "ORD-500166",
+    "customerId": "CUS-200166",
+    "invoiceAmount": 55022.16,
+    "invoiceDate": "2026-07-30T10:37:22.263Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500166"
+  },
+  {
+    "invoiceId": "INV-900167",
+    "orderId": "ORD-500167",
+    "customerId": "CUS-200167",
+    "invoiceAmount": 19523.23,
+    "invoiceDate": "2026-07-14T15:55:55.314Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500167"
+  },
+  {
+    "invoiceId": "INV-900168",
+    "orderId": "ORD-500168",
+    "customerId": "CUS-200168",
+    "invoiceAmount": 96314.97,
+    "invoiceDate": "2026-07-11T04:43:15.324Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500168"
+  },
+  {
+    "invoiceId": "INV-900169",
+    "orderId": "ORD-500169",
+    "customerId": "CUS-200169",
+    "invoiceAmount": 70823.68,
+    "invoiceDate": "2026-07-26T00:04:37.953Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500169"
+  },
+  {
+    "invoiceId": "INV-900170",
+    "orderId": "ORD-500170",
+    "customerId": "CUS-200170",
+    "invoiceAmount": 48221.57,
+    "invoiceDate": "2026-08-08T09:47:31.036Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500170"
+  },
+  {
+    "invoiceId": "INV-900171",
+    "orderId": "ORD-500171",
+    "customerId": "CUS-200171",
+    "invoiceAmount": 20302.83,
+    "invoiceDate": "2026-07-07T16:15:25.268Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500171"
+  },
+  {
+    "invoiceId": "INV-900172",
+    "orderId": "ORD-500172",
+    "customerId": "CUS-200172",
+    "invoiceAmount": 50356.73,
+    "invoiceDate": "2026-08-27T02:33:44.036Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500172"
+  },
+  {
+    "invoiceId": "INV-900173",
+    "orderId": "ORD-500173",
+    "customerId": "CUS-200173",
+    "invoiceAmount": 7161.34,
+    "invoiceDate": "2026-08-23T12:50:17.068Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500173"
+  },
+  {
+    "invoiceId": "INV-900174",
+    "orderId": "ORD-500174",
+    "customerId": "CUS-200174",
+    "invoiceAmount": 45632.07,
+    "invoiceDate": "2026-08-24T18:33:07.463Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500174"
+  },
+  {
+    "invoiceId": "INV-900175",
+    "orderId": "ORD-500175",
+    "customerId": "CUS-200175",
+    "invoiceAmount": 63152.42,
+    "invoiceDate": "2026-07-02T10:45:43.193Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500175"
+  },
+  {
+    "invoiceId": "INV-900176",
+    "orderId": "ORD-500176",
+    "customerId": "CUS-200176",
+    "invoiceAmount": 60248.63,
+    "invoiceDate": "2026-08-04T07:41:28.838Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500176"
+  },
+  {
+    "invoiceId": "INV-900177",
+    "orderId": "ORD-500177",
+    "customerId": "CUS-200177",
+    "invoiceAmount": 70578.54,
+    "invoiceDate": "2026-07-06T21:52:58.561Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500177"
+  },
+  {
+    "invoiceId": "INV-900178",
+    "orderId": "ORD-500178",
+    "customerId": "CUS-200178",
+    "invoiceAmount": 3440.54,
+    "invoiceDate": "2026-08-22T05:25:35.638Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500178"
+  },
+  {
+    "invoiceId": "INV-900179",
+    "orderId": "ORD-500179",
+    "customerId": "CUS-200179",
+    "invoiceAmount": 27745.41,
+    "invoiceDate": "2026-07-07T14:46:18.218Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500179"
+  },
+  {
+    "invoiceId": "INV-900180",
+    "orderId": "ORD-500180",
+    "customerId": "CUS-200180",
+    "invoiceAmount": 41931.76,
+    "invoiceDate": "2026-07-24T05:58:43.575Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500180"
+  },
+  {
+    "invoiceId": "INV-900181",
+    "orderId": "ORD-500181",
+    "customerId": "CUS-200181",
+    "invoiceAmount": 57119.07,
+    "invoiceDate": "2026-08-04T17:17:25.794Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500181"
+  },
+  {
+    "invoiceId": "INV-900182",
+    "orderId": "ORD-500182",
+    "customerId": "CUS-200182",
+    "invoiceAmount": 912.03,
+    "invoiceDate": "2026-08-10T13:59:50.043Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500182"
+  },
+  {
+    "invoiceId": "INV-900183",
+    "orderId": "ORD-500183",
+    "customerId": "CUS-200183",
+    "invoiceAmount": 55127.25,
+    "invoiceDate": "2026-08-07T19:44:00.576Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500183"
+  },
+  {
+    "invoiceId": "INV-900184",
+    "orderId": "ORD-500184",
+    "customerId": "CUS-200184",
+    "invoiceAmount": 6465.71,
+    "invoiceDate": "2026-07-19T07:37:39.489Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500184"
+  },
+  {
+    "invoiceId": "INV-900185",
+    "orderId": "ORD-500185",
+    "customerId": "CUS-200185",
+    "invoiceAmount": 2616.96,
+    "invoiceDate": "2026-07-24T19:15:35.314Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500185"
+  },
+  {
+    "invoiceId": "INV-900186",
+    "orderId": "ORD-500186",
+    "customerId": "CUS-200186",
+    "invoiceAmount": 59717.33,
+    "invoiceDate": "2026-08-22T04:28:26.915Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500186"
+  },
+  {
+    "invoiceId": "INV-900187",
+    "orderId": "ORD-500187",
+    "customerId": "CUS-200187",
+    "invoiceAmount": 41368.05,
+    "invoiceDate": "2026-07-02T15:12:38.746Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500187"
+  },
+  {
+    "invoiceId": "INV-900188",
+    "orderId": "ORD-500188",
+    "customerId": "CUS-200188",
+    "invoiceAmount": 85058.44,
+    "invoiceDate": "2026-07-14T16:35:00.028Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500188"
+  },
+  {
+    "invoiceId": "INV-900189",
+    "orderId": "ORD-500189",
+    "customerId": "CUS-200189",
+    "invoiceAmount": 25462.56,
+    "invoiceDate": "2026-07-25T23:12:33.697Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500189"
+  },
+  {
+    "invoiceId": "INV-900190",
+    "orderId": "ORD-500190",
+    "customerId": "CUS-200190",
+    "invoiceAmount": 69111.66,
+    "invoiceDate": "2026-07-16T19:54:49.988Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500190"
+  },
+  {
+    "invoiceId": "INV-900191",
+    "orderId": "ORD-500191",
+    "customerId": "CUS-200191",
+    "invoiceAmount": 84265.09,
+    "invoiceDate": "2026-07-27T14:10:53.485Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500191"
+  },
+  {
+    "invoiceId": "INV-900192",
+    "orderId": "ORD-500192",
+    "customerId": "CUS-200192",
+    "invoiceAmount": 76937.03,
+    "invoiceDate": "2026-08-30T03:16:45.025Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500192"
+  },
+  {
+    "invoiceId": "INV-900193",
+    "orderId": "ORD-500193",
+    "customerId": "CUS-200193",
+    "invoiceAmount": 49273.89,
+    "invoiceDate": "2026-07-18T03:07:06.256Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500193"
+  },
+  {
+    "invoiceId": "INV-900194",
+    "orderId": "ORD-500194",
+    "customerId": "CUS-200194",
+    "invoiceAmount": 30812.78,
+    "invoiceDate": "2026-08-07T02:57:40.613Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500194"
+  },
+  {
+    "invoiceId": "INV-900195",
+    "orderId": "ORD-500195",
+    "customerId": "CUS-200195",
+    "invoiceAmount": 92699.91,
+    "invoiceDate": "2026-07-23T12:00:58.717Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500195"
+  },
+  {
+    "invoiceId": "INV-900196",
+    "orderId": "ORD-500196",
+    "customerId": "CUS-200196",
+    "invoiceAmount": 45095.42,
+    "invoiceDate": "2026-07-14T17:35:34.249Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500196"
+  },
+  {
+    "invoiceId": "INV-900197",
+    "orderId": "ORD-500197",
+    "customerId": "CUS-200197",
+    "invoiceAmount": 75115.63,
+    "invoiceDate": "2026-07-13T14:29:07.630Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500197"
+  },
+  {
+    "invoiceId": "INV-900198",
+    "orderId": "ORD-500198",
+    "customerId": "CUS-200198",
+    "invoiceAmount": 63202.18,
+    "invoiceDate": "2026-07-11T12:59:22.244Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500198"
+  },
+  {
+    "invoiceId": "INV-900199",
+    "orderId": "ORD-500199",
+    "customerId": "CUS-200199",
+    "invoiceAmount": 89929.67,
+    "invoiceDate": "2026-08-04T08:30:39.313Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500199"
+  },
+  {
+    "invoiceId": "INV-900200",
+    "orderId": "ORD-500200",
+    "customerId": "CUS-200200",
+    "invoiceAmount": 13429.76,
+    "invoiceDate": "2026-08-23T19:53:20.342Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500200"
+  },
+  {
+    "invoiceId": "INV-900201",
+    "orderId": "ORD-500201",
+    "customerId": "CUS-200201",
+    "invoiceAmount": 99482.84,
+    "invoiceDate": "2026-07-20T05:16:44.239Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500201"
+  },
+  {
+    "invoiceId": "INV-900202",
+    "orderId": "ORD-500202",
+    "customerId": "CUS-200202",
+    "invoiceAmount": 29047.51,
+    "invoiceDate": "2026-07-22T23:30:49.314Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500202"
+  },
+  {
+    "invoiceId": "INV-900203",
+    "orderId": "ORD-500203",
+    "customerId": "CUS-200203",
+    "invoiceAmount": 69767.53,
+    "invoiceDate": "2026-07-21T02:20:55.736Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500203"
+  },
+  {
+    "invoiceId": "INV-900204",
+    "orderId": "ORD-500204",
+    "customerId": "CUS-200204",
+    "invoiceAmount": 40547.64,
+    "invoiceDate": "2026-07-05T01:01:21.113Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500204"
+  },
+  {
+    "invoiceId": "INV-900205",
+    "orderId": "ORD-500205",
+    "customerId": "CUS-200205",
+    "invoiceAmount": 97941.61,
+    "invoiceDate": "2026-07-13T12:15:18.627Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500205"
+  },
+  {
+    "invoiceId": "INV-900206",
+    "orderId": "ORD-500206",
+    "customerId": "CUS-200206",
+    "invoiceAmount": 74519.97,
+    "invoiceDate": "2026-07-01T03:45:10.467Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500206"
+  },
+  {
+    "invoiceId": "INV-900207",
+    "orderId": "ORD-500207",
+    "customerId": "CUS-200207",
+    "invoiceAmount": 87781.61,
+    "invoiceDate": "2026-08-04T04:22:05.568Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500207"
+  },
+  {
+    "invoiceId": "INV-900208",
+    "orderId": "ORD-500208",
+    "customerId": "CUS-200208",
+    "invoiceAmount": 72411.9,
+    "invoiceDate": "2026-08-11T07:10:41.233Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500208"
+  },
+  {
+    "invoiceId": "INV-900209",
+    "orderId": "ORD-500209",
+    "customerId": "CUS-200209",
+    "invoiceAmount": 19793.77,
+    "invoiceDate": "2026-07-07T15:01:05.668Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500209"
+  },
+  {
+    "invoiceId": "INV-900210",
+    "orderId": "ORD-500210",
+    "customerId": "CUS-200210",
+    "invoiceAmount": 95554.85,
+    "invoiceDate": "2026-07-06T23:12:56.185Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500210"
+  },
+  {
+    "invoiceId": "INV-900211",
+    "orderId": "ORD-500211",
+    "customerId": "CUS-200211",
+    "invoiceAmount": 95817.34,
+    "invoiceDate": "2026-07-27T19:00:31.903Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500211"
+  },
+  {
+    "invoiceId": "INV-900212",
+    "orderId": "ORD-500212",
+    "customerId": "CUS-200212",
+    "invoiceAmount": 99855.13,
+    "invoiceDate": "2026-08-17T20:25:13.273Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500212"
+  },
+  {
+    "invoiceId": "INV-900213",
+    "orderId": "ORD-500213",
+    "customerId": "CUS-200213",
+    "invoiceAmount": 63808.04,
+    "invoiceDate": "2026-08-02T05:11:50.653Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500213"
+  },
+  {
+    "invoiceId": "INV-900214",
+    "orderId": "ORD-500214",
+    "customerId": "CUS-200214",
+    "invoiceAmount": 68678.86,
+    "invoiceDate": "2026-08-21T07:11:00.774Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500214"
+  },
+  {
+    "invoiceId": "INV-900215",
+    "orderId": "ORD-500215",
+    "customerId": "CUS-200215",
+    "invoiceAmount": 52122.8,
+    "invoiceDate": "2026-07-30T03:18:48.626Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500215"
+  },
+  {
+    "invoiceId": "INV-900216",
+    "orderId": "ORD-500216",
+    "customerId": "CUS-200216",
+    "invoiceAmount": 73075.57,
+    "invoiceDate": "2026-08-29T20:49:48.144Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500216"
+  },
+  {
+    "invoiceId": "INV-900217",
+    "orderId": "ORD-500217",
+    "customerId": "CUS-200217",
+    "invoiceAmount": 31534.55,
+    "invoiceDate": "2026-07-25T08:06:59.252Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500217"
+  },
+  {
+    "invoiceId": "INV-900218",
+    "orderId": "ORD-500218",
+    "customerId": "CUS-200218",
+    "invoiceAmount": 11602.53,
+    "invoiceDate": "2026-07-27T05:58:08.730Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500218"
+  },
+  {
+    "invoiceId": "INV-900219",
+    "orderId": "ORD-500219",
+    "customerId": "CUS-200219",
+    "invoiceAmount": 65131.83,
+    "invoiceDate": "2026-07-24T05:51:32.557Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500219"
+  },
+  {
+    "invoiceId": "INV-900220",
+    "orderId": "ORD-500220",
+    "customerId": "CUS-200220",
+    "invoiceAmount": 49200.68,
+    "invoiceDate": "2026-08-26T01:06:04.900Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500220"
+  },
+  {
+    "invoiceId": "INV-900221",
+    "orderId": "ORD-500221",
+    "customerId": "CUS-200221",
+    "invoiceAmount": 76195.08,
+    "invoiceDate": "2026-07-16T05:19:49.350Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500221"
+  },
+  {
+    "invoiceId": "INV-900222",
+    "orderId": "ORD-500222",
+    "customerId": "CUS-200222",
+    "invoiceAmount": 62151.2,
+    "invoiceDate": "2026-07-01T14:49:15.490Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500222"
+  },
+  {
+    "invoiceId": "INV-900223",
+    "orderId": "ORD-500223",
+    "customerId": "CUS-200223",
+    "invoiceAmount": 54234.46,
+    "invoiceDate": "2026-08-23T15:59:32.480Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500223"
+  },
+  {
+    "invoiceId": "INV-900224",
+    "orderId": "ORD-500224",
+    "customerId": "CUS-200224",
+    "invoiceAmount": 74978.94,
+    "invoiceDate": "2026-08-15T19:28:29.915Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500224"
+  },
+  {
+    "invoiceId": "INV-900225",
+    "orderId": "ORD-500225",
+    "customerId": "CUS-200225",
+    "invoiceAmount": 95216.23,
+    "invoiceDate": "2026-08-09T18:24:14.756Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500225"
+  },
+  {
+    "invoiceId": "INV-900226",
+    "orderId": "ORD-500226",
+    "customerId": "CUS-200226",
+    "invoiceAmount": 90183.09,
+    "invoiceDate": "2026-08-07T15:21:12.540Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500226"
+  },
+  {
+    "invoiceId": "INV-900227",
+    "orderId": "ORD-500227",
+    "customerId": "CUS-200227",
+    "invoiceAmount": 34239.53,
+    "invoiceDate": "2026-08-11T01:44:45.032Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500227"
+  },
+  {
+    "invoiceId": "INV-900228",
+    "orderId": "ORD-500228",
+    "customerId": "CUS-200228",
+    "invoiceAmount": 30936.18,
+    "invoiceDate": "2026-08-03T17:52:55.440Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500228"
+  },
+  {
+    "invoiceId": "INV-900229",
+    "orderId": "ORD-500229",
+    "customerId": "CUS-200229",
+    "invoiceAmount": 34447.58,
+    "invoiceDate": "2026-07-07T11:18:30.791Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500229"
+  },
+  {
+    "invoiceId": "INV-900230",
+    "orderId": "ORD-500230",
+    "customerId": "CUS-200230",
+    "invoiceAmount": 80317.67,
+    "invoiceDate": "2026-07-06T00:22:26.908Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500230"
+  },
+  {
+    "invoiceId": "INV-900231",
+    "orderId": "ORD-500231",
+    "customerId": "CUS-200231",
+    "invoiceAmount": 57309,
+    "invoiceDate": "2026-08-23T09:48:27.489Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500231"
+  },
+  {
+    "invoiceId": "INV-900232",
+    "orderId": "ORD-500232",
+    "customerId": "CUS-200232",
+    "invoiceAmount": 87907.04,
+    "invoiceDate": "2026-07-26T07:10:27.535Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500232"
+  },
+  {
+    "invoiceId": "INV-900233",
+    "orderId": "ORD-500233",
+    "customerId": "CUS-200233",
+    "invoiceAmount": 482.1,
+    "invoiceDate": "2026-07-13T11:48:31.748Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500233"
+  },
+  {
+    "invoiceId": "INV-900234",
+    "orderId": "ORD-500234",
+    "customerId": "CUS-200234",
+    "invoiceAmount": 50773.09,
+    "invoiceDate": "2026-07-06T15:59:05.037Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500234"
+  },
+  {
+    "invoiceId": "INV-900235",
+    "orderId": "ORD-500235",
+    "customerId": "CUS-200235",
+    "invoiceAmount": 69918.74,
+    "invoiceDate": "2026-08-11T04:55:17.402Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500235"
+  },
+  {
+    "invoiceId": "INV-900236",
+    "orderId": "ORD-500236",
+    "customerId": "CUS-200236",
+    "invoiceAmount": 54227.78,
+    "invoiceDate": "2026-07-10T21:18:53.366Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500236"
+  },
+  {
+    "invoiceId": "INV-900237",
+    "orderId": "ORD-500237",
+    "customerId": "CUS-200237",
+    "invoiceAmount": 1571.05,
+    "invoiceDate": "2026-08-04T10:13:10.229Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500237"
+  },
+  {
+    "invoiceId": "INV-900238",
+    "orderId": "ORD-500238",
+    "customerId": "CUS-200238",
+    "invoiceAmount": 96785.79,
+    "invoiceDate": "2026-07-14T01:49:51.025Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500238"
+  },
+  {
+    "invoiceId": "INV-900239",
+    "orderId": "ORD-500239",
+    "customerId": "CUS-200239",
+    "invoiceAmount": 67275.57,
+    "invoiceDate": "2026-07-21T03:05:29.131Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500239"
+  },
+  {
+    "invoiceId": "INV-900240",
+    "orderId": "ORD-500240",
+    "customerId": "CUS-200240",
+    "invoiceAmount": 12751.19,
+    "invoiceDate": "2026-08-22T06:24:17.895Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500240"
+  },
+  {
+    "invoiceId": "INV-900241",
+    "orderId": "ORD-500241",
+    "customerId": "CUS-200241",
+    "invoiceAmount": 61700.44,
+    "invoiceDate": "2026-08-29T11:54:08.354Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500241"
+  },
+  {
+    "invoiceId": "INV-900242",
+    "orderId": "ORD-500242",
+    "customerId": "CUS-200242",
+    "invoiceAmount": 73161,
+    "invoiceDate": "2026-07-11T21:22:29.237Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500242"
+  },
+  {
+    "invoiceId": "INV-900243",
+    "orderId": "ORD-500243",
+    "customerId": "CUS-200243",
+    "invoiceAmount": 53494.95,
+    "invoiceDate": "2026-07-27T00:57:57.235Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500243"
+  },
+  {
+    "invoiceId": "INV-900244",
+    "orderId": "ORD-500244",
+    "customerId": "CUS-200244",
+    "invoiceAmount": 76419.68,
+    "invoiceDate": "2026-07-16T09:25:19.922Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500244"
+  },
+  {
+    "invoiceId": "INV-900245",
+    "orderId": "ORD-500245",
+    "customerId": "CUS-200245",
+    "invoiceAmount": 78771.31,
+    "invoiceDate": "2026-08-11T20:52:50.847Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500245"
+  },
+  {
+    "invoiceId": "INV-900246",
+    "orderId": "ORD-500246",
+    "customerId": "CUS-200246",
+    "invoiceAmount": 53877.3,
+    "invoiceDate": "2026-08-23T16:04:01.304Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500246"
+  },
+  {
+    "invoiceId": "INV-900247",
+    "orderId": "ORD-500247",
+    "customerId": "CUS-200247",
+    "invoiceAmount": 40119.43,
+    "invoiceDate": "2026-07-05T03:46:36.750Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500247"
+  },
+  {
+    "invoiceId": "INV-900248",
+    "orderId": "ORD-500248",
+    "customerId": "CUS-200248",
+    "invoiceAmount": 13207.28,
+    "invoiceDate": "2026-07-16T04:32:37.529Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500248"
+  },
+  {
+    "invoiceId": "INV-900249",
+    "orderId": "ORD-500249",
+    "customerId": "CUS-200249",
+    "invoiceAmount": 21601.04,
+    "invoiceDate": "2026-08-20T17:56:50.000Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500249"
+  },
+  {
+    "invoiceId": "INV-900250",
+    "orderId": "ORD-500250",
+    "customerId": "CUS-200250",
+    "invoiceAmount": 34343.94,
+    "invoiceDate": "2026-07-08T10:17:27.484Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500250"
+  },
+  {
+    "invoiceId": "INV-900251",
+    "orderId": "ORD-500251",
+    "customerId": "CUS-200251",
+    "invoiceAmount": 40832.08,
+    "invoiceDate": "2026-08-10T11:12:30.340Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500251"
+  },
+  {
+    "invoiceId": "INV-900252",
+    "orderId": "ORD-500252",
+    "customerId": "CUS-200252",
+    "invoiceAmount": 15716.81,
+    "invoiceDate": "2026-08-17T06:55:52.875Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500252"
+  },
+  {
+    "invoiceId": "INV-900253",
+    "orderId": "ORD-500253",
+    "customerId": "CUS-200253",
+    "invoiceAmount": 86437.82,
+    "invoiceDate": "2026-07-26T11:38:12.505Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500253"
+  },
+  {
+    "invoiceId": "INV-900254",
+    "orderId": "ORD-500254",
+    "customerId": "CUS-200254",
+    "invoiceAmount": 64184.15,
+    "invoiceDate": "2026-08-13T21:57:22.413Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500254"
+  },
+  {
+    "invoiceId": "INV-900255",
+    "orderId": "ORD-500255",
+    "customerId": "CUS-200255",
+    "invoiceAmount": 45195.03,
+    "invoiceDate": "2026-07-08T16:34:12.310Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500255"
+  },
+  {
+    "invoiceId": "INV-900256",
+    "orderId": "ORD-500256",
+    "customerId": "CUS-200256",
+    "invoiceAmount": 19592.76,
+    "invoiceDate": "2026-08-10T05:51:06.376Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500256"
+  },
+  {
+    "invoiceId": "INV-900257",
+    "orderId": "ORD-500257",
+    "customerId": "CUS-200257",
+    "invoiceAmount": 59055.49,
+    "invoiceDate": "2026-07-22T16:26:38.169Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500257"
+  },
+  {
+    "invoiceId": "INV-900258",
+    "orderId": "ORD-500258",
+    "customerId": "CUS-200258",
+    "invoiceAmount": 25393.03,
+    "invoiceDate": "2026-08-04T19:36:55.213Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500258"
+  },
+  {
+    "invoiceId": "INV-900259",
+    "orderId": "ORD-500259",
+    "customerId": "CUS-200259",
+    "invoiceAmount": 79117.43,
+    "invoiceDate": "2026-08-24T05:38:59.518Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500259"
+  },
+  {
+    "invoiceId": "INV-900260",
+    "orderId": "ORD-500260",
+    "customerId": "CUS-200260",
+    "invoiceAmount": 94786.19,
+    "invoiceDate": "2026-07-29T05:00:30.264Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500260"
+  },
+  {
+    "invoiceId": "INV-900261",
+    "orderId": "ORD-500261",
+    "customerId": "CUS-200261",
+    "invoiceAmount": 50570.92,
+    "invoiceDate": "2026-07-29T02:39:20.497Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500261"
+  },
+  {
+    "invoiceId": "INV-900262",
+    "orderId": "ORD-500262",
+    "customerId": "CUS-200262",
+    "invoiceAmount": 93893.33,
+    "invoiceDate": "2026-08-28T08:58:43.988Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500262"
+  },
+  {
+    "invoiceId": "INV-900263",
+    "orderId": "ORD-500263",
+    "customerId": "CUS-200263",
+    "invoiceAmount": 85132.83,
+    "invoiceDate": "2026-07-05T17:37:19.137Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500263"
+  },
+  {
+    "invoiceId": "INV-900264",
+    "orderId": "ORD-500264",
+    "customerId": "CUS-200264",
+    "invoiceAmount": 63082.35,
+    "invoiceDate": "2026-07-27T11:57:31.516Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500264"
+  },
+  {
+    "invoiceId": "INV-900265",
+    "orderId": "ORD-500265",
+    "customerId": "CUS-200265",
+    "invoiceAmount": 4901.18,
+    "invoiceDate": "2026-07-22T10:10:39.151Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500265"
+  },
+  {
+    "invoiceId": "INV-900266",
+    "orderId": "ORD-500266",
+    "customerId": "CUS-200266",
+    "invoiceAmount": 50387.63,
+    "invoiceDate": "2026-07-08T22:42:14.692Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500266"
+  },
+  {
+    "invoiceId": "INV-900267",
+    "orderId": "ORD-500267",
+    "customerId": "CUS-200267",
+    "invoiceAmount": 79840.39,
+    "invoiceDate": "2026-07-31T13:23:03.313Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500267"
+  },
+  {
+    "invoiceId": "INV-900268",
+    "orderId": "ORD-500268",
+    "customerId": "CUS-200268",
+    "invoiceAmount": 16777.02,
+    "invoiceDate": "2026-08-22T04:29:34.155Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500268"
+  },
+  {
+    "invoiceId": "INV-900269",
+    "orderId": "ORD-500269",
+    "customerId": "CUS-200269",
+    "invoiceAmount": 96052.64,
+    "invoiceDate": "2026-08-16T23:43:34.293Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500269"
+  },
+  {
+    "invoiceId": "INV-900270",
+    "orderId": "ORD-500270",
+    "customerId": "CUS-200270",
+    "invoiceAmount": 26980.41,
+    "invoiceDate": "2026-08-21T12:19:54.371Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500270"
+  },
+  {
+    "invoiceId": "INV-900271",
+    "orderId": "ORD-500271",
+    "customerId": "CUS-200271",
+    "invoiceAmount": 71839.89,
+    "invoiceDate": "2026-07-31T23:42:00.679Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500271"
+  },
+  {
+    "invoiceId": "INV-900272",
+    "orderId": "ORD-500272",
+    "customerId": "CUS-200272",
+    "invoiceAmount": 41762.57,
+    "invoiceDate": "2026-07-30T20:50:50.933Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500272"
+  },
+  {
+    "invoiceId": "INV-900273",
+    "orderId": "ORD-500273",
+    "customerId": "CUS-200273",
+    "invoiceAmount": 62509.12,
+    "invoiceDate": "2026-08-13T17:45:52.788Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500273"
+  },
+  {
+    "invoiceId": "INV-900274",
+    "orderId": "ORD-500274",
+    "customerId": "CUS-200274",
+    "invoiceAmount": 6318.26,
+    "invoiceDate": "2026-07-29T09:14:48.777Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500274"
+  },
+  {
+    "invoiceId": "INV-900275",
+    "orderId": "ORD-500275",
+    "customerId": "CUS-200275",
+    "invoiceAmount": 47664.92,
+    "invoiceDate": "2026-08-26T05:31:14.762Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500275"
+  },
+  {
+    "invoiceId": "INV-900276",
+    "orderId": "ORD-500276",
+    "customerId": "CUS-200276",
+    "invoiceAmount": 70659.57,
+    "invoiceDate": "2026-07-11T13:37:54.384Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500276"
+  },
+  {
+    "invoiceId": "INV-900277",
+    "orderId": "ORD-500277",
+    "customerId": "CUS-200277",
+    "invoiceAmount": 46461.43,
+    "invoiceDate": "2026-07-28T10:33:16.295Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500277"
+  },
+  {
+    "invoiceId": "INV-900278",
+    "orderId": "ORD-500278",
+    "customerId": "CUS-200278",
+    "invoiceAmount": 10371.89,
+    "invoiceDate": "2026-08-15T03:32:14.367Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500278"
+  },
+  {
+    "invoiceId": "INV-900279",
+    "orderId": "ORD-500279",
+    "customerId": "CUS-200279",
+    "invoiceAmount": 58494.22,
+    "invoiceDate": "2026-07-24T05:51:39.248Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500279"
+  },
+  {
+    "invoiceId": "INV-900280",
+    "orderId": "ORD-500280",
+    "customerId": "CUS-200280",
+    "invoiceAmount": 17404.98,
+    "invoiceDate": "2026-07-20T13:20:17.257Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500280"
+  },
+  {
+    "invoiceId": "INV-900281",
+    "orderId": "ORD-500281",
+    "customerId": "CUS-200281",
+    "invoiceAmount": 36095.38,
+    "invoiceDate": "2026-07-05T13:42:01.226Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500281"
+  },
+  {
+    "invoiceId": "INV-900282",
+    "orderId": "ORD-500282",
+    "customerId": "CUS-200282",
+    "invoiceAmount": 43858.25,
+    "invoiceDate": "2026-08-06T01:37:34.660Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500282"
+  },
+  {
+    "invoiceId": "INV-900283",
+    "orderId": "ORD-500283",
+    "customerId": "CUS-200283",
+    "invoiceAmount": 65795.71,
+    "invoiceDate": "2026-08-25T09:36:20.141Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500283"
+  },
+  {
+    "invoiceId": "INV-900284",
+    "orderId": "ORD-500284",
+    "customerId": "CUS-200284",
+    "invoiceAmount": 69982.8,
+    "invoiceDate": "2026-07-09T05:18:52.314Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500284"
+  },
+  {
+    "invoiceId": "INV-900285",
+    "orderId": "ORD-500285",
+    "customerId": "CUS-200285",
+    "invoiceAmount": 29130.48,
+    "invoiceDate": "2026-07-30T11:33:40.584Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500285"
+  },
+  {
+    "invoiceId": "INV-900286",
+    "orderId": "ORD-500286",
+    "customerId": "CUS-200286",
+    "invoiceAmount": 81076.2,
+    "invoiceDate": "2026-07-12T16:33:10.990Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500286"
+  },
+  {
+    "invoiceId": "INV-900287",
+    "orderId": "ORD-500287",
+    "customerId": "CUS-200287",
+    "invoiceAmount": 28232.87,
+    "invoiceDate": "2026-08-08T17:37:14.775Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500287"
+  },
+  {
+    "invoiceId": "INV-900288",
+    "orderId": "ORD-500288",
+    "customerId": "CUS-200288",
+    "invoiceAmount": 43958.15,
+    "invoiceDate": "2026-08-23T11:04:21.518Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500288"
+  },
+  {
+    "invoiceId": "INV-900289",
+    "orderId": "ORD-500289",
+    "customerId": "CUS-200289",
+    "invoiceAmount": 63776.47,
+    "invoiceDate": "2026-08-20T21:54:17.669Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500289"
+  },
+  {
+    "invoiceId": "INV-900290",
+    "orderId": "ORD-500290",
+    "customerId": "CUS-200290",
+    "invoiceAmount": 10304.22,
+    "invoiceDate": "2026-07-28T20:46:37.617Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500290"
+  },
+  {
+    "invoiceId": "INV-900291",
+    "orderId": "ORD-500291",
+    "customerId": "CUS-200291",
+    "invoiceAmount": 37838.23,
+    "invoiceDate": "2026-08-20T07:32:37.722Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500291"
+  },
+  {
+    "invoiceId": "INV-900292",
+    "orderId": "ORD-500292",
+    "customerId": "CUS-200292",
+    "invoiceAmount": 21150.7,
+    "invoiceDate": "2026-07-20T04:48:24.579Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500292"
+  },
+  {
+    "invoiceId": "INV-900293",
+    "orderId": "ORD-500293",
+    "customerId": "CUS-200293",
+    "invoiceAmount": 87449.94,
+    "invoiceDate": "2026-08-13T05:10:41.669Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500293"
+  },
+  {
+    "invoiceId": "INV-900294",
+    "orderId": "ORD-500294",
+    "customerId": "CUS-200294",
+    "invoiceAmount": 74283.53,
+    "invoiceDate": "2026-08-02T01:22:51.218Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500294"
+  },
+  {
+    "invoiceId": "INV-900295",
+    "orderId": "ORD-500295",
+    "customerId": "CUS-200295",
+    "invoiceAmount": 38733.72,
+    "invoiceDate": "2026-08-15T02:37:43.557Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500295"
+  },
+  {
+    "invoiceId": "INV-900296",
+    "orderId": "ORD-500296",
+    "customerId": "CUS-200296",
+    "invoiceAmount": 27258.4,
+    "invoiceDate": "2026-07-14T07:59:56.892Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500296"
+  },
+  {
+    "invoiceId": "INV-900297",
+    "orderId": "ORD-500297",
+    "customerId": "CUS-200297",
+    "invoiceAmount": 58168.26,
+    "invoiceDate": "2026-08-21T11:46:15.121Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500297"
+  },
+  {
+    "invoiceId": "INV-900298",
+    "orderId": "ORD-500298",
+    "customerId": "CUS-200298",
+    "invoiceAmount": 72585.19,
+    "invoiceDate": "2026-08-26T22:32:44.761Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500298"
+  },
+  {
+    "invoiceId": "INV-900299",
+    "orderId": "ORD-500299",
+    "customerId": "CUS-200299",
+    "invoiceAmount": 85252.34,
+    "invoiceDate": "2026-06-30T18:01:16.515Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500299"
+  },
+  {
+    "invoiceId": "INV-900300",
+    "orderId": "ORD-500300",
+    "customerId": "CUS-200300",
+    "invoiceAmount": 23717.42,
+    "invoiceDate": "2026-08-07T04:59:06.836Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500300"
+  },
+  {
+    "invoiceId": "INV-900301",
+    "orderId": "ORD-500301",
+    "customerId": "CUS-200301",
+    "invoiceAmount": 99112.78,
+    "invoiceDate": "2026-08-10T19:38:43.242Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500301"
+  },
+  {
+    "invoiceId": "INV-900302",
+    "orderId": "ORD-500302",
+    "customerId": "CUS-200302",
+    "invoiceAmount": 12234.38,
+    "invoiceDate": "2026-08-12T06:10:35.738Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500302"
+  },
+  {
+    "invoiceId": "INV-900303",
+    "orderId": "ORD-500303",
+    "customerId": "CUS-200303",
+    "invoiceAmount": 23391.12,
+    "invoiceDate": "2026-07-23T04:50:17.009Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500303"
+  },
+  {
+    "invoiceId": "INV-900304",
+    "orderId": "ORD-500304",
+    "customerId": "CUS-200304",
+    "invoiceAmount": 15559.31,
+    "invoiceDate": "2026-07-04T16:21:22.456Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500304"
+  },
+  {
+    "invoiceId": "INV-900305",
+    "orderId": "ORD-500305",
+    "customerId": "CUS-200305",
+    "invoiceAmount": 52328.83,
+    "invoiceDate": "2026-08-11T03:42:35.145Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500305"
+  },
+  {
+    "invoiceId": "INV-900306",
+    "orderId": "ORD-500306",
+    "customerId": "CUS-200306",
+    "invoiceAmount": 22840.58,
+    "invoiceDate": "2026-07-06T13:32:58.790Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500306"
+  },
+  {
+    "invoiceId": "INV-900307",
+    "orderId": "ORD-500307",
+    "customerId": "CUS-200307",
+    "invoiceAmount": 1999.82,
+    "invoiceDate": "2026-07-12T00:25:35.028Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500307"
+  },
+  {
+    "invoiceId": "INV-900308",
+    "orderId": "ORD-500308",
+    "customerId": "CUS-200308",
+    "invoiceAmount": 2101.18,
+    "invoiceDate": "2026-07-19T20:04:17.517Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500308"
+  },
+  {
+    "invoiceId": "INV-900309",
+    "orderId": "ORD-500309",
+    "customerId": "CUS-200309",
+    "invoiceAmount": 304.42,
+    "invoiceDate": "2026-08-16T10:18:26.922Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500309"
+  },
+  {
+    "invoiceId": "INV-900310",
+    "orderId": "ORD-500310",
+    "customerId": "CUS-200310",
+    "invoiceAmount": 74756.86,
+    "invoiceDate": "2026-07-25T23:51:32.698Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500310"
+  },
+  {
+    "invoiceId": "INV-900311",
+    "orderId": "ORD-500311",
+    "customerId": "CUS-200311",
+    "invoiceAmount": 48285.21,
+    "invoiceDate": "2026-07-03T13:10:40.413Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500311"
+  },
+  {
+    "invoiceId": "INV-900312",
+    "orderId": "ORD-500312",
+    "customerId": "CUS-200312",
+    "invoiceAmount": 21779.98,
+    "invoiceDate": "2026-07-01T06:09:26.934Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500312"
+  },
+  {
+    "invoiceId": "INV-900313",
+    "orderId": "ORD-500313",
+    "customerId": "CUS-200313",
+    "invoiceAmount": 52444.96,
+    "invoiceDate": "2026-07-22T05:11:56.606Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500313"
+  },
+  {
+    "invoiceId": "INV-900314",
+    "orderId": "ORD-500314",
+    "customerId": "CUS-200314",
+    "invoiceAmount": 63766.85,
+    "invoiceDate": "2026-08-09T04:32:11.743Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500314"
+  },
+  {
+    "invoiceId": "INV-900315",
+    "orderId": "ORD-500315",
+    "customerId": "CUS-200315",
+    "invoiceAmount": 64085.55,
+    "invoiceDate": "2026-07-02T22:16:20.006Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500315"
+  },
+  {
+    "invoiceId": "INV-900316",
+    "orderId": "ORD-500316",
+    "customerId": "CUS-200316",
+    "invoiceAmount": 67916.8,
+    "invoiceDate": "2026-07-06T13:52:01.577Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500316"
+  },
+  {
+    "invoiceId": "INV-900317",
+    "orderId": "ORD-500317",
+    "customerId": "CUS-200317",
+    "invoiceAmount": 16136.18,
+    "invoiceDate": "2026-07-04T16:24:41.007Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500317"
+  },
+  {
+    "invoiceId": "INV-900318",
+    "orderId": "ORD-500318",
+    "customerId": "CUS-200318",
+    "invoiceAmount": 51572.76,
+    "invoiceDate": "2026-08-11T14:13:11.457Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500318"
+  },
+  {
+    "invoiceId": "INV-900319",
+    "orderId": "ORD-500319",
+    "customerId": "CUS-200319",
+    "invoiceAmount": 25944.98,
+    "invoiceDate": "2026-07-02T15:43:31.669Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500319"
+  },
+  {
+    "invoiceId": "INV-900320",
+    "orderId": "ORD-500320",
+    "customerId": "CUS-200320",
+    "invoiceAmount": 76771.98,
+    "invoiceDate": "2026-08-09T10:10:32.450Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500320"
+  },
+  {
+    "invoiceId": "INV-900321",
+    "orderId": "ORD-500321",
+    "customerId": "CUS-200321",
+    "invoiceAmount": 96562.4,
+    "invoiceDate": "2026-08-15T06:19:44.426Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500321"
+  },
+  {
+    "invoiceId": "INV-900322",
+    "orderId": "ORD-500322",
+    "customerId": "CUS-200322",
+    "invoiceAmount": 76732.94,
+    "invoiceDate": "2026-08-28T22:14:38.736Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500322"
+  },
+  {
+    "invoiceId": "INV-900323",
+    "orderId": "ORD-500323",
+    "customerId": "CUS-200323",
+    "invoiceAmount": 97092.49,
+    "invoiceDate": "2026-08-11T10:07:05.189Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500323"
+  },
+  {
+    "invoiceId": "INV-900324",
+    "orderId": "ORD-500324",
+    "customerId": "CUS-200324",
+    "invoiceAmount": 14427.16,
+    "invoiceDate": "2026-08-14T13:29:14.245Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500324"
+  },
+  {
+    "invoiceId": "INV-900325",
+    "orderId": "ORD-500325",
+    "customerId": "CUS-200325",
+    "invoiceAmount": 98122.39,
+    "invoiceDate": "2026-08-17T03:24:09.231Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500325"
+  },
+  {
+    "invoiceId": "INV-900326",
+    "orderId": "ORD-500326",
+    "customerId": "CUS-200326",
+    "invoiceAmount": 74572.35,
+    "invoiceDate": "2026-07-30T02:31:56.334Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500326"
+  },
+  {
+    "invoiceId": "INV-900327",
+    "orderId": "ORD-500327",
+    "customerId": "CUS-200327",
+    "invoiceAmount": 84705.16,
+    "invoiceDate": "2026-07-04T02:22:40.043Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500327"
+  },
+  {
+    "invoiceId": "INV-900328",
+    "orderId": "ORD-500328",
+    "customerId": "CUS-200328",
+    "invoiceAmount": 14105.1,
+    "invoiceDate": "2026-08-06T09:25:38.274Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500328"
+  },
+  {
+    "invoiceId": "INV-900329",
+    "orderId": "ORD-500329",
+    "customerId": "CUS-200329",
+    "invoiceAmount": 19859.92,
+    "invoiceDate": "2026-07-29T23:50:58.328Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500329"
+  },
+  {
+    "invoiceId": "INV-900330",
+    "orderId": "ORD-500330",
+    "customerId": "CUS-200330",
+    "invoiceAmount": 69964.46,
+    "invoiceDate": "2026-07-13T15:45:31.728Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500330"
+  },
+  {
+    "invoiceId": "INV-900331",
+    "orderId": "ORD-500331",
+    "customerId": "CUS-200331",
+    "invoiceAmount": 98410.38,
+    "invoiceDate": "2026-07-19T00:59:30.057Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500331"
+  },
+  {
+    "invoiceId": "INV-900332",
+    "orderId": "ORD-500332",
+    "customerId": "CUS-200332",
+    "invoiceAmount": 41013.23,
+    "invoiceDate": "2026-08-14T23:35:44.771Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500332"
+  },
+  {
+    "invoiceId": "INV-900333",
+    "orderId": "ORD-500333",
+    "customerId": "CUS-200333",
+    "invoiceAmount": 67201.3,
+    "invoiceDate": "2026-07-11T05:43:19.497Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500333"
+  },
+  {
+    "invoiceId": "INV-900334",
+    "orderId": "ORD-500334",
+    "customerId": "CUS-200334",
+    "invoiceAmount": 32657.93,
+    "invoiceDate": "2026-08-27T22:39:40.362Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500334"
+  },
+  {
+    "invoiceId": "INV-900335",
+    "orderId": "ORD-500335",
+    "customerId": "CUS-200335",
+    "invoiceAmount": 95156.73,
+    "invoiceDate": "2026-07-20T01:01:24.919Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500335"
+  },
+  {
+    "invoiceId": "INV-900336",
+    "orderId": "ORD-500336",
+    "customerId": "CUS-200336",
+    "invoiceAmount": 85271.87,
+    "invoiceDate": "2026-07-07T00:09:24.575Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500336"
+  },
+  {
+    "invoiceId": "INV-900337",
+    "orderId": "ORD-500337",
+    "customerId": "CUS-200337",
+    "invoiceAmount": 25367.04,
+    "invoiceDate": "2026-07-24T12:43:01.595Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500337"
+  },
+  {
+    "invoiceId": "INV-900338",
+    "orderId": "ORD-500338",
+    "customerId": "CUS-200338",
+    "invoiceAmount": 8596.59,
+    "invoiceDate": "2026-08-20T09:22:33.262Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500338"
+  },
+  {
+    "invoiceId": "INV-900339",
+    "orderId": "ORD-500339",
+    "customerId": "CUS-200339",
+    "invoiceAmount": 16558.19,
+    "invoiceDate": "2026-08-21T21:18:38.584Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500339"
+  },
+  {
+    "invoiceId": "INV-900340",
+    "orderId": "ORD-500340",
+    "customerId": "CUS-200340",
+    "invoiceAmount": 10363.03,
+    "invoiceDate": "2026-08-14T11:08:20.181Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500340"
+  },
+  {
+    "invoiceId": "INV-900341",
+    "orderId": "ORD-500341",
+    "customerId": "CUS-200341",
+    "invoiceAmount": 62699.74,
+    "invoiceDate": "2026-07-03T03:06:12.647Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500341"
+  },
+  {
+    "invoiceId": "INV-900342",
+    "orderId": "ORD-500342",
+    "customerId": "CUS-200342",
+    "invoiceAmount": 66756.11,
+    "invoiceDate": "2026-08-17T06:40:19.032Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500342"
+  },
+  {
+    "invoiceId": "INV-900343",
+    "orderId": "ORD-500343",
+    "customerId": "CUS-200343",
+    "invoiceAmount": 51991.34,
+    "invoiceDate": "2026-07-20T01:12:54.546Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500343"
+  },
+  {
+    "invoiceId": "INV-900344",
+    "orderId": "ORD-500344",
+    "customerId": "CUS-200344",
+    "invoiceAmount": 7710.79,
+    "invoiceDate": "2026-08-09T06:19:16.173Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500344"
+  },
+  {
+    "invoiceId": "INV-900345",
+    "orderId": "ORD-500345",
+    "customerId": "CUS-200345",
+    "invoiceAmount": 62125.59,
+    "invoiceDate": "2026-08-05T20:08:29.810Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500345"
+  },
+  {
+    "invoiceId": "INV-900346",
+    "orderId": "ORD-500346",
+    "customerId": "CUS-200346",
+    "invoiceAmount": 25595.78,
+    "invoiceDate": "2026-07-20T18:57:30.216Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500346"
+  },
+  {
+    "invoiceId": "INV-900347",
+    "orderId": "ORD-500347",
+    "customerId": "CUS-200347",
+    "invoiceAmount": 86200.35,
+    "invoiceDate": "2026-08-21T17:18:17.985Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500347"
+  },
+  {
+    "invoiceId": "INV-900348",
+    "orderId": "ORD-500348",
+    "customerId": "CUS-200348",
+    "invoiceAmount": 35579.15,
+    "invoiceDate": "2026-08-07T19:34:49.024Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500348"
+  },
+  {
+    "invoiceId": "INV-900349",
+    "orderId": "ORD-500349",
+    "customerId": "CUS-200349",
+    "invoiceAmount": 98441.48,
+    "invoiceDate": "2026-08-17T09:22:11.200Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500349"
+  },
+  {
+    "invoiceId": "INV-900350",
+    "orderId": "ORD-500350",
+    "customerId": "CUS-200350",
+    "invoiceAmount": 47098.91,
+    "invoiceDate": "2026-08-23T03:56:24.046Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500350"
+  },
+  {
+    "invoiceId": "INV-900351",
+    "orderId": "ORD-500351",
+    "customerId": "CUS-200351",
+    "invoiceAmount": 12539.33,
+    "invoiceDate": "2026-07-02T04:20:24.792Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500351"
+  },
+  {
+    "invoiceId": "INV-900352",
+    "orderId": "ORD-500352",
+    "customerId": "CUS-200352",
+    "invoiceAmount": 42048.3,
+    "invoiceDate": "2026-07-20T20:34:26.282Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500352"
+  },
+  {
+    "invoiceId": "INV-900353",
+    "orderId": "ORD-500353",
+    "customerId": "CUS-200353",
+    "invoiceAmount": 8794.98,
+    "invoiceDate": "2026-07-05T08:07:59.611Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500353"
+  },
+  {
+    "invoiceId": "INV-900354",
+    "orderId": "ORD-500354",
+    "customerId": "CUS-200354",
+    "invoiceAmount": 14550.2,
+    "invoiceDate": "2026-08-01T18:47:47.555Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500354"
+  },
+  {
+    "invoiceId": "INV-900355",
+    "orderId": "ORD-500355",
+    "customerId": "CUS-200355",
+    "invoiceAmount": 20556.72,
+    "invoiceDate": "2026-07-02T09:56:17.468Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500355"
+  },
+  {
+    "invoiceId": "INV-900356",
+    "orderId": "ORD-500356",
+    "customerId": "CUS-200356",
+    "invoiceAmount": 99505.21,
+    "invoiceDate": "2026-08-12T00:38:05.121Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500356"
+  },
+  {
+    "invoiceId": "INV-900357",
+    "orderId": "ORD-500357",
+    "customerId": "CUS-200357",
+    "invoiceAmount": 24699.42,
+    "invoiceDate": "2026-07-07T03:43:48.101Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500357"
+  },
+  {
+    "invoiceId": "INV-900358",
+    "orderId": "ORD-500358",
+    "customerId": "CUS-200358",
+    "invoiceAmount": 30773.55,
+    "invoiceDate": "2026-07-27T13:45:37.069Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500358"
+  },
+  {
+    "invoiceId": "INV-900359",
+    "orderId": "ORD-500359",
+    "customerId": "CUS-200359",
+    "invoiceAmount": 91501.58,
+    "invoiceDate": "2026-08-23T01:17:37.895Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500359"
+  },
+  {
+    "invoiceId": "INV-900360",
+    "orderId": "ORD-500360",
+    "customerId": "CUS-200360",
+    "invoiceAmount": 2659.56,
+    "invoiceDate": "2026-08-29T01:45:00.270Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500360"
+  },
+  {
+    "invoiceId": "INV-900361",
+    "orderId": "ORD-500361",
+    "customerId": "CUS-200361",
+    "invoiceAmount": 63301.2,
+    "invoiceDate": "2026-08-21T23:32:57.447Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500361"
+  },
+  {
+    "invoiceId": "INV-900362",
+    "orderId": "ORD-500362",
+    "customerId": "CUS-200362",
+    "invoiceAmount": 2928.86,
+    "invoiceDate": "2026-08-20T23:58:02.079Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500362"
+  },
+  {
+    "invoiceId": "INV-900363",
+    "orderId": "ORD-500363",
+    "customerId": "CUS-200363",
+    "invoiceAmount": 58206.25,
+    "invoiceDate": "2026-07-23T12:19:46.984Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500363"
+  },
+  {
+    "invoiceId": "INV-900364",
+    "orderId": "ORD-500364",
+    "customerId": "CUS-200364",
+    "invoiceAmount": 4970.88,
+    "invoiceDate": "2026-07-22T12:30:11.318Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500364"
+  },
+  {
+    "invoiceId": "INV-900365",
+    "orderId": "ORD-500365",
+    "customerId": "CUS-200365",
+    "invoiceAmount": 95791.49,
+    "invoiceDate": "2026-07-09T10:34:35.480Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500365"
+  },
+  {
+    "invoiceId": "INV-900366",
+    "orderId": "ORD-500366",
+    "customerId": "CUS-200366",
+    "invoiceAmount": 1240.99,
+    "invoiceDate": "2026-07-20T23:27:23.476Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500366"
+  },
+  {
+    "invoiceId": "INV-900367",
+    "orderId": "ORD-500367",
+    "customerId": "CUS-200367",
+    "invoiceAmount": 12375.15,
+    "invoiceDate": "2026-08-25T13:39:01.204Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500367"
+  },
+  {
+    "invoiceId": "INV-900368",
+    "orderId": "ORD-500368",
+    "customerId": "CUS-200368",
+    "invoiceAmount": 97647.89,
+    "invoiceDate": "2026-07-13T21:50:59.398Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500368"
+  },
+  {
+    "invoiceId": "INV-900369",
+    "orderId": "ORD-500369",
+    "customerId": "CUS-200369",
+    "invoiceAmount": 39829.63,
+    "invoiceDate": "2026-08-14T10:38:28.311Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500369"
+  },
+  {
+    "invoiceId": "INV-900370",
+    "orderId": "ORD-500370",
+    "customerId": "CUS-200370",
+    "invoiceAmount": 7109.62,
+    "invoiceDate": "2026-07-11T17:11:36.174Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500370"
+  },
+  {
+    "invoiceId": "INV-900371",
+    "orderId": "ORD-500371",
+    "customerId": "CUS-200371",
+    "invoiceAmount": 68084.51,
+    "invoiceDate": "2026-08-29T04:40:35.975Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500371"
+  },
+  {
+    "invoiceId": "INV-900372",
+    "orderId": "ORD-500372",
+    "customerId": "CUS-200372",
+    "invoiceAmount": 55555.86,
+    "invoiceDate": "2026-08-18T14:36:23.235Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500372"
+  },
+  {
+    "invoiceId": "INV-900373",
+    "orderId": "ORD-500373",
+    "customerId": "CUS-200373",
+    "invoiceAmount": 45420.26,
+    "invoiceDate": "2026-07-14T16:46:53.395Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500373"
+  },
+  {
+    "invoiceId": "INV-900374",
+    "orderId": "ORD-500374",
+    "customerId": "CUS-200374",
+    "invoiceAmount": 88623.24,
+    "invoiceDate": "2026-08-12T19:59:26.102Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500374"
+  },
+  {
+    "invoiceId": "INV-900375",
+    "orderId": "ORD-500375",
+    "customerId": "CUS-200375",
+    "invoiceAmount": 13772.53,
+    "invoiceDate": "2026-07-07T12:20:05.940Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500375"
+  },
+  {
+    "invoiceId": "INV-900376",
+    "orderId": "ORD-500376",
+    "customerId": "CUS-200376",
+    "invoiceAmount": 1843.09,
+    "invoiceDate": "2026-07-14T10:31:24.579Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500376"
+  },
+  {
+    "invoiceId": "INV-900377",
+    "orderId": "ORD-500377",
+    "customerId": "CUS-200377",
+    "invoiceAmount": 70661.52,
+    "invoiceDate": "2026-08-02T10:06:04.509Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500377"
+  },
+  {
+    "invoiceId": "INV-900378",
+    "orderId": "ORD-500378",
+    "customerId": "CUS-200378",
+    "invoiceAmount": 68475.8,
+    "invoiceDate": "2026-08-24T12:12:11.565Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500378"
+  },
+  {
+    "invoiceId": "INV-900379",
+    "orderId": "ORD-500379",
+    "customerId": "CUS-200379",
+    "invoiceAmount": 9374.84,
+    "invoiceDate": "2026-07-02T07:40:32.122Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500379"
+  },
+  {
+    "invoiceId": "INV-900380",
+    "orderId": "ORD-500380",
+    "customerId": "CUS-200380",
+    "invoiceAmount": 69272.38,
+    "invoiceDate": "2026-08-02T06:49:13.013Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500380"
+  },
+  {
+    "invoiceId": "INV-900381",
+    "orderId": "ORD-500381",
+    "customerId": "CUS-200381",
+    "invoiceAmount": 66356.37,
+    "invoiceDate": "2026-07-18T15:29:38.581Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500381"
+  },
+  {
+    "invoiceId": "INV-900382",
+    "orderId": "ORD-500382",
+    "customerId": "CUS-200382",
+    "invoiceAmount": 71959.43,
+    "invoiceDate": "2026-08-26T17:04:18.994Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500382"
+  },
+  {
+    "invoiceId": "INV-900383",
+    "orderId": "ORD-500383",
+    "customerId": "CUS-200383",
+    "invoiceAmount": 13734.78,
+    "invoiceDate": "2026-08-01T16:47:45.940Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500383"
+  },
+  {
+    "invoiceId": "INV-900384",
+    "orderId": "ORD-500384",
+    "customerId": "CUS-200384",
+    "invoiceAmount": 58918.35,
+    "invoiceDate": "2026-07-18T06:03:20.124Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500384"
+  },
+  {
+    "invoiceId": "INV-900385",
+    "orderId": "ORD-500385",
+    "customerId": "CUS-200385",
+    "invoiceAmount": 15554.3,
+    "invoiceDate": "2026-07-03T14:36:34.399Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500385"
+  },
+  {
+    "invoiceId": "INV-900386",
+    "orderId": "ORD-500386",
+    "customerId": "CUS-200386",
+    "invoiceAmount": 70981.64,
+    "invoiceDate": "2026-07-13T03:35:23.057Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500386"
+  },
+  {
+    "invoiceId": "INV-900387",
+    "orderId": "ORD-500387",
+    "customerId": "CUS-200387",
+    "invoiceAmount": 47993.35,
+    "invoiceDate": "2026-08-22T01:26:40.107Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500387"
+  },
+  {
+    "invoiceId": "INV-900388",
+    "orderId": "ORD-500388",
+    "customerId": "CUS-200388",
+    "invoiceAmount": 21866.67,
+    "invoiceDate": "2026-08-02T02:12:33.067Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500388"
+  },
+  {
+    "invoiceId": "INV-900389",
+    "orderId": "ORD-500389",
+    "customerId": "CUS-200389",
+    "invoiceAmount": 98065.65,
+    "invoiceDate": "2026-08-09T07:26:13.206Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500389"
+  },
+  {
+    "invoiceId": "INV-900390",
+    "orderId": "ORD-500390",
+    "customerId": "CUS-200390",
+    "invoiceAmount": 61530.57,
+    "invoiceDate": "2026-08-30T04:46:01.159Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500390"
+  },
+  {
+    "invoiceId": "INV-900391",
+    "orderId": "ORD-500391",
+    "customerId": "CUS-200391",
+    "invoiceAmount": 29038.36,
+    "invoiceDate": "2026-08-09T03:40:36.407Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500391"
+  },
+  {
+    "invoiceId": "INV-900392",
+    "orderId": "ORD-500392",
+    "customerId": "CUS-200392",
+    "invoiceAmount": 17226.05,
+    "invoiceDate": "2026-07-21T15:50:57.490Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500392"
+  },
+  {
+    "invoiceId": "INV-900393",
+    "orderId": "ORD-500393",
+    "customerId": "CUS-200393",
+    "invoiceAmount": 76165.58,
+    "invoiceDate": "2026-07-20T08:52:51.145Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500393"
+  },
+  {
+    "invoiceId": "INV-900394",
+    "orderId": "ORD-500394",
+    "customerId": "CUS-200394",
+    "invoiceAmount": 39486.49,
+    "invoiceDate": "2026-08-25T13:10:12.297Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500394"
+  },
+  {
+    "invoiceId": "INV-900395",
+    "orderId": "ORD-500395",
+    "customerId": "CUS-200395",
+    "invoiceAmount": 29967.63,
+    "invoiceDate": "2026-07-09T01:56:40.343Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500395"
+  },
+  {
+    "invoiceId": "INV-900396",
+    "orderId": "ORD-500396",
+    "customerId": "CUS-200396",
+    "invoiceAmount": 22038.99,
+    "invoiceDate": "2026-07-25T11:15:39.838Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500396"
+  },
+  {
+    "invoiceId": "INV-900397",
+    "orderId": "ORD-500397",
+    "customerId": "CUS-200397",
+    "invoiceAmount": 19680.07,
+    "invoiceDate": "2026-07-29T10:42:13.615Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500397"
+  },
+  {
+    "invoiceId": "INV-900398",
+    "orderId": "ORD-500398",
+    "customerId": "CUS-200398",
+    "invoiceAmount": 63553.19,
+    "invoiceDate": "2026-08-27T14:36:30.315Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500398"
+  },
+  {
+    "invoiceId": "INV-900399",
+    "orderId": "ORD-500399",
+    "customerId": "CUS-200399",
+    "invoiceAmount": 51295.72,
+    "invoiceDate": "2026-08-24T16:59:12.662Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500399"
+  },
+  {
+    "invoiceId": "INV-900400",
+    "orderId": "ORD-500400",
+    "customerId": "CUS-200400",
+    "invoiceAmount": 94552.21,
+    "invoiceDate": "2026-07-08T10:24:39.035Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500400"
+  },
+  {
+    "invoiceId": "INV-900401",
+    "orderId": "ORD-500401",
+    "customerId": "CUS-200401",
+    "invoiceAmount": 18120.95,
+    "invoiceDate": "2026-08-18T04:12:41.464Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500401"
+  },
+  {
+    "invoiceId": "INV-900402",
+    "orderId": "ORD-500402",
+    "customerId": "CUS-200402",
+    "invoiceAmount": 19757.7,
+    "invoiceDate": "2026-07-23T00:50:41.513Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500402"
+  },
+  {
+    "invoiceId": "INV-900403",
+    "orderId": "ORD-500403",
+    "customerId": "CUS-200403",
+    "invoiceAmount": 10009.17,
+    "invoiceDate": "2026-08-28T00:54:07.746Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500403"
+  },
+  {
+    "invoiceId": "INV-900404",
+    "orderId": "ORD-500404",
+    "customerId": "CUS-200404",
+    "invoiceAmount": 18182.58,
+    "invoiceDate": "2026-07-17T04:37:17.538Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500404"
+  },
+  {
+    "invoiceId": "INV-900405",
+    "orderId": "ORD-500405",
+    "customerId": "CUS-200405",
+    "invoiceAmount": 49012.33,
+    "invoiceDate": "2026-08-20T03:03:19.086Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500405"
+  },
+  {
+    "invoiceId": "INV-900406",
+    "orderId": "ORD-500406",
+    "customerId": "CUS-200406",
+    "invoiceAmount": 25641.56,
+    "invoiceDate": "2026-08-29T10:12:16.644Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500406"
+  },
+  {
+    "invoiceId": "INV-900407",
+    "orderId": "ORD-500407",
+    "customerId": "CUS-200407",
+    "invoiceAmount": 79149.6,
+    "invoiceDate": "2026-06-30T12:46:28.893Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500407"
+  },
+  {
+    "invoiceId": "INV-900408",
+    "orderId": "ORD-500408",
+    "customerId": "CUS-200408",
+    "invoiceAmount": 76089.77,
+    "invoiceDate": "2026-07-15T10:50:01.765Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500408"
+  },
+  {
+    "invoiceId": "INV-900409",
+    "orderId": "ORD-500409",
+    "customerId": "CUS-200409",
+    "invoiceAmount": 97625.46,
+    "invoiceDate": "2026-08-09T19:31:34.377Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500409"
+  },
+  {
+    "invoiceId": "INV-900410",
+    "orderId": "ORD-500410",
+    "customerId": "CUS-200410",
+    "invoiceAmount": 39642.35,
+    "invoiceDate": "2026-08-16T23:57:27.273Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500410"
+  },
+  {
+    "invoiceId": "INV-900411",
+    "orderId": "ORD-500411",
+    "customerId": "CUS-200411",
+    "invoiceAmount": 37079.63,
+    "invoiceDate": "2026-07-10T02:13:50.465Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500411"
+  },
+  {
+    "invoiceId": "INV-900412",
+    "orderId": "ORD-500412",
+    "customerId": "CUS-200412",
+    "invoiceAmount": 35841.2,
+    "invoiceDate": "2026-07-26T02:19:41.903Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500412"
+  },
+  {
+    "invoiceId": "INV-900413",
+    "orderId": "ORD-500413",
+    "customerId": "CUS-200413",
+    "invoiceAmount": 48914.29,
+    "invoiceDate": "2026-07-17T08:43:00.573Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500413"
+  },
+  {
+    "invoiceId": "INV-900414",
+    "orderId": "ORD-500414",
+    "customerId": "CUS-200414",
+    "invoiceAmount": 63338.76,
+    "invoiceDate": "2026-07-29T10:20:56.533Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500414"
+  },
+  {
+    "invoiceId": "INV-900415",
+    "orderId": "ORD-500415",
+    "customerId": "CUS-200415",
+    "invoiceAmount": 6861.17,
+    "invoiceDate": "2026-08-02T15:17:56.908Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500415"
+  },
+  {
+    "invoiceId": "INV-900416",
+    "orderId": "ORD-500416",
+    "customerId": "CUS-200416",
+    "invoiceAmount": 42030.56,
+    "invoiceDate": "2026-07-03T00:47:01.083Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500416"
+  },
+  {
+    "invoiceId": "INV-900417",
+    "orderId": "ORD-500417",
+    "customerId": "CUS-200417",
+    "invoiceAmount": 96218.93,
+    "invoiceDate": "2026-07-09T08:55:29.961Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500417"
+  },
+  {
+    "invoiceId": "INV-900418",
+    "orderId": "ORD-500418",
+    "customerId": "CUS-200418",
+    "invoiceAmount": 51507.65,
+    "invoiceDate": "2026-08-21T13:09:14.229Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500418"
+  },
+  {
+    "invoiceId": "INV-900419",
+    "orderId": "ORD-500419",
+    "customerId": "CUS-200419",
+    "invoiceAmount": 96050.76,
+    "invoiceDate": "2026-08-02T19:57:08.649Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500419"
+  },
+  {
+    "invoiceId": "INV-900420",
+    "orderId": "ORD-500420",
+    "customerId": "CUS-200420",
+    "invoiceAmount": 46785.55,
+    "invoiceDate": "2026-08-22T02:32:43.943Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500420"
+  },
+  {
+    "invoiceId": "INV-900421",
+    "orderId": "ORD-500421",
+    "customerId": "CUS-200421",
+    "invoiceAmount": 38679.12,
+    "invoiceDate": "2026-08-23T10:40:29.464Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500421"
+  },
+  {
+    "invoiceId": "INV-900422",
+    "orderId": "ORD-500422",
+    "customerId": "CUS-200422",
+    "invoiceAmount": 68516.55,
+    "invoiceDate": "2026-08-09T14:37:46.336Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500422"
+  },
+  {
+    "invoiceId": "INV-900423",
+    "orderId": "ORD-500423",
+    "customerId": "CUS-200423",
+    "invoiceAmount": 68591.8,
+    "invoiceDate": "2026-08-01T11:42:04.876Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500423"
+  },
+  {
+    "invoiceId": "INV-900424",
+    "orderId": "ORD-500424",
+    "customerId": "CUS-200424",
+    "invoiceAmount": 27476.05,
+    "invoiceDate": "2026-07-17T04:58:54.543Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500424"
+  },
+  {
+    "invoiceId": "INV-900425",
+    "orderId": "ORD-500425",
+    "customerId": "CUS-200425",
+    "invoiceAmount": 60074.98,
+    "invoiceDate": "2026-07-01T21:43:48.098Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500425"
+  },
+  {
+    "invoiceId": "INV-900426",
+    "orderId": "ORD-500426",
+    "customerId": "CUS-200426",
+    "invoiceAmount": 55750.11,
+    "invoiceDate": "2026-08-14T18:44:28.867Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500426"
+  },
+  {
+    "invoiceId": "INV-900427",
+    "orderId": "ORD-500427",
+    "customerId": "CUS-200427",
+    "invoiceAmount": 5658.12,
+    "invoiceDate": "2026-07-22T12:37:13.182Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500427"
+  },
+  {
+    "invoiceId": "INV-900428",
+    "orderId": "ORD-500428",
+    "customerId": "CUS-200428",
+    "invoiceAmount": 69108.37,
+    "invoiceDate": "2026-08-11T08:47:53.689Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500428"
+  },
+  {
+    "invoiceId": "INV-900429",
+    "orderId": "ORD-500429",
+    "customerId": "CUS-200429",
+    "invoiceAmount": 12387.18,
+    "invoiceDate": "2026-07-06T02:28:26.320Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500429"
+  },
+  {
+    "invoiceId": "INV-900430",
+    "orderId": "ORD-500430",
+    "customerId": "CUS-200430",
+    "invoiceAmount": 98243.83,
+    "invoiceDate": "2026-07-24T21:32:16.113Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500430"
+  },
+  {
+    "invoiceId": "INV-900431",
+    "orderId": "ORD-500431",
+    "customerId": "CUS-200431",
+    "invoiceAmount": 40178.74,
+    "invoiceDate": "2026-07-06T03:10:36.089Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500431"
+  },
+  {
+    "invoiceId": "INV-900432",
+    "orderId": "ORD-500432",
+    "customerId": "CUS-200432",
+    "invoiceAmount": 13266.83,
+    "invoiceDate": "2026-08-05T07:11:25.596Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500432"
+  },
+  {
+    "invoiceId": "INV-900433",
+    "orderId": "ORD-500433",
+    "customerId": "CUS-200433",
+    "invoiceAmount": 46543.76,
+    "invoiceDate": "2026-08-26T22:01:57.227Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500433"
+  },
+  {
+    "invoiceId": "INV-900434",
+    "orderId": "ORD-500434",
+    "customerId": "CUS-200434",
+    "invoiceAmount": 5773.52,
+    "invoiceDate": "2026-07-18T18:32:53.262Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500434"
+  },
+  {
+    "invoiceId": "INV-900435",
+    "orderId": "ORD-500435",
+    "customerId": "CUS-200435",
+    "invoiceAmount": 71948.53,
+    "invoiceDate": "2026-08-08T08:14:24.446Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500435"
+  },
+  {
+    "invoiceId": "INV-900436",
+    "orderId": "ORD-500436",
+    "customerId": "CUS-200436",
+    "invoiceAmount": 98738.3,
+    "invoiceDate": "2026-07-10T21:42:23.950Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500436"
+  },
+  {
+    "invoiceId": "INV-900437",
+    "orderId": "ORD-500437",
+    "customerId": "CUS-200437",
+    "invoiceAmount": 63195.69,
+    "invoiceDate": "2026-08-19T03:30:49.642Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500437"
+  },
+  {
+    "invoiceId": "INV-900438",
+    "orderId": "ORD-500438",
+    "customerId": "CUS-200438",
+    "invoiceAmount": 45624.02,
+    "invoiceDate": "2026-07-24T12:04:43.390Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500438"
+  },
+  {
+    "invoiceId": "INV-900439",
+    "orderId": "ORD-500439",
+    "customerId": "CUS-200439",
+    "invoiceAmount": 95504.34,
+    "invoiceDate": "2026-07-10T13:38:47.703Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500439"
+  },
+  {
+    "invoiceId": "INV-900440",
+    "orderId": "ORD-500440",
+    "customerId": "CUS-200440",
+    "invoiceAmount": 47930.88,
+    "invoiceDate": "2026-08-19T17:41:47.339Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500440"
+  },
+  {
+    "invoiceId": "INV-900441",
+    "orderId": "ORD-500441",
+    "customerId": "CUS-200441",
+    "invoiceAmount": 76738.52,
+    "invoiceDate": "2026-07-13T13:44:23.083Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500441"
+  },
+  {
+    "invoiceId": "INV-900442",
+    "orderId": "ORD-500442",
+    "customerId": "CUS-200442",
+    "invoiceAmount": 93835.55,
+    "invoiceDate": "2026-08-07T12:16:58.826Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500442"
+  },
+  {
+    "invoiceId": "INV-900443",
+    "orderId": "ORD-500443",
+    "customerId": "CUS-200443",
+    "invoiceAmount": 99621.33,
+    "invoiceDate": "2026-08-13T02:41:31.062Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500443"
+  },
+  {
+    "invoiceId": "INV-900444",
+    "orderId": "ORD-500444",
+    "customerId": "CUS-200444",
+    "invoiceAmount": 72172.51,
+    "invoiceDate": "2026-08-13T05:13:14.055Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500444"
+  },
+  {
+    "invoiceId": "INV-900445",
+    "orderId": "ORD-500445",
+    "customerId": "CUS-200445",
+    "invoiceAmount": 14372.11,
+    "invoiceDate": "2026-07-22T06:50:44.598Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500445"
+  },
+  {
+    "invoiceId": "INV-900446",
+    "orderId": "ORD-500446",
+    "customerId": "CUS-200446",
+    "invoiceAmount": 91101.07,
+    "invoiceDate": "2026-08-04T05:52:46.899Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500446"
+  },
+  {
+    "invoiceId": "INV-900447",
+    "orderId": "ORD-500447",
+    "customerId": "CUS-200447",
+    "invoiceAmount": 20759.24,
+    "invoiceDate": "2026-07-14T23:55:49.493Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500447"
+  },
+  {
+    "invoiceId": "INV-900448",
+    "orderId": "ORD-500448",
+    "customerId": "CUS-200448",
+    "invoiceAmount": 1250.53,
+    "invoiceDate": "2026-07-09T08:17:46.271Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500448"
+  },
+  {
+    "invoiceId": "INV-900449",
+    "orderId": "ORD-500449",
+    "customerId": "CUS-200449",
+    "invoiceAmount": 94365.85,
+    "invoiceDate": "2026-07-07T15:07:17.467Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500449"
+  },
+  {
+    "invoiceId": "INV-900450",
+    "orderId": "ORD-500450",
+    "customerId": "CUS-200450",
+    "invoiceAmount": 19163.25,
+    "invoiceDate": "2026-08-26T05:23:40.052Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500450"
+  },
+  {
+    "invoiceId": "INV-900451",
+    "orderId": "ORD-500451",
+    "customerId": "CUS-200451",
+    "invoiceAmount": 57963.27,
+    "invoiceDate": "2026-08-21T02:39:08.644Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500451"
+  },
+  {
+    "invoiceId": "INV-900452",
+    "orderId": "ORD-500452",
+    "customerId": "CUS-200452",
+    "invoiceAmount": 60228.06,
+    "invoiceDate": "2026-08-09T04:21:13.606Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500452"
+  },
+  {
+    "invoiceId": "INV-900453",
+    "orderId": "ORD-500453",
+    "customerId": "CUS-200453",
+    "invoiceAmount": 55571.31,
+    "invoiceDate": "2026-08-19T06:28:11.798Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500453"
+  },
+  {
+    "invoiceId": "INV-900454",
+    "orderId": "ORD-500454",
+    "customerId": "CUS-200454",
+    "invoiceAmount": 36134.3,
+    "invoiceDate": "2026-08-27T04:48:00.336Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500454"
+  },
+  {
+    "invoiceId": "INV-900455",
+    "orderId": "ORD-500455",
+    "customerId": "CUS-200455",
+    "invoiceAmount": 83299.15,
+    "invoiceDate": "2026-07-15T19:25:02.600Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500455"
+  },
+  {
+    "invoiceId": "INV-900456",
+    "orderId": "ORD-500456",
+    "customerId": "CUS-200456",
+    "invoiceAmount": 48348.22,
+    "invoiceDate": "2026-08-24T12:46:46.041Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500456"
+  },
+  {
+    "invoiceId": "INV-900457",
+    "orderId": "ORD-500457",
+    "customerId": "CUS-200457",
+    "invoiceAmount": 30699.73,
+    "invoiceDate": "2026-08-18T00:51:26.978Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500457"
+  },
+  {
+    "invoiceId": "INV-900458",
+    "orderId": "ORD-500458",
+    "customerId": "CUS-200458",
+    "invoiceAmount": 35537.21,
+    "invoiceDate": "2026-08-17T21:25:48.273Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500458"
+  },
+  {
+    "invoiceId": "INV-900459",
+    "orderId": "ORD-500459",
+    "customerId": "CUS-200459",
+    "invoiceAmount": 3777.27,
+    "invoiceDate": "2026-08-12T09:00:58.548Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500459"
+  },
+  {
+    "invoiceId": "INV-900460",
+    "orderId": "ORD-500460",
+    "customerId": "CUS-200460",
+    "invoiceAmount": 93412.02,
+    "invoiceDate": "2026-08-18T14:25:06.231Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500460"
+  },
+  {
+    "invoiceId": "INV-900461",
+    "orderId": "ORD-500461",
+    "customerId": "CUS-200461",
+    "invoiceAmount": 86656.42,
+    "invoiceDate": "2026-08-25T23:07:56.022Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500461"
+  },
+  {
+    "invoiceId": "INV-900462",
+    "orderId": "ORD-500462",
+    "customerId": "CUS-200462",
+    "invoiceAmount": 16741.9,
+    "invoiceDate": "2026-08-13T16:02:26.106Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500462"
+  },
+  {
+    "invoiceId": "INV-900463",
+    "orderId": "ORD-500463",
+    "customerId": "CUS-200463",
+    "invoiceAmount": 58595.43,
+    "invoiceDate": "2026-07-29T10:14:18.283Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500463"
+  },
+  {
+    "invoiceId": "INV-900464",
+    "orderId": "ORD-500464",
+    "customerId": "CUS-200464",
+    "invoiceAmount": 86090.98,
+    "invoiceDate": "2026-07-29T00:54:51.188Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500464"
+  },
+  {
+    "invoiceId": "INV-900465",
+    "orderId": "ORD-500465",
+    "customerId": "CUS-200465",
+    "invoiceAmount": 75599.27,
+    "invoiceDate": "2026-08-20T16:35:01.770Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500465"
+  },
+  {
+    "invoiceId": "INV-900466",
+    "orderId": "ORD-500466",
+    "customerId": "CUS-200466",
+    "invoiceAmount": 82044.47,
+    "invoiceDate": "2026-08-04T04:53:45.407Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500466"
+  },
+  {
+    "invoiceId": "INV-900467",
+    "orderId": "ORD-500467",
+    "customerId": "CUS-200467",
+    "invoiceAmount": 60504.87,
+    "invoiceDate": "2026-07-11T20:49:06.622Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500467"
+  },
+  {
+    "invoiceId": "INV-900468",
+    "orderId": "ORD-500468",
+    "customerId": "CUS-200468",
+    "invoiceAmount": 18510.32,
+    "invoiceDate": "2026-08-24T07:45:33.331Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500468"
+  },
+  {
+    "invoiceId": "INV-900469",
+    "orderId": "ORD-500469",
+    "customerId": "CUS-200469",
+    "invoiceAmount": 66763.56,
+    "invoiceDate": "2026-08-09T08:37:14.984Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500469"
+  },
+  {
+    "invoiceId": "INV-900470",
+    "orderId": "ORD-500470",
+    "customerId": "CUS-200470",
+    "invoiceAmount": 99413.3,
+    "invoiceDate": "2026-08-08T10:45:09.077Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500470"
+  },
+  {
+    "invoiceId": "INV-900471",
+    "orderId": "ORD-500471",
+    "customerId": "CUS-200471",
+    "invoiceAmount": 11679.46,
+    "invoiceDate": "2026-07-25T19:56:16.667Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500471"
+  },
+  {
+    "invoiceId": "INV-900472",
+    "orderId": "ORD-500472",
+    "customerId": "CUS-200472",
+    "invoiceAmount": 79813.69,
+    "invoiceDate": "2026-08-09T12:55:50.911Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500472"
+  },
+  {
+    "invoiceId": "INV-900473",
+    "orderId": "ORD-500473",
+    "customerId": "CUS-200473",
+    "invoiceAmount": 55670.28,
+    "invoiceDate": "2026-07-14T04:56:24.302Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500473"
+  },
+  {
+    "invoiceId": "INV-900474",
+    "orderId": "ORD-500474",
+    "customerId": "CUS-200474",
+    "invoiceAmount": 93900.21,
+    "invoiceDate": "2026-07-17T06:36:57.707Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500474"
+  },
+  {
+    "invoiceId": "INV-900475",
+    "orderId": "ORD-500475",
+    "customerId": "CUS-200475",
+    "invoiceAmount": 53942.44,
+    "invoiceDate": "2026-07-05T08:39:21.957Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500475"
+  },
+  {
+    "invoiceId": "INV-900476",
+    "orderId": "ORD-500476",
+    "customerId": "CUS-200476",
+    "invoiceAmount": 85695.41,
+    "invoiceDate": "2026-08-13T07:59:17.827Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500476"
+  },
+  {
+    "invoiceId": "INV-900477",
+    "orderId": "ORD-500477",
+    "customerId": "CUS-200477",
+    "invoiceAmount": 69910.15,
+    "invoiceDate": "2026-07-16T23:33:48.079Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500477"
+  },
+  {
+    "invoiceId": "INV-900478",
+    "orderId": "ORD-500478",
+    "customerId": "CUS-200478",
+    "invoiceAmount": 58090.19,
+    "invoiceDate": "2026-08-12T22:08:50.326Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500478"
+  },
+  {
+    "invoiceId": "INV-900479",
+    "orderId": "ORD-500479",
+    "customerId": "CUS-200479",
+    "invoiceAmount": 35880.71,
+    "invoiceDate": "2026-08-25T18:38:45.495Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500479"
+  },
+  {
+    "invoiceId": "INV-900480",
+    "orderId": "ORD-500480",
+    "customerId": "CUS-200480",
+    "invoiceAmount": 41661.07,
+    "invoiceDate": "2026-07-15T03:30:22.797Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500480"
+  },
+  {
+    "invoiceId": "INV-900481",
+    "orderId": "ORD-500481",
+    "customerId": "CUS-200481",
+    "invoiceAmount": 17470.49,
+    "invoiceDate": "2026-08-29T07:06:58.092Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500481"
+  },
+  {
+    "invoiceId": "INV-900482",
+    "orderId": "ORD-500482",
+    "customerId": "CUS-200482",
+    "invoiceAmount": 94738.19,
+    "invoiceDate": "2026-08-12T08:35:29.513Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500482"
+  },
+  {
+    "invoiceId": "INV-900483",
+    "orderId": "ORD-500483",
+    "customerId": "CUS-200483",
+    "invoiceAmount": 3351.12,
+    "invoiceDate": "2026-08-25T00:36:35.638Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500483"
+  },
+  {
+    "invoiceId": "INV-900484",
+    "orderId": "ORD-500484",
+    "customerId": "CUS-200484",
+    "invoiceAmount": 68352.58,
+    "invoiceDate": "2026-07-12T06:43:07.917Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500484"
+  },
+  {
+    "invoiceId": "INV-900485",
+    "orderId": "ORD-500485",
+    "customerId": "CUS-200485",
+    "invoiceAmount": 47147.13,
+    "invoiceDate": "2026-08-26T04:43:25.130Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500485"
+  },
+  {
+    "invoiceId": "INV-900486",
+    "orderId": "ORD-500486",
+    "customerId": "CUS-200486",
+    "invoiceAmount": 31516.32,
+    "invoiceDate": "2026-07-18T05:06:20.892Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500486"
+  },
+  {
+    "invoiceId": "INV-900487",
+    "orderId": "ORD-500487",
+    "customerId": "CUS-200487",
+    "invoiceAmount": 47758.57,
+    "invoiceDate": "2026-07-15T17:44:58.877Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500487"
+  },
+  {
+    "invoiceId": "INV-900488",
+    "orderId": "ORD-500488",
+    "customerId": "CUS-200488",
+    "invoiceAmount": 40148.4,
+    "invoiceDate": "2026-08-28T09:14:56.589Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500488"
+  },
+  {
+    "invoiceId": "INV-900489",
+    "orderId": "ORD-500489",
+    "customerId": "CUS-200489",
+    "invoiceAmount": 17758.62,
+    "invoiceDate": "2026-07-20T04:53:56.454Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500489"
+  },
+  {
+    "invoiceId": "INV-900490",
+    "orderId": "ORD-500490",
+    "customerId": "CUS-200490",
+    "invoiceAmount": 70369.94,
+    "invoiceDate": "2026-08-18T01:21:37.000Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500490"
+  },
+  {
+    "invoiceId": "INV-900491",
+    "orderId": "ORD-500491",
+    "customerId": "CUS-200491",
+    "invoiceAmount": 69360.58,
+    "invoiceDate": "2026-08-14T23:39:59.486Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500491"
+  },
+  {
+    "invoiceId": "INV-900492",
+    "orderId": "ORD-500492",
+    "customerId": "CUS-200492",
+    "invoiceAmount": 12525.11,
+    "invoiceDate": "2026-07-12T06:48:00.823Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500492"
+  },
+  {
+    "invoiceId": "INV-900493",
+    "orderId": "ORD-500493",
+    "customerId": "CUS-200493",
+    "invoiceAmount": 94454.82,
+    "invoiceDate": "2026-08-25T12:47:55.138Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500493"
+  },
+  {
+    "invoiceId": "INV-900494",
+    "orderId": "ORD-500494",
+    "customerId": "CUS-200494",
+    "invoiceAmount": 62956.07,
+    "invoiceDate": "2026-07-25T15:17:15.526Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500494"
+  },
+  {
+    "invoiceId": "INV-900495",
+    "orderId": "ORD-500495",
+    "customerId": "CUS-200495",
+    "invoiceAmount": 37827.95,
+    "invoiceDate": "2026-07-10T21:03:56.040Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500495"
+  },
+  {
+    "invoiceId": "INV-900496",
+    "orderId": "ORD-500496",
+    "customerId": "CUS-200496",
+    "invoiceAmount": 41141.03,
+    "invoiceDate": "2026-08-11T01:40:57.924Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500496"
+  },
+  {
+    "invoiceId": "INV-900497",
+    "orderId": "ORD-500497",
+    "customerId": "CUS-200497",
+    "invoiceAmount": 19887.13,
+    "invoiceDate": "2026-07-22T05:13:11.266Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500497"
+  },
+  {
+    "invoiceId": "INV-900498",
+    "orderId": "ORD-500498",
+    "customerId": "CUS-200498",
+    "invoiceAmount": 23612.63,
+    "invoiceDate": "2026-08-01T06:51:21.930Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500498"
+  },
+  {
+    "invoiceId": "INV-900499",
+    "orderId": "ORD-500499",
+    "customerId": "CUS-200499",
+    "invoiceAmount": 58566.41,
+    "invoiceDate": "2026-07-15T04:38:24.820Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500499"
+  },
+  {
+    "invoiceId": "INV-900500",
+    "orderId": "ORD-500500",
+    "customerId": "CUS-200500",
+    "invoiceAmount": 18578.11,
+    "invoiceDate": "2026-07-08T20:03:06.537Z",
+    "currency": "INR",
+    "status": "PAID",
+    "description": "Invoice for order ORD-500500"
+  }
+]
