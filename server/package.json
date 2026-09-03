@@ -8,7 +8,8 @@
     "start": "node server.js",
     "generate:data": "node utils/dataGenerator/generateData.js",
     "reconcile:data": "node services/reconciliation/index.js",
-    "test": "node --test services/reconciliation/__tests__/*.test.js utils/dataGenerator/__tests__/*.test.js"
+    "analyze:data": "node services/analytics/index.js",
+    "test": "node --test services/reconciliation/__tests__/*.test.js utils/dataGenerator/__tests__/*.test.js services/analytics/__tests__/*.test.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

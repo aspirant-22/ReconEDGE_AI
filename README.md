@@ -4,9 +4,9 @@
 
 ## Current Phase
 
-**Phase 3 — Deterministic Reconciliation Engine**
+**Phase 4 — Metrics & Analytics**
 
-Phase 3 implements a deterministic, ground-truth-isolated reconciliation engine that matches payments to bank transactions and invoices, detects anomalies, and evaluates prediction accuracy against ground truth.
+Phase 4 builds a deterministic analytics layer on top of the reconciliation engine, transforming raw results into meaningful financial-control metrics for dashboard consumption.
 
 ## Tech Stack
 
@@ -255,6 +255,75 @@ The generator validates all generated data before writing files:
 - Ground truth references valid records
 - Scenario counts match payment count
 - Relationship consistency for each scenario
+
+## Phase 4 — Metrics & Analytics
+
+### Overview
+
+Phase 4 builds a deterministic analytics layer on top of the reconciliation engine. It transforms raw reconciliation results into meaningful financial-control metrics.
+
+### Architecture
+
+```
+reconciliation-results.json
+        ↓
+Phase 4 Metrics & Analytics
+        ↓
+Operational + Exception + Quality Metrics
+        ↓
+reconciliation-analytics.json
+```
+
+### Available Metrics
+
+| Category | Metrics |
+|----------|---------|
+| Overview | totalPayments, totalBankTransactions, totalInvoices, matchedRecords, paymentMatchRate, bankMatchRate, invoiceMatchRate, bankAssignmentAccuracy |
+| Exceptions | totalExceptions, exceptionRate, breakdown by category |
+| Severity | highSeverityCount, mediumSeverityCount, lowSeverityCount |
+| Financial Impact | totalPaymentAmount, totalBankAmount, matchedPaymentAmount, amountMismatchImpact |
+| Control Effectiveness | reconciliationRate, exceptionRate, cleanMatchRate, controlEffectivenessScore |
+| Health | healthStatus (HEALTHY/WARNING/CRITICAL), healthReason |
+
+### Severity Model
+
+| Severity | Categories |
+|----------|-----------|
+| HIGH | MISSING_BANK_TRANSACTION, UNMATCHED_BANK_TRANSACTION, DUPLICATE_BANK_TRANSACTION |
+| MEDIUM | AMOUNT_MISMATCH, DATE_MISMATCH |
+
+### Health Classification
+
+| Status | Threshold |
+|--------|-----------|
+| HEALTHY | Exception rate < 10% |
+| WARNING | Exception rate >= 10% and < 25% |
+| CRITICAL | Exception rate >= 25% |
+
+### Running
+
+```bash
+cd server
+
+# Generate analytics
+npm run analyze:data
+```
+
+### Output
+
+Generated in `data/generated/`:
+- `reconciliation-analytics.json`
+
+### Phase 4 vs Phase 3
+
+| Aspect | Phase 3 (Reconciliation Metrics) | Phase 4 (Analytics) |
+|--------|----------------------------------|---------------------|
+| Purpose | Evaluation correctness | Business/operational metrics |
+| Input | Reconciliation results + ground truth | Reconciliation results |
+| Ground Truth | Required | Not used |
+| Output | reconciliation-metrics.json | reconciliation-analytics.json |
+
+**Phase 4 does not use Gemini or AI.**
 
 ## Frontend Routes
 
