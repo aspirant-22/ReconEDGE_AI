@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import FinanceQA from '../FinanceQA';
 
 vi.mock('../../services/api', () => ({
@@ -10,6 +11,12 @@ vi.mock('../../services/api', () => ({
 }));
 
 import api from '../../services/api';
+
+vi.mock('../../contexts/ReconciliationContext', () => ({
+  useReconciliation: vi.fn(),
+}));
+
+import { useReconciliation } from '../../contexts/ReconciliationContext';
 
 const statusResponse = { data: { success: true, available: true, model: 'gemini' } };
 
@@ -33,28 +40,29 @@ describe('FinanceQA Page', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     api.get.mockResolvedValue(statusResponse);
+    useReconciliation.mockReturnValue({ runs: [], runsLoading: false, selectedRunId: null, setSelectedRunId: vi.fn(), selectedRun: null, refreshRuns: vi.fn() });
   });
 
   it('renders the page header', () => {
-    render(<FinanceQA />);
+    render(<MemoryRouter><FinanceQA /></MemoryRouter>);
     expect(screen.getByRole('heading', { name: /Finance Q&A/ })).toBeInTheDocument();
     expect(screen.getByText(/Ask natural-language questions/)).toBeInTheDocument();
   });
 
   it('renders advisory banner', () => {
-    render(<FinanceQA />);
+    render(<MemoryRouter><FinanceQA /></MemoryRouter>);
     expect(screen.getByText(/AI Finance Copilot/)).toBeInTheDocument();
   });
 
   it('renders suggested questions', async () => {
-    render(<FinanceQA />);
+    render(<MemoryRouter><FinanceQA /></MemoryRouter>);
     expect(screen.getByText('What is the overall reconciliation status?')).toBeInTheDocument();
     expect(screen.getByText('How many exceptions are there and why?')).toBeInTheDocument();
   });
 
   it('submits a question and displays the answer', async () => {
     api.post.mockResolvedValue(qaSuccessResponse);
-    render(<FinanceQA />);
+    render(<MemoryRouter><FinanceQA /></MemoryRouter>);
 
     fireEvent.change(screen.getByPlaceholderText(/Ask about your reconciliation data/), {
       target: { value: 'What is the match rate?' },
@@ -75,7 +83,7 @@ describe('FinanceQA Page', () => {
   it('displays loading indicator while awaiting response', async () => {
     let resolvePost;
     api.post.mockReturnValue(new Promise((resolve) => { resolvePost = resolve; }));
-    render(<FinanceQA />);
+    render(<MemoryRouter><FinanceQA /></MemoryRouter>);
 
     fireEvent.change(screen.getByPlaceholderText(/Ask about your reconciliation data/), {
       target: { value: 'What is the match rate?' },
@@ -96,7 +104,7 @@ describe('FinanceQA Page', () => {
     api.post.mockRejectedValue({
       response: { data: { error: { message: 'AI analysis is temporarily unavailable.' } } },
     });
-    render(<FinanceQA />);
+    render(<MemoryRouter><FinanceQA /></MemoryRouter>);
 
     fireEvent.change(screen.getByPlaceholderText(/Ask about your reconciliation data/), {
       target: { value: 'What is the match rate?' },
@@ -109,7 +117,7 @@ describe('FinanceQA Page', () => {
   });
 
   it('does not submit an empty question', async () => {
-    render(<FinanceQA />);
+    render(<MemoryRouter><FinanceQA /></MemoryRouter>);
     const askBtn = screen.getByRole('button', { name: /Ask/ });
     expect(askBtn).toBeDisabled();
 
@@ -122,7 +130,7 @@ describe('FinanceQA Page', () => {
 
   it('uses suggested question via click', async () => {
     api.post.mockResolvedValue(qaSuccessResponse);
-    render(<FinanceQA />);
+    render(<MemoryRouter><FinanceQA /></MemoryRouter>);
 
     fireEvent.click(screen.getByText('What is the overall reconciliation status?'));
 

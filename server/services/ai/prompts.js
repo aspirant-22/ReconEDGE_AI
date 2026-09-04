@@ -62,6 +62,15 @@ function buildAnalysisPayload(exceptionRecord) {
     exceptionType: exceptionRecord.exceptionType,
   };
 
+  if (exceptionRecord.runName) {
+    payload.run = {
+      name: exceptionRecord.runName,
+      status: exceptionRecord.runStatus || null,
+      periodStart: exceptionRecord.runPeriodStart || null,
+      periodEnd: exceptionRecord.runPeriodEnd || null,
+    };
+  }
+
   if (exceptionRecord.paymentId) {
     payload.payment = {
       paymentId: exceptionRecord.paymentId,

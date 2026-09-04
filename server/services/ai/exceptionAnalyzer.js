@@ -2,6 +2,7 @@ const geminiClient = require('./geminiClient');
 const { buildPrompt, buildAnalysisPayload } = require('./prompts');
 const { parseResponse } = require('./responseParser');
 const { validateAnalysis } = require('./aiGuardrails');
+const logger = require('../../utils/logger');
 
 const GROUND_TRUTH_FIELDS = [
   'expectedScenario',
@@ -21,8 +22,23 @@ const VALID_EXCEPTION_TYPES = [
 
 const analysisCache = new Map();
 
-function getCacheKey(exceptionId, exceptionRecord) {
-  return `${exceptionId}:${JSON.stringify(exceptionRecord)}`;
+// Bound the in-memory cache so repeated unique exceptions cannot grow memory unboundedly.
+const ANALYSIS_CACHE_MAX_SIZE = 200;
+
+function cacheGet(key) {
+  return analysisCache.get(key);
+}
+
+function cacheSet(key, value) {
+  if (analysisCache.size >= ANALYSIS_CACHE_MAX_SIZE && !analysisCache.has(key)) {
+    const oldestKey = analysisCache.keys().next().value;
+    analysisCache.delete(oldestKey);
+  }
+  analysisCache.set(key, value);
+}
+
+function getCacheKey(exceptionId, exceptionRecord, scope) {
+  return `${scope || 'default'}:${exceptionId}:${JSON.stringify(exceptionRecord)}`;
 }
 
 function validateExceptionRecord(record) {
@@ -54,15 +70,15 @@ function buildPayload(exceptionRecord) {
   return payload;
 }
 
-async function analyzeException(exceptionId, exceptionRecord) {
+async function analyzeException(exceptionId, exceptionRecord, scope) {
   const validation = validateExceptionRecord(exceptionRecord);
   if (!validation.valid) {
     return { success: false, error: { code: 'AI_REQUEST_INVALID', message: validation.error } };
   }
 
-  const cacheKey = getCacheKey(exceptionId, exceptionRecord);
-  if (analysisCache.has(cacheKey)) {
-    return { success: true, analysis: analysisCache.get(cacheKey), cached: true };
+  const cacheKey = getCacheKey(exceptionId, exceptionRecord, scope);
+  if (cacheGet(cacheKey)) {
+    return { success: true, analysis: cacheGet(cacheKey), cached: true };
   }
 
   if (!geminiClient.isAvailable()) {
@@ -75,17 +91,17 @@ async function analyzeException(exceptionId, exceptionRecord) {
     const parsed = parseResponse(rawText);
 
     if (!parsed) {
-      console.log('AI analysis validation failed: Could not parse response');
+      logger.warn('AI analysis validation failed: Could not parse response');
       return { success: false, error: { code: 'AI_INVALID_RESPONSE', message: 'AI returned an unparseable response.' } };
     }
 
     const guardrailResult = validateAnalysis(parsed);
     if (!guardrailResult.valid) {
-      console.log('AI analysis validation failed:', guardrailResult.error);
+      logger.warn(`AI analysis validation failed: ${logger.sanitize(String(guardrailResult.error))}`);
       return { success: false, error: { code: 'AI_INVALID_RESPONSE', message: guardrailResult.error } };
     }
 
-    analysisCache.set(cacheKey, guardrailResult.data);
+    cacheSet(cacheKey, guardrailResult.data);
 
     return { success: true, analysis: guardrailResult.data };
   } catch (error) {
@@ -95,7 +111,7 @@ async function analyzeException(exceptionId, exceptionRecord) {
     if (error.message === 'AI_TIMEOUT') {
       return { success: false, error: { code: 'AI_TIMEOUT', message: 'AI request timed out.' } };
     }
-    console.log('AI analysis unavailable:', error.message);
+    logger.error(`AI analysis unavailable: ${logger.sanitize(error.message)}`);
     return { success: false, error: { code: 'AI_UNAVAILABLE', message: 'AI analysis is temporarily unavailable.' } };
   }
 }

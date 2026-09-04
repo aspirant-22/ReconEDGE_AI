@@ -178,7 +178,17 @@ function buildContextForIntent(analytics, results, intent) {
   }
 }
 
-function buildContext(question, intent) {
+function buildContext(question, intent, options) {
+  // Run-aware path: the caller supplies run-specific analytics + results
+  // (already ownership-verified). This keeps real-run Q&A grounded in the
+  // selected run only, never the global sample dataset.
+  if (options && options.analytics) {
+    const analytics = options.analytics;
+    const results = Array.isArray(options.results) ? options.results : [];
+    const context = buildContextForIntent(analytics, results, intent);
+    return { success: true, context, analytics, results };
+  }
+
   const analytics = loadAnalytics();
   if (!analytics) {
     return { success: false, error: { code: 'DATA_NOT_FOUND', message: 'Analytics data not available.' } };

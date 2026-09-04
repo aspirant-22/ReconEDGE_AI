@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const logger = require('../utils/logger');
 const { geminiClient, analyzeException, VALID_EXCEPTION_TYPES } = require('../services/ai');
+const { createAuditEvent } = require('./auditLogController');
 
 const RESULTS_PATH = path.join(__dirname, '..', '..', 'data', 'generated', 'reconciliation-results.json');
 
@@ -60,6 +62,15 @@ exports.analyzeException = async (req, res) => {
     const result = await analyzeException(exceptionId, record);
 
     if (!result.success) {
+      createAuditEvent({
+        userId: req.user ? String(req.user._id) : null,
+        userName: req.user ? req.user.name : null,
+        action: 'EXCEPTION_ANALYSIS',
+        resource: 'EXCEPTION',
+        resourceId: exceptionId,
+        status: 'FAILED',
+      });
+
       const statusCode = result.error.code === 'AI_REQUEST_INVALID' ? 400
         : result.error.code === 'AI_CONFIG_ERROR' ? 503
         : result.error.code === 'AI_TIMEOUT' ? 504
@@ -72,6 +83,16 @@ exports.analyzeException = async (req, res) => {
       });
     }
 
+    createAuditEvent({
+      userId: req.user ? String(req.user._id) : null,
+      userName: req.user ? req.user.name : null,
+      action: 'EXCEPTION_ANALYSIS',
+      resource: 'EXCEPTION',
+      resourceId: exceptionId,
+      status: 'SUCCESS',
+      metadata: { exceptionType: record.exceptionType },
+    });
+
     res.json({
       success: true,
       exceptionId,
@@ -80,7 +101,7 @@ exports.analyzeException = async (req, res) => {
       cached: result.cached || false,
     });
   } catch (error) {
-    console.log('AI controller error:', error.message);
+    logger.error(`AI controller error: ${logger.sanitize(error.message)}`);
     res.status(500).json({
       success: false,
       error: { code: 'AI_UNAVAILABLE', message: 'AI analysis is temporarily unavailable.' },

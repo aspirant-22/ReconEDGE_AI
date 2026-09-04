@@ -91,7 +91,16 @@ vi.mock('../../hooks/useDashboardData', () => ({
   useDashboardData: vi.fn(),
 }));
 
+vi.mock('../../contexts/ReconciliationContext', () => ({
+  useReconciliation: vi.fn(),
+}));
+
 import { useDashboardData } from '../../hooks/useDashboardData';
+import { useReconciliation } from '../../contexts/ReconciliationContext';
+
+function defaultRecon() {
+  return { runs: [], runsLoading: false, selectedRunId: null, setSelectedRunId: vi.fn(), selectedRun: null, refreshRuns: vi.fn() };
+}
 
 function renderDashboard(ui) {
   return render(<MemoryRouter>{ui}</MemoryRouter>);
@@ -100,6 +109,7 @@ function renderDashboard(ui) {
 describe('Dashboard Page', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    useReconciliation.mockReturnValue(defaultRecon());
   });
 
   it('renders loading state with skeleton elements', () => {

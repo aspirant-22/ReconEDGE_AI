@@ -43,6 +43,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
+    try {
+      api.post('/auth/logout').catch(() => {});
+    } catch {
+      // best-effort audit trail; ignore failures
+    }
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     setUser(null);

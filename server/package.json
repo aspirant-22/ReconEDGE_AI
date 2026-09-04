@@ -9,7 +9,7 @@
     "generate:data": "node utils/dataGenerator/generateData.js",
     "reconcile:data": "node services/reconciliation/index.js",
     "analyze:data": "node services/analytics/index.js",
-    "test": "node --test services/reconciliation/__tests__/*.test.js utils/dataGenerator/__tests__/*.test.js services/analytics/__tests__/*.test.js services/ai/__tests__/*.test.js"
+    "test": "node --test services/reconciliation/__tests__/*.test.js services/reconciliationAdapter/__tests__/*.test.js services/fileProcessing/__tests__/*.test.js utils/dataGenerator/__tests__/*.test.js services/analytics/__tests__/*.test.js services/ai/__tests__/*.test.js middleware/__tests__/*.test.js controllers/__tests__/*.test.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -19,7 +19,8 @@
     "express": "^4.21.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.1",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"

@@ -1,11 +1,15 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { ReconciliationProvider } from './contexts/ReconciliationContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import DashboardLayout from './layouts/DashboardLayout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Reconciliation from './pages/Reconciliation';
+import ReconRuns from './pages/ReconRuns';
+import CreateReconciliation from './pages/CreateReconciliation';
+import ReconRunDetail from './pages/ReconRunDetail';
 import Exceptions from './pages/Exceptions';
 import FinanceQA from './pages/FinanceQA';
 import AuditLogs from './pages/AuditLogs';
@@ -45,6 +49,9 @@ const AppRoutes = () => {
       >
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/reconciliation" element={<Reconciliation />} />
+        <Route path="/reconciliation/runs" element={<ReconRuns />} />
+        <Route path="/reconciliation/runs/new" element={<CreateReconciliation />} />
+        <Route path="/reconciliation/runs/:runId" element={<ReconRunDetail />} />
         <Route path="/exceptions" element={<Exceptions />} />
         <Route path="/finance-qa" element={<FinanceQA />} />
         <Route path="/audit-logs" element={<AuditLogs />} />
@@ -58,7 +65,9 @@ const App = () => {
   return (
     <Router>
       <AuthProvider>
-        <AppRoutes />
+        <ReconciliationProvider>
+          <AppRoutes />
+        </ReconciliationProvider>
       </AuthProvider>
     </Router>
   );

@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { Send, Shield, Loader2, Sparkles, RefreshCw, AlertCircle } from 'lucide-react';
 import api from '../services/api';
+import { useReconciliation } from '../contexts/ReconciliationContext';
+import RunSelector from '../components/run/RunSelector';
 
 const SUGGESTED_QUESTIONS = [
   'What is the overall reconciliation status?',
@@ -10,6 +12,7 @@ const SUGGESTED_QUESTIONS = [
 ];
 
 const FinanceQA = () => {
+  const { selectedRunId, selectedRun } = useReconciliation();
   const [question, setQuestion] = useState('');
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -36,7 +39,7 @@ const FinanceQA = () => {
     setLoading(true);
 
     try {
-      const response = await api.post('/ai/finance-qa', { question: trimmed });
+      const response = await api.post('/ai/finance-qa', { question: trimmed, runId: selectedRunId || undefined });
       if (response.data.success) {
         setMessages((prev) => [...prev, { role: 'assistant', ...response.data.data }]);
       } else {
@@ -65,11 +68,14 @@ const FinanceQA = () => {
 
   return (
     <div>
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">Finance Q&A</h1>
-        <p className="text-sm text-gray-500 mt-1">
-          Ask natural-language questions about your reconciliation and analytics data
-        </p>
+      <div className="flex items-start justify-between flex-wrap gap-3 mb-8">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900">Finance Q&A</h1>
+          <p className="text-sm text-gray-500 mt-1">
+            Ask natural-language questions about your reconciliation and analytics data
+          </p>
+        </div>
+        <RunSelector />
       </div>
 
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 flex items-start gap-3">
@@ -77,8 +83,9 @@ const FinanceQA = () => {
         <div className="text-sm text-blue-800">
           <p className="font-medium">AI Finance Copilot — Grounded & Advisory</p>
           <p className="mt-1">
-            Answers are generated from this system's deterministic reconciliation analytics only.
-            AI responses are advisory and cannot modify any financial records.
+            {selectedRunId
+              ? `Answers are grounded only in "${selectedRun?.name || 'the selected run'}" reconciliation analytics.`
+              : 'Answers use the demo sample dataset. Select a reconciliation run to scope Q&A to its real analytics.'}
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const { createAuditEvent } = require('./auditLogController');
 
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
@@ -72,6 +73,14 @@ exports.login = async (req, res, next) => {
 
     const token = generateToken(user._id);
 
+    createAuditEvent({
+      userId: String(user._id),
+      userName: user.name,
+      action: 'LOGIN',
+      resource: 'AUTH',
+      status: 'SUCCESS',
+    });
+
     res.json({
       success: true,
       token,
@@ -85,6 +94,21 @@ exports.login = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+};
+
+exports.logout = async (req, res) => {
+  createAuditEvent({
+    userId: String(req.user._id),
+    userName: req.user.name,
+    action: 'LOGOUT',
+    resource: 'AUTH',
+    status: 'SUCCESS',
+  });
+
+  res.json({
+    success: true,
+    message: 'Logged out successfully',
+  });
 };
 
 exports.getMe = async (req, res, next) => {

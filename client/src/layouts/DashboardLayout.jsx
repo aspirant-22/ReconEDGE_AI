@@ -8,11 +8,13 @@ import {
   LogOut,
   User,
   MessageSquareText,
+  FolderOpen,
 } from 'lucide-react';
 
 const navItems = [
   { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { to: '/reconciliation', label: 'Reconciliation', icon: ArrowLeftRight },
+  { to: '/reconciliation/runs', label: 'My Runs', icon: FolderOpen },
   { to: '/exceptions', label: 'Exceptions', icon: AlertTriangle },
   { to: '/finance-qa', label: 'Finance Q&A', icon: MessageSquareText },
   { to: '/audit-logs', label: 'Audit Logs', icon: FileText },

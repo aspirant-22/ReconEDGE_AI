@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import api from '../services/api';
 
-export function useDashboardData() {
+export function useDashboardData(runId) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,7 +12,8 @@ export function useDashboardData() {
     setError(null);
 
     try {
-      const response = await api.get('/dashboard');
+      const params = runId ? { runId } : undefined;
+      const response = await api.get('/dashboard', { params });
       const payload = response.data;
 
       if (payload.success && payload.hasData) {
@@ -26,11 +27,15 @@ export function useDashboardData() {
       }
     } catch (err) {
       if (err.response?.status === 401) return;
+      if (err.response?.status === 404) {
+        setError('The selected reconciliation run does not exist or you do not have access to it.');
+        return;
+      }
       setError(err.response?.data?.error?.message || 'Unable to load dashboard data. Please try again.');
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [runId]);
 
   useEffect(() => {
     fetchDashboard();

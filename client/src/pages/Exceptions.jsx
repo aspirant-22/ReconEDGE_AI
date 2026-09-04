@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
-import { AlertTriangle, Brain, Loader2, ChevronDown, ChevronUp, Shield } from 'lucide-react';
-import api from '../services/api';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { AlertTriangle, Brain, Loader2, ChevronDown, ChevronUp, Shield, Search } from 'lucide-react';
+import { recApi } from '../services/recApi';
+import { useReconciliation } from '../contexts/ReconciliationContext';
+import RunSelector from '../components/run/RunSelector';
 
 const EXCEPTION_ICONS = {
   MISSING_BANK_TRANSACTION: '🏦',
@@ -16,62 +18,106 @@ const RISK_COLORS = {
   HIGH: 'bg-red-100 text-red-800',
 };
 
+const EXCEPTION_TYPES = [
+  { value: '', label: 'All Exception Types' },
+  { value: 'MISSING_BANK_TRANSACTION', label: 'Missing Bank Transaction' },
+  { value: 'AMOUNT_MISMATCH', label: 'Amount Mismatch' },
+  { value: 'DUPLICATE_BANK_TRANSACTION', label: 'Duplicate Bank Transaction' },
+  { value: 'DATE_MISMATCH', label: 'Date Mismatch' },
+  { value: 'UNMATCHED_BANK_TRANSACTION', label: 'Unmatched Bank Transaction' },
+];
+
+function loadDemoExceptions() {
+  return fetch('/data/generated/reconciliation-results.json')
+    .then((r) => r.json())
+    .then((all) => all.filter((x) => x.status === 'EXCEPTION'))
+    .catch(() => []);
+}
+
 const Exceptions = () => {
+  const { selectedRunId, selectedRun } = useReconciliation();
   const [exceptions, setExceptions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [aiStatus, setAiStatus] = useState(null);
   const [analyzing, setAnalyzing] = useState(null);
   const [analyses, setAnalyses] = useState({});
   const [expandedRow, setExpandedRow] = useState(null);
+  const [exceptionType, setExceptionType] = useState('');
+  const [severity, setSeverity] = useState('');
+  const [search, setSearch] = useState('');
+  const [appliedFilter, setAppliedFilter] = useState({ exceptionType: '', severity: '', search: '' });
+  const promoRef = useRef(false);
 
   useEffect(() => {
-    loadData();
+    if (promoRef.current) return;
+    promoRef.current = true;
+    apiStatusFetch();
   }, []);
 
-  const loadData = async () => {
+  const apiStatusFetch = async () => {
+    const statusRes = await fetch('/api/ai/status', { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } })
+      .then((r) => r.json()).catch(() => ({ available: false }));
+    setAiStatus(statusRes);
+  };
+
+  const loadData = useCallback(async () => {
+    setLoading(true);
     try {
-      const [resultsRes, statusRes] = await Promise.all([
-        api.get('/ai/status').catch(() => ({ data: { available: false } })),
-        fetch('/data/generated/reconciliation-results.json').then((r) => r.json()).catch(() => []),
-      ]);
-
-      setAiStatus(statusRes.data);
-
-      const exceptionRecords = resultsRes.data && Array.isArray(resultsRes.data)
-        ? resultsRes.data.filter((r) => r.status === 'EXCEPTION')
-        : [];
-
-      if (exceptionRecords.length === 0) {
-        try {
-          const response = await fetch('/data/generated/reconciliation-results.json');
-          const allResults = await response.json();
-          setExceptions(allResults.filter((r) => r.status === 'EXCEPTION'));
-        } catch {
-          setExceptions([]);
-        }
+      if (!selectedRunId) {
+        const demo = await loadDemoExceptions();
+        setExceptions(demo);
       } else {
-        setExceptions(exceptionRecords);
+        const params = {};
+        if (appliedFilter.exceptionType) params.exceptionType = appliedFilter.exceptionType;
+        if (appliedFilter.severity) params.severity = appliedFilter.severity;
+        if (appliedFilter.search.trim()) params.search = appliedFilter.search.trim();
+        params.limit = 100;
+        const response = await recApi.getExceptions(selectedRunId, params);
+        setExceptions(response.data?.data || []);
       }
-    } catch {
-      try {
-        const response = await fetch('/data/generated/reconciliation-results.json');
-        const allResults = await response.json();
-        setExceptions(allResults.filter((r) => r.status === 'EXCEPTION'));
-      } catch {
-        setExceptions([]);
-      }
+    } catch (err) {
+      if (err.response?.status === 401) return;
+      setExceptions([]);
     } finally {
       setLoading(false);
     }
+  }, [selectedRunId, appliedFilter]);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
+  // Switching runs (or entering demo mode) must never display the previous
+  // run's AI analysis responses. Reset all run-local UI state on run change.
+  useEffect(() => {
+    setAnalyses({});
+    setExpandedRow(null);
+    setAnalyzing(null);
+  }, [selectedRunId]);
+
+  const applyFilters = () => {
+    setAppliedFilter({ exceptionType, severity, search });
   };
 
   const handleAnalyze = async (exception) => {
-    const id = exception.paymentId || exception.bankTransactionId;
+    const id = exception.paymentId || exception.bankTransactionId || exception.invoiceId;
     setAnalyzing(id);
 
     try {
-      const response = await api.post('/ai/analyze-exception', { exceptionId: id });
-      if (response.data.success) {
+      let response;
+      if (selectedRunId) {
+        response = await recApi.analyzeException(selectedRunId, id);
+      } else {
+        response = await fetch('/api/ai/analyze-exception', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+          body: JSON.stringify({ exceptionId: id }),
+        }).then((r) => r.json());
+      }
+      if (response.data?.success) {
         setAnalyses((prev) => ({ ...prev, [id]: response.data.analysis }));
       }
     } catch (err) {
@@ -106,9 +152,12 @@ const Exceptions = () => {
 
   return (
     <div>
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">Exceptions</h1>
-        <p className="text-sm text-gray-500 mt-1">Review and resolve reconciliation discrepancies</p>
+      <div className="flex flex-wrap items-start justify-between gap-3 mb-6">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900">Exceptions</h1>
+          <p className="text-sm text-gray-500 mt-1">Review and resolve reconciliation discrepancies</p>
+        </div>
+        <RunSelector />
       </div>
 
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 flex items-start gap-3">
@@ -122,35 +171,87 @@ const Exceptions = () => {
         </div>
       </div>
 
+      {!selectedRunId && (
+        <div className="mb-6 text-xs text-blue-700 bg-blue-50 border border-blue-200 rounded-lg px-3 py-2">
+          Showing demo sample exceptions. Select a reconciliation run above to view your real run's exceptions.
+        </div>
+      )}
+
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
-          <div>
-            <h2 className="font-semibold text-gray-900">Reconciliation Exceptions</h2>
-            <p className="text-sm text-gray-500">{exceptions.length} exceptions detected</p>
-          </div>
-          {aiStatus && (
-            <div className={`text-xs px-3 py-1 rounded-full ${aiStatus.available ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
-              AI: {aiStatus.available ? `Available (${aiStatus.model})` : 'Not Configured'}
+        <div className="px-6 py-4 border-b border-gray-200">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h2 className="font-semibold text-gray-900">
+                {selectedRunId ? `Exceptions — ${selectedRun?.name || 'Run'}` : 'Reconciliation Exceptions'}
+              </h2>
+              <p className="text-sm text-gray-500">{exceptions.length} exceptions detected</p>
             </div>
-          )}
+            {aiStatus && (
+              <div className={`text-xs px-3 py-1 rounded-full ${aiStatus.available ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
+                AI: {aiStatus.available ? 'Available' : 'Not Configured'}
+              </div>
+            )}
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="relative flex-1 min-w-[200px]">
+              <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter') applyFilters(); }}
+                placeholder="Search by payment/bank/invoice ID..."
+                aria-label="search exceptions"
+                className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              />
+            </div>
+            <select
+              value={exceptionType}
+              onChange={(e) => setExceptionType(e.target.value)}
+              aria-label="exception type filter"
+              className="px-3 py-2 text-sm border border-gray-200 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            >
+              {EXCEPTION_TYPES.map((t) => (
+                <option key={t.value} value={t.value}>{t.label}</option>
+              ))}
+            </select>
+            <select
+              value={severity}
+              onChange={(e) => setSeverity(e.target.value)}
+              aria-label="severity filter"
+              className="px-3 py-2 text-sm border border-gray-200 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            >
+              <option value="">All Severities</option>
+              <option value="HIGH">High</option>
+              <option value="MEDIUM">Medium</option>
+              <option value="LOW">Low</option>
+            </select>
+            <button
+              onClick={applyFilters}
+              className="px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors"
+            >
+              Apply Filters
+            </button>
+          </div>
         </div>
 
         {exceptions.length === 0 ? (
           <div className="p-12 text-center">
             <AlertTriangle size={48} className="mx-auto mb-4 text-gray-300" />
             <h2 className="text-lg font-medium text-gray-900 mb-2">No Exceptions</h2>
-            <p className="text-sm text-gray-500">All records have been matched successfully.</p>
+            <p className="text-sm text-gray-500">All reconciled records passed the configured matching checks.</p>
           </div>
         ) : (
           <div className="divide-y divide-gray-100">
             {exceptions.map((exc) => {
-              const id = exc.paymentId || exc.bankTransactionId;
+              const id = exc.paymentId || exc.bankTransactionId || exc.invoiceId;
               const isExpanded = expandedRow === id;
               const analysis = analyses[id];
               const isAnalyzing = analyzing === id;
 
               return (
-                <div key={id} className="hover:bg-gray-50 transition-colors">
+                <div key={`${selectedRunId || 'demo'}-${id}`} className="hover:bg-gray-50 transition-colors">
                   <div
                     className="px-6 py-4 cursor-pointer flex items-center gap-4"
                     onClick={() => toggleRow(id)}
@@ -159,6 +260,11 @@ const Exceptions = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="font-medium text-gray-900 text-sm">{exc.exceptionType?.replace(/_/g, ' ')}</span>
+                        {exc.severity && (
+                          <span className={`text-xs px-2 py-0.5 rounded-full ${RISK_COLORS[exc.severity] || 'bg-gray-100 text-gray-600'}`}>
+                            {exc.severity}
+                          </span>
+                        )}
                         <span className="text-xs text-gray-400">|</span>
                         <span className="text-xs text-gray-500">{id}</span>
                       </div>
@@ -203,7 +309,7 @@ const Exceptions = () => {
                             <Brain size={16} className="text-primary-600" />
                             <span className="text-sm font-medium text-gray-900">AI Analysis</span>
                             <span className="text-xs text-gray-400">
-                              (Confidence: {Math.round(analysis.confidence * 100)}%)
+                              (Confidence: {Math.round((analysis.confidence || 0) * 100)}%)
                             </span>
                             {analysis.requiresHumanReview && (
                               <span className="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">
@@ -230,7 +336,7 @@ const Exceptions = () => {
                             <div>
                               <span className="text-gray-500 font-medium">Recommended Actions:</span>
                               <ul className="mt-1 space-y-1">
-                                {analysis.recommendedActions.map((action, i) => (
+                                {(analysis.recommendedActions || []).map((action, i) => (
                                   <li key={i} className="text-gray-700 flex items-start gap-2">
                                     <span className="text-primary-500 mt-0.5">•</span>
                                     {action}

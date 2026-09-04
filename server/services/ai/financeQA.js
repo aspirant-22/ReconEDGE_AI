@@ -2,6 +2,7 @@ const geminiClient = require('./geminiClient');
 const { buildFinanceQAPrompt } = require('./prompts');
 const { parseResponse } = require('./responseParser');
 const { buildContext } = require('./financeContext');
+const logger = require('../../utils/logger');
 
 const INTENTS = [
   'RECONCILIATION',
@@ -23,6 +24,21 @@ const GROUND_TRUTH_FIELDS = [
 ];
 
 const QA_CACHE = new Map();
+
+// Bound the in-memory cache so repeated unique questions cannot grow memory unboundedly.
+const QA_CACHE_MAX_SIZE = 200;
+
+function cacheGet(key) {
+  return QA_CACHE.get(key);
+}
+
+function cacheSet(key, value) {
+  if (QA_CACHE.size >= QA_CACHE_MAX_SIZE && !QA_CACHE.has(key)) {
+    const oldestKey = QA_CACHE.keys().next().value;
+    QA_CACHE.delete(oldestKey);
+  }
+  QA_CACHE.set(key, value);
+}
 
 const RECONCILIATION_KEYWORDS = [
   'reconcil', 'match rate', 'successfully reconciled', 'percentage', 'payment match',
@@ -231,7 +247,7 @@ function getDeterministicKeyMetrics(context) {
   return metrics;
 }
 
-async function askFinanceQuestion(question) {
+async function askFinanceQuestion(question, options) {
   if (!question || typeof question !== 'string' || question.trim().length === 0) {
     return { success: false, error: { code: 'QA_INVALID_INPUT', message: 'Question is required.' } };
   }
@@ -255,7 +271,7 @@ async function askFinanceQuestion(question) {
     };
   }
 
-  const contextResult = buildContext(trimmedQuestion, intent);
+  const contextResult = buildContext(trimmedQuestion, intent, options);
   if (!contextResult.success) {
     return { success: false, error: { code: 'DATA_NOT_FOUND', message: 'Financial data is not available.' } };
   }
@@ -279,9 +295,12 @@ async function askFinanceQuestion(question) {
     };
   }
 
-  const cacheKey = `${intent}:${trimmedQuestion.toLowerCase()}`;
-  if (QA_CACHE.has(cacheKey)) {
-    return { success: true, data: QA_CACHE.get(cacheKey), cached: true };
+  // Cache is scoped so answers for one run can never be served for another
+  // (even if exception/run ids collide across fixtures).
+  const scope = (options && options.scope) || 'default';
+  const cacheKey = `${scope}:${intent}:${trimmedQuestion.toLowerCase()}`;
+  if (cacheGet(cacheKey)) {
+    return { success: true, data: cacheGet(cacheKey), cached: true };
   }
 
   if (!geminiClient.isAvailable()) {
@@ -298,12 +317,12 @@ async function askFinanceQuestion(question) {
     }
 
     if (hasGroundTruthFields(parsed)) {
-      console.log('Finance QA guardrail: response contained ground-truth-like fields.');
+      logger.warn('Finance QA guardrail: response contained ground-truth-like fields.');
       return { success: false, error: { code: 'AI_INVALID_RESPONSE', message: 'Response validation failed.' } };
     }
 
     if (hasActionVerbs(parsed.answer)) {
-      console.log('Finance QA guardrail: answer suggests financial record mutation.');
+      logger.warn('Finance QA guardrail: answer suggests financial record mutation.');
       return { success: false, error: { code: 'AI_INVALID_RESPONSE', message: 'Response validation failed.' } };
     }
 
@@ -313,7 +332,7 @@ async function askFinanceQuestion(question) {
 
     const guardrailResult = validateFinanceAnswer(parsed);
     if (!guardrailResult.valid) {
-      console.log('Finance QA validation failed:', guardrailResult.error);
+      logger.warn(`Finance QA validation failed: ${logger.sanitize(String(guardrailResult.error))}`);
       return { success: false, error: { code: 'AI_INVALID_RESPONSE', message: guardrailResult.error } };
     }
 
@@ -328,7 +347,7 @@ async function askFinanceQuestion(question) {
       requiresHumanReview: guardrailResult.data.requiresHumanReview,
     };
 
-    QA_CACHE.set(cacheKey, result);
+    cacheSet(cacheKey, result);
 
     return { success: true, data: result };
   } catch (error) {
@@ -338,7 +357,7 @@ async function askFinanceQuestion(question) {
     if (error.message === 'AI_TIMEOUT') {
       return { success: false, error: { code: 'AI_TIMEOUT', message: 'AI request timed out.' } };
     }
-    console.log('Finance QA unavailable:', error.message);
+    logger.error(`Finance QA unavailable: ${logger.sanitize(error.message)}`);
     return { success: false, error: { code: 'AI_UNAVAILABLE', message: 'AI analysis is temporarily unavailable.' } };
   }
 }
