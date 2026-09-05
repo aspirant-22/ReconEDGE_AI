@@ -43,6 +43,8 @@ function normalizePayment(payment) {
   return {
     ...payment,
     paymentId: normalizeId(payment.paymentId),
+    referenceId: normalizeId(payment.referenceId),
+    invoiceId: normalizeId(payment.invoiceId),
     orderId: normalizeId(payment.orderId),
     customerId: normalizeId(payment.customerId),
     amount: Number(payment.amount),
@@ -70,6 +72,7 @@ function normalizeInvoice(invoice) {
   return {
     ...invoice,
     invoiceId: normalizeId(invoice.invoiceId),
+    referenceId: normalizeId(invoice.referenceId),
     orderId: normalizeId(invoice.orderId),
     customerId: normalizeId(invoice.customerId),
     invoiceAmount: Number(invoice.invoiceAmount),

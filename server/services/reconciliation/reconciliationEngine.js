@@ -27,9 +27,32 @@ function reconcile(payments, bankTransactions, invoices) {
     }
   }
 
+  // Duplicate-payment detection: within a duplicate-reference bank group, if
+  // more than one payment resolves to the same reference, every payment after
+  // the deterministically-first one is a duplicate payment. Never guessed from
+  // bank.referenceId === payment.paymentId.
+  const duplicateRefIds = new Set(duplicateGroups.map((g) => g.referenceId));
+  const paymentsByRef = new Map();
+  for (const p of normPayments) {
+    const refKey = p.referenceId || p.paymentId;
+    if (!refKey || !duplicateRefIds.has(refKey)) continue;
+    if (!paymentsByRef.has(refKey)) paymentsByRef.set(refKey, []);
+    paymentsByRef.get(refKey).push(p);
+  }
+  const duplicatePaymentIds = new Set();
+  for (const list of paymentsByRef.values()) {
+    if (list.length > 1) {
+      list.sort((a, b) => a.paymentId.localeCompare(b.paymentId));
+      for (const p of list.slice(1)) {
+        duplicatePaymentIds.add(p.paymentId);
+      }
+    }
+  }
+
   const results = [];
 
   for (const payment of normPayments) {
+    const isDuplicatePayment = duplicatePaymentIds.has(payment.paymentId);
     const bankMatch = matchPaymentToBank(payment, indexes, usedBankIds);
 
     let bankTransactionId = null;
@@ -43,11 +66,10 @@ function reconcile(payments, bankTransactions, invoices) {
 
     if (bankMatch) {
       if (bankMatch.isDuplicate) {
-        const group = duplicateGroups.find(
-          (g) => g.referenceId === payment.paymentId
-        );
+        const refKey = payment.referenceId || payment.paymentId;
+        const group = duplicateGroups.find((g) => g.referenceId === refKey);
         if (group) {
-          const best = selectBestDuplicate(group, payment, bankMap);
+          const best = selectBestDuplicate(group, payment, bankMap, usedBankIds);
           if (best) {
             bankTransactionId = best.bankTransactionId;
             usedBankIds.add(best.bankTransactionId);
@@ -115,6 +137,7 @@ function reconcile(payments, bankTransactions, invoices) {
       hasAmountMismatch,
       hasDateMismatch,
       isDuplicate,
+      isDuplicatePayment,
     });
   }
 

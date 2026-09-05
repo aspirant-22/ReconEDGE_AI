@@ -13,6 +13,14 @@ function classifyException(result) {
     };
   }
 
+  if (result.isDuplicatePayment) {
+    return {
+      ...result,
+      status: 'EXCEPTION',
+      exceptionType: 'DUPLICATE_PAYMENT',
+    };
+  }
+
   if (result.isDuplicate) {
     return {
       ...result,
@@ -29,16 +37,27 @@ function classifyException(result) {
     };
   }
 
-  if (result.hasAmountMismatch && result.bankTransactionId) {
+  if (result.hasAmountMismatch && (result.bankTransactionId || result.invoiceId)) {
+    let actualAmount = result.bankAmount;
+    let difference = result.amountDifference;
+
+    if (result.invoiceId && Math.abs(result.invoiceAmountDifference) > 0) {
+      actualAmount = result.invoiceAmount;
+      difference = result.invoiceAmountDifference;
+    } else if (result.bankTransactionId && Math.abs(result.amountDifference) > 0) {
+      actualAmount = result.bankAmount;
+      difference = result.amountDifference;
+    }
+
     return {
       ...result,
       status: 'EXCEPTION',
       exceptionType: 'AMOUNT_MISMATCH',
       expectedAmount: result.paymentAmount,
-      actualAmount: result.bankAmount,
-      difference: result.amountDifference,
+      actualAmount,
+      difference,
       differencePercent: result.paymentAmount !== 0
-        ? ((result.amountDifference / result.paymentAmount) * 100).toFixed(2)
+        ? ((difference / result.paymentAmount) * 100).toFixed(2)
         : 0,
     };
   }

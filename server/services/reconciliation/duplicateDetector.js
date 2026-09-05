@@ -36,8 +36,11 @@ function detectDuplicateBankTransactions(bankTransactions, paymentToBankCandidat
   return { duplicateGroups, processed };
 }
 
-function selectBestDuplicate(duplicateGroup, payment, bankMap) {
-  const candidates = duplicateGroup.allBankIds.map((id) => bankMap.get(id)).filter(Boolean);
+function selectBestDuplicate(duplicateGroup, payment, bankMap, usedBankIds = new Set()) {
+  const candidates = duplicateGroup.allBankIds
+    .map((id) => bankMap.get(id))
+    .filter(Boolean)
+    .filter((bankTx) => !usedBankIds.has(bankTx.bankTransactionId));
 
   let bestMatch = null;
   let bestScore = -1;

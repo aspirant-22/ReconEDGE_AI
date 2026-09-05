@@ -42,6 +42,14 @@ Explain:
 - Suggested human verification
 Do NOT recommend automatic deletion.`,
 
+  DUPLICATE_PAYMENT: `Analyze a DUPLICATE_PAYMENT exception.
+Explain:
+- Multiple payments share the same business reference and invoice
+- Possible causes (double charge, duplicate payment entry, system error)
+- Which payment appears to be the original and which the duplicate
+- Suggested human verification
+Do NOT recommend automatic deletion.`,
+
   DATE_MISMATCH: `Analyze a DATE_MISMATCH exception.
 Explain:
 - The payment date and bank transaction date

@@ -11,6 +11,8 @@ const Invoice = require('../../models/Invoice');
 function paymentToEngine(doc) {
   return {
     paymentId: doc.paymentId,
+    referenceId: doc.reference || '',
+    invoiceId: doc.invoiceId || '',
     orderId: '',
     customerId: doc.customerId,
     amount: doc.amount,
@@ -34,6 +36,7 @@ function bankToEngine(doc) {
 function invoiceToEngine(doc) {
   return {
     invoiceId: doc.invoiceId,
+    referenceId: doc.reference || '',
     orderId: '',
     customerId: doc.customerId,
     invoiceAmount: doc.amount,
