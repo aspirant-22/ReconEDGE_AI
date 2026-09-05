@@ -1,531 +1,1466 @@
 # ReconEDGE AI
 
-**AI Finance Controller for Automated Financial Reconciliation**
+## AI Finance Controller
 
-## Current Phase
+> **Reconcile. Detect. Explain. Resolve.**
 
-**Phase 5 — AI Exception Analyzer**
+ReconEDGE AI is a deterministic-first **AI Finance Controller** that automates financial reconciliation across **payments, bank transactions, and invoices**.
 
-Phase 4 builds a deterministic analytics layer on top of the reconciliation engine, transforming raw results into meaningful financial-control metrics for dashboard consumption.
+It combines a reliable rule-based reconciliation engine with **Gemini-powered exception intelligence** and a **human-in-the-loop resolution workflow** to help finance teams identify discrepancies, understand why they occurred, and resolve them with a complete audit trail.
 
-## Tech Stack
+---
 
-### Frontend
-- React.js (Vite)
+## 🚀 The Problem
+
+Financial reconciliation is still heavily dependent on manual comparison of data from multiple systems.
+
+A finance team may need to compare:
+
+- Payment records
+- Bank transactions
+- Customer invoices
+- Transaction references
+- Amounts
+- Dates
+- Duplicate transactions
+- Missing records
+
+The challenge is not only determining whether two records match.
+
+The real questions are:
+
+> **What happened? Why did it fail? How severe is the issue? What should the finance team investigate?**
+
+Traditional rule-based systems can detect discrepancies but often provide little context.
+
+LLM-only systems can provide explanations but introduce the risk of hallucination and unreliable financial decisions.
+
+### ReconEDGE combines both approaches.
+
+```text
+                 ┌──────────────────────┐
+                 │     Financial Data   │
+                 │ Payments / Bank /    │
+                 │ Invoices             │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │ Schema Detection &   │
+                 │ Column Mapping       │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │ Normalization &      │
+                 │ Validation           │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │ Deterministic        │
+                 │ Reconciliation       │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │ Exception Detection  │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │ Gemini AI            │
+                 │ Explain & Recommend  │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │ Human Resolution     │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │ Audit Trail          │
+                 └──────────────────────┘
+```
+
+---
+
+# 💡 Our Solution
+
+ReconEDGE follows a simple principle:
+
+> ## **Deterministic code determines financial truth. AI explains it. Humans resolve it.**
+
+The system separates financial computation from generative AI.
+
+### Deterministic Engine
+
+Responsible for:
+
+- Record normalization
+- Identifier matching
+- Reference matching
+- Amount comparison
+- Date comparison
+- Duplicate detection
+- Missing record detection
+- Exception classification
+- Reconciliation metrics
+
+### Gemini AI
+
+Responsible for:
+
+- Explaining detected exceptions
+- Identifying possible causes
+- Suggesting investigation steps
+- Answering finance-related questions
+
+### Human
+
+Responsible for:
+
+- Reviewing exceptions
+- Approving/rejecting resolutions
+- Escalating uncertain cases
+- Making the final financial decision
+
+This creates a safer architecture for financial workflows.
+
+---
+
+# ✨ Key Features
+
+## 1. Multi-File Financial Reconciliation
+
+Upload:
+
+```text
+payments.csv
+bank-transactions.csv
+invoices.csv
+```
+
+ReconEDGE processes them through a unified canonical data model.
+
+```text
+CSV / XLSX
+    ↓
+Parser
+    ↓
+Column Mapper
+    ↓
+Data Normalizer
+    ↓
+Canonical Records
+    ↓
+Reconciliation Engine
+```
+
+The system does not depend on the original ordering of rows.
+
+---
+
+# 2. Flexible Column Mapping
+
+Different organizations use different names for the same financial fields.
+
+For example:
+
+```text
+payment_id
+Payment ID
+PaymentID
+payment-id
+```
+
+can be normalized into the same canonical field.
+
+ReconEDGE uses:
+
+- Header normalization
+- Column aliases
+- Schema detection
+- Required-field validation
+- Ambiguity detection
+
+This allows financial files from different sources to be processed without requiring identical column names.
+
+---
+
+# 3. Deterministic-First Matching
+
+ReconEDGE intentionally avoids using an LLM for core financial matching.
+
+The reconciliation engine uses deterministic logic for:
+
+```text
+Identity
+   ↓
+Reference
+   ↓
+Relationship
+   ↓
+Amount
+   ↓
+Date
+   ↓
+Exception
+```
+
+This makes the reconciliation process:
+
+- Reproducible
+- Testable
+- Explainable
+- Auditable
+- Predictable
+
+The same input produces the same reconciliation result.
+
+---
+
+# 4. Reference-First Reconciliation
+
+ReconEDGE prioritizes strong transaction references before weaker signals.
+
+For Payment → Bank reconciliation:
+
+```text
+Payment Reference
+       │
+       ▼
+Bank Reference
+       │
+       ▼
+Unique Counterpart
+       │
+       ▼
+Amount Validation
+       │
+       ▼
+Date Validation
+       │
+       ▼
+Exception Classification
+```
+
+This is important because an amount mismatch does **not** necessarily mean the bank transaction is missing.
+
+### Example
+
+Payment:
+
+```text
+Reference: REF10009
+Amount:    ₹10,000
+```
+
+Bank:
+
+```text
+Reference: REF10009
+Amount:    ₹10,500
+```
+
+A naive matcher may conclude:
+
+```text
+No Match
+```
+
+ReconEDGE instead determines:
+
+```text
+Reference matches
+       ↓
+Same transaction candidate
+       ↓
+Amount differs
+       ↓
+AMOUNT_MISMATCH
+```
+
+The finance team can now investigate the discrepancy rather than searching for a transaction that actually exists.
+
+---
+
+# 5. Match First → Validate → Classify
+
+ReconEDGE separates three important stages.
+
+### Step 1 — Match
+
+Identify the most reliable counterpart.
+
+```text
+Payment → Bank
+Payment → Invoice
+```
+
+### Step 2 — Validate
+
+Check:
+
+```text
+Amount
+Date
+Reference
+Relationship
+```
+
+### Step 3 — Classify
+
+Determine the exception:
+
+```text
+MATCHED
+AMOUNT_MISMATCH
+DATE_MISMATCH
+MISSING_BANK_TRANSACTION
+MISSING_INVOICE
+DUPLICATE_BANK_TRANSACTION
+DUPLICATE_PAYMENT
+UNMATCHED_BANK_TRANSACTION
+```
+
+This prevents mismatches from being incorrectly classified as missing transactions.
+
+---
+
+# 6. Empty Identity Protection
+
+Empty fields are never treated as meaningful evidence.
+
+For example:
+
+```text
+Payment.customerId = ""
+Invoice.customerId = ""
+```
+
+does **not** mean the customer identity matches.
+
+Similarly:
+
+```text
+"" === ""
+```
+
+is never considered valid matching evidence.
+
+If both order and customer information are unavailable:
+
+```text
+orderId = ""
+customerId = ""
+```
+
+the fallback matching path is disabled instead of selecting an arbitrary invoice.
+
+This prevents accidental cross-wiring between unrelated records.
+
+---
+
+# 7. Ambiguity Protection
+
+ReconEDGE follows another important financial principle:
+
+> **If the evidence is insufficient, do not guess.**
+
+If multiple candidates are equally plausible, the system avoids blindly selecting the first available record.
+
+Example:
+
+```text
+                 Payment
+                    │
+             ┌──────┴──────┐
+             ▼             ▼
+         Invoice A      Invoice B
+             │             │
+             └──────┬──────┘
+                    │
+             No unique evidence
+                    │
+                    ▼
+              Human Review
+```
+
+This reduces false-positive reconciliation.
+
+---
+
+# 8. Duplicate Detection
+
+ReconEDGE detects duplicate financial activity instead of silently discarding records.
+
+Example:
+
+```text
+Payment A ─────────┐
+                   ├── REF10014
+Payment B ─────────┘
+                      │
+                ┌─────┴─────┐
+                ▼           ▼
+             Bank 1       Bank 2
+```
+
+The system can distinguish between:
+
+```text
+DUPLICATE_BANK_TRANSACTION
+```
+
+and:
+
+```text
+DUPLICATE_PAYMENT
+```
+
+Duplicate selection also prevents an already-consumed bank transaction from being reused by another duplicate match.
+
+---
+
+# 9. Exception Classification
+
+ReconEDGE currently supports the following exception categories:
+
+| Exception | Description |
+|---|---|
+| `MISSING_BANK_TRANSACTION` | Payment has no corresponding bank transaction |
+| `MISSING_INVOICE` | Payment has no corresponding invoice |
+| `AMOUNT_MISMATCH` | Counterpart exists but amount differs |
+| `DATE_MISMATCH` | Counterpart exists but date differs |
+| `DUPLICATE_BANK_TRANSACTION` | Multiple bank transactions correspond to the same payment reference |
+| `DUPLICATE_PAYMENT` | Multiple payments represent the same underlying payment relationship |
+| `UNMATCHED_BANK_TRANSACTION` | Bank transaction has no corresponding payment |
+| `AMBIGUOUS` | Multiple plausible candidates exist without sufficient evidence |
+
+---
+
+# 10. Gemini-Powered Exception Intelligence
+
+Once deterministic reconciliation identifies an exception, Gemini analyzes it.
+
+```text
+Deterministic Reconciliation
+            ↓
+      Exception Found
+            ↓
+       Gemini AI
+            ↓
+ ┌─────────────────────────┐
+ │ Why did it happen?      │
+ │ What could cause it?    │
+ │ What should be checked? │
+ └─────────────────────────┘
+```
+
+For example:
+
+```text
+The payment and bank transaction share the same
+reference number, indicating that they likely represent
+the same transaction.
+
+However, the bank amount differs from the payment amount.
+
+Recommended investigation:
+1. Verify bank charges or fees.
+2. Check whether the payment was partially settled.
+3. Verify the original payment entry.
+```
+
+The AI explains the evidence already discovered by the reconciliation engine.
+
+It does not create the underlying financial result.
+
+---
+
+# 11. AI Safety Boundary
+
+ReconEDGE intentionally restricts what AI can do.
+
+### Gemini CAN:
+
+- Explain exceptions
+- Summarize reconciliation results
+- Suggest possible causes
+- Recommend investigation steps
+- Answer finance questions
+
+### Gemini CANNOT:
+
+- Modify financial records
+- Delete transactions
+- Approve transactions
+- Resolve exceptions automatically
+- Invent reconciliation results
+- Access ground-truth evaluation labels
+
+The financial decision remains deterministic and human-controlled.
+
+---
+
+# 12. Ground-Truth Isolation
+
+Ground truth is completely separated from production reconciliation logic.
+
+The matcher does not receive:
+
+```text
+ground-truth.json
+expectedScenario
+expectedBankTransactionId
+expectedInvoiceId
+```
+
+This prevents test data leakage.
+
+The reconciliation engine must derive its result from:
+
+```text
+Uploaded Payment Data
++
+Uploaded Bank Data
++
+Uploaded Invoice Data
+```
+
+rather than from expected answers.
+
+---
+
+# 13. Human-in-the-Loop Resolution
+
+ReconEDGE provides a controlled exception-resolution workflow.
+
+```text
+OPEN
+  │
+  ▼
+IN_REVIEW
+  │
+  ├───────────────┐
+  ▼               ▼
+RESOLVED       REJECTED
+  │
+  └───────────────┐
+                  ▼
+              ESCALATED
+```
+
+Finance users can review an exception and take a controlled action.
+
+AI recommendations do not automatically resolve financial exceptions.
+
+---
+
+# 14. Immutable Audit Trail
+
+Every important exception workflow action can be recorded.
+
+Examples:
+
+```text
+Exception Created
+Exception Viewed
+Status Changed
+Resolution Added
+Exception Resolved
+Exception Rejected
+Exception Escalated
+```
+
+The audit trail provides:
+
+- Who performed an action
+- What action was performed
+- When it happened
+- Which exception was affected
+
+This provides accountability for financial operations.
+
+---
+
+# 15. Reconciliation Runs
+
+ReconEDGE supports isolated reconciliation runs.
+
+Each run maintains its own:
+
+- Uploaded files
+- Payment records
+- Bank transactions
+- Invoice records
+- Reconciliation results
+- Exceptions
+- Analytics
+- AI context
+- Resolution history
+
+This prevents data from one run from contaminating another.
+
+---
+
+# 📊 Analytics Dashboard
+
+ReconEDGE provides financial reconciliation analytics including:
+
+- Total payment amount
+- Total bank amount
+- Total invoice amount
+- Matched amount
+- Exception amount
+- Exception count
+- Exception rate
+- Amount mismatch impact
+- Exception distribution
+
+Example baseline:
+
+```text
+Total Payment Amount       ₹25,079,405.23
+Total Bank Amount          ₹23,432,239.40
+Total Invoice Amount       ₹25,073,030.79
+
+Matched Payment Amount     ₹17,486,654.13
+Exception Payment Amount   ₹7,592,751.10
+Amount Mismatch Impact     ₹12,012.70
+
+Exception Rate             35%
+```
+
+The dashboard gives finance teams a high-level view before they investigate individual transactions.
+
+---
+
+# 🧠 Finance Q&A
+
+ReconEDGE provides a finance-focused Q&A interface.
+
+Users can ask:
+
+```text
+What is the total unmatched amount?
+
+Which exceptions have the highest financial impact?
+
+Why did this payment fail reconciliation?
+
+Which transactions have duplicate bank entries?
+
+How many payments are unresolved?
+
+What should I investigate first?
+```
+
+The Q&A system is scoped to the selected reconciliation run.
+
+---
+
+# 🏗️ System Architecture
+
+```text
+                         ┌─────────────────────┐
+                         │      React UI       │
+                         │ React + Vite        │
+                         │ Tailwind CSS        │
+                         └──────────┬──────────┘
+                                    │
+                                    │ REST API
+                                    ▼
+                         ┌─────────────────────┐
+                         │   Express Backend   │
+                         │      Node.js        │
+                         └──────────┬──────────┘
+                                    │
+             ┌──────────────────────┼─────────────────────┐
+             │                      │                     │
+             ▼                      ▼                     ▼
+     ┌───────────────┐    ┌─────────────────┐    ┌──────────────┐
+     │ File          │    │ Reconciliation  │    │ Analytics    │
+     │ Processing    │    │ Engine          │    │ Services     │
+     └───────┬───────┘    └────────┬────────┘    └──────────────┘
+             │                     │
+             ▼                     ▼
+     ┌───────────────┐    ┌─────────────────┐
+     │ CSV / XLSX    │    │ Deterministic   │
+     │ Parser        │    │ Matching         │
+     └───────────────┘    └────────┬────────┘
+                                   │
+                      ┌────────────┼─────────────┐
+                      │            │             │
+                      ▼            ▼             ▼
+                 Duplicate     Exception      Metrics
+                 Detection     Classifier
+                      │            │
+                      └──────┬─────┘
+                             ▼
+                     ┌──────────────┐
+                     │ Gemini AI    │
+                     │ Intelligence │
+                     └──────┬───────┘
+                            │
+                            ▼
+                     ┌──────────────┐
+                     │ Human Review │
+                     └──────┬───────┘
+                            │
+                            ▼
+                     ┌──────────────┐
+                     │ Audit Trail  │
+                     └──────────────┘
+```
+
+---
+
+# 🧩 Technology Stack
+
+## Frontend
+
+- React
+- Vite
+- JavaScript
 - Tailwind CSS
 - React Router
 - Axios
 - Lucide React
+- Recharts
 
-### Backend
-- Node.js + Express.js
-- MongoDB + Mongoose
-- JWT + bcryptjs
+## Backend
 
-## Project Structure
+- Node.js
+- Express.js
+- JavaScript
+- REST APIs
 
-```
-recon-edge-ai/
-├── client/          # React frontend
+## Database
+
+- MongoDB
+- Mongoose
+
+## AI
+
+- Google Gemini API
+
+## Authentication
+
+- JWT
+- bcryptjs
+
+## Data Processing
+
+- CSV Parser
+- XLSX Processing
+- Schema Mapping
+- Data Normalization
+- Deterministic Reconciliation
+
+## Testing
+
+- Node.js Test Runner
+- Frontend Test Suite
+- Integration Tests
+- Regression Tests
+- Production-Path Validation
+
+---
+
+# 📁 Project Structure
+
+```text
+ReconEDGE/
+│
+├── client/
 │   ├── src/
-│   │   ├── components/    # Reusable components
-│   │   ├── contexts/      # React contexts
-│   │   ├── layouts/       # Page layouts
-│   │   ├── pages/         # Page components
-│   │   ├── services/      # API services
-│   │   └── utils/         # Utility functions
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   └── ...
+│   │
 │   └── ...
-├── server/          # Express backend
-│   ├── config/      # Configuration (DB)
-│   ├── controllers/ # Request handlers
-│   ├── middleware/   # Auth, error handling
-│   ├── models/      # Mongoose schemas
-│   ├── routes/      # API routes
-│   ├── services/    # Business logic
-│   │   ├── reconciliation/  # Reconciliation engine
-│   │   ├── analytics/       # Phase 4 metrics & analytics
-│   │   └── ai/              # Phase 5 AI exception analyzer
-│   └── utils/       # Utility functions
-├── data/            # Data storage
-│   └── generated/   # Synthetic data + results
-└── README.md
+│
+├── server/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   │
+│   ├── services/
+│   │   ├── ai/
+│   │   ├── analytics/
+│   │   ├── reconciliation/
+│   │   ├── reconciliationAdapter/
+│   │   └── ...
+│   │
+│   ├── tests/
+│   └── ...
+│
+├── data/
+│   └── generated/
+│
+├── README.md
+└── package.json
 ```
 
-## Setup
+---
 
-### Prerequisites
-- Node.js (v18+)
-- MongoDB (running locally or connection string)
+# 🔄 End-to-End Workflow
 
-### Installation
+```text
+1. Upload
+   ↓
+2. Detect Schema
+   ↓
+3. Map Columns
+   ↓
+4. Normalize Data
+   ↓
+5. Validate Records
+   ↓
+6. Create Canonical Records
+   ↓
+7. Detect Duplicates
+   ↓
+8. Match Payments → Bank
+   ↓
+9. Match Payments → Invoice
+   ↓
+10. Validate Relationships
+   ↓
+11. Classify Exceptions
+   ↓
+12. Calculate Analytics
+   ↓
+13. Gemini Explains Exceptions
+   ↓
+14. Human Reviews
+   ↓
+15. Resolve / Reject / Escalate
+   ↓
+16. Audit Trail
+```
+
+---
+
+# 🎯 Reconciliation Strategy
+
+## Payment → Bank
+
+Primary evidence:
+
+```text
+payment.referenceId
+        ↕
+bank.referenceId
+```
+
+If a unique counterpart is found, the system retains it even when:
+
+```text
+Amount differs
+Date differs
+```
+
+The discrepancy is then classified separately.
+
+---
+
+## Payment → Invoice
+
+The system prioritizes explicit relationship information where available, followed by reliable invoice references and safe identity-based fallbacks.
+
+Empty fields are never considered evidence.
+
+Multiple plausible candidates are not blindly resolved.
+
+---
+
+# 🧪 Testing & Validation
+
+ReconEDGE uses multiple levels of testing.
+
+## Backend
+
+```text
+264 / 264 tests passing
+56 test suites
+```
+
+Full-tree verification:
+
+```text
+265 / 265 tests passing
+```
+
+Coverage includes:
+
+- Reconciliation
+- Reference-first matching
+- Duplicate detection
+- Exception classification
+- AI behavior
+- Reconciliation runs
+- Human resolution
+- June regression
+- Analytics
+
+---
+
+## Frontend
+
+```text
+60 / 60 tests passing
+9 test files
+```
+
+---
+
+## Production Build
 
 ```bash
-# Install root dependencies
-npm install
-
-# Install client dependencies
-cd client
-npm install
-
-# Install server dependencies
-cd ../server
-npm install
+npm run build
 ```
 
-### Environment Variables
+Result:
 
-```bash
-cd server
-cp .env.example .env
+```text
+SUCCESS
 ```
 
-Edit `.env` with your values:
-- `MONGODB_URI` — MongoDB connection string
-- `JWT_SECRET` — Secret key for JWT signing
-- `GEMINI_API_KEY` — Gemini API key (for future phases)
-- `CLIENT_URL` — Frontend URL (default: http://localhost:5173)
+Only the pre-existing bundle chunk-size warning remains.
 
-### Running
+---
 
-```bash
-# From root — runs both client and server
-npm run dev
+# 🧪 Real-Data Validation
 
-# Or run individually:
-cd server && npm run dev
-cd client && npm run dev
+ReconEDGE was validated against a June financial dataset containing:
+
+```text
+51 Payments
+53 Bank Transactions
+50 Invoices
 ```
 
-## API Endpoints
+The production processing path was exercised:
 
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| GET | `/api/health` | Health check | No |
-| POST | `/api/auth/register` | Register user | No |
-| POST | `/api/auth/login` | Login user | No |
-| GET | `/api/auth/me` | Get current user | Yes |
-| GET | `/api/ai/status` | AI service status | No |
-| POST | `/api/ai/analyze-exception` | Analyze exception with AI | No |
-
-## Phase 3 — Deterministic Reconciliation Engine
-
-### Architecture
-
-The reconciliation engine follows a multi-stage pipeline:
-
-1. **Normalization** — Standardize data formats (dates, amounts, IDs)
-2. **Indexing** — Build lookup maps for efficient matching
-3. **Duplicate Detection** — Identify duplicate bank transactions
-4. **Matching** — Match payments to bank transactions and invoices
-5. **Residual Scan** — Detect unmatched bank transactions
-6. **Classification** — Categorize exceptions
-7. **Evaluation** — Compare predictions to ground truth
-
-### Matching Strategy
-
-| Stage | Method | Confidence |
-|-------|--------|------------|
-| 1 | Reference ID exact match | 1.0 |
-| 2 | Order + Customer ID match | 0.95 |
-| 3 | Amount + Date match | 0.85 |
-| 4 | Description parsing | 0.70 |
-
-### Exception Categories
-
-| Category | Description |
-|----------|-------------|
-| AMOUNT_MISMATCH | Payment and bank amounts differ |
-| MISSING_BANK_TRANSACTION | No bank transaction found for payment |
-| DUPLICATE_BANK_TRANSACTION | Multiple bank transactions for same payment |
-| DATE_MISMATCH | Bank transaction date outside tolerance |
-| UNMATCHED_BANK_TRANSACTION | Bank transaction not matched to any payment |
-
-### Ground Truth Isolation
-
-The engine never reads `ground-truth.json` during prediction/matching. Ground truth is only used post-prediction for evaluation. This ensures the engine operates independently.
-
-### Running
-
-```bash
-cd server
-
-# Run reconciliation engine
-npm run reconcile:data
-
-# Run tests
-npm test
+```text
+CSV
+ ↓
+csvParser
+ ↓
+columnMapper
+ ↓
+dataNormalizer
+ ↓
+mongoDataAdapter
+ ↓
+reconciliationEngine
 ```
 
-### Output Files
+This validated the same core processing path used by the upload workflow.
 
-Generated in `data/generated/`:
-- `reconciliation-results.json` — Matched records and exceptions
-- `reconciliation-metrics.json` — Performance metrics and evaluation
+---
 
-### Evaluation Metrics
+# ✅ Section-8 Acceptance Results
 
-**Exception Detection (Binary):**
-- Precision, Recall, F1 Score
-- True Positives, False Positives, False Negatives, True Negatives
+All nine critical acceptance cases pass.
 
-**Exception Classification (Per-Category):**
-- Precision, Recall, F1 per exception type
+| Payment | Bank | Invoice | Expected Result |
+|---|---|---|---|
+| PMT-50009 | TXN-900009 | INV-10009 | `AMOUNT_MISMATCH` |
+| PMT-50012 | TXN-900012 | INV-10012 | `AMOUNT_MISMATCH` |
+| PMT-50030 | TXN-900030 | INV-10030 | `AMOUNT_MISMATCH` |
+| PMT-50042 | TXN-900041 | INV-10042 | `AMOUNT_MISMATCH` |
+| PMT-50015 | TXN-900015 | INV-10015 | `DUPLICATE_BANK_TRANSACTION` |
+| PMT-50016 | TXN-900016 | INV-10015 | `DUPLICATE_PAYMENT` |
+| PMT-50045 | TXN-900044 | INV-10045 | `MATCHED` |
+| PMT-50047 | TXN-900046 | INV-10047 | `DUPLICATE_BANK_TRANSACTION` |
+| PMT-50048 | TXN-900047 | INV-10047 | `DUPLICATE_PAYMENT` |
 
-**Match Rates:**
-- Payment Match Rate
-- Bank Match Rate
-- Invoice Match Rate
+### June Dataset Consistency
 
-### Test Coverage
+```text
+Payments:             51
+Matched Payments:     40
+Payment Exceptions:   11
 
-```bash
-# Run all tests
-cd server
-npm test
+Bank Transactions:    53
+Consumed Banks:       49
+Unmatched Banks:       4
 
-# Tests cover:
-# - Unmatched bank transaction detection
-# - Exception classifier logic
-# - Per-category classification
-# - Separate match rate calculations
+Invoices:              50
 ```
 
-## Phase 2 — Synthetic Financial Data
+Unmatched bank transactions are explicitly preserved instead of being silently discarded.
 
-### Why Synthetic Data
+---
 
-Synthetic data allows us to test the reconciliation engine with known ground truth. We can precisely measure match rate, precision, recall, and exception detection accuracy because we control the expected relationships.
+# 🔬 Demo Regression
 
-### Dataset Types
+The reference-first improvements were regression-tested against the existing demo dataset.
 
-| Dataset | Description |
-|---------|-------------|
-| Payments | Payment gateway transaction records (INR) |
-| Bank Transactions | Bank settlement records |
-| Invoices | Invoice records |
-| Ground Truth | Expected relationships and scenario labels |
+Result:
 
-### Default Configuration
-
-- Payment count: 500
-- Seed: 42
-- Date range: 2026-07-01 to 2026-08-31
-- Currency: INR
-- Amount range: ₹100 – ₹100,000
-
-### Generation
-
-```bash
-cd server
-npm run generate:data
+```text
+525 reconciliation rows
+0 output differences
+Byte-identical reconciliation output
 ```
 
-With custom parameters:
+Metrics remained identical apart from execution timing.
 
-```bash
-node utils/dataGenerator/generateData.js --count=1000 --seed=99
+This ensures that the new reconciliation behavior does not break the existing demo flow.
+
+---
+
+# 🔐 Security & Production Hardening
+
+ReconEDGE includes multiple backend hardening measures:
+
+- JWT authentication
+- bcrypt password hashing
+- Strong JWT secret validation
+- Rate limiting
+- Security headers
+- Input validation
+- Centralized error handling
+- Structured logging
+- Health checks
+- Graceful shutdown
+- Run-level data isolation
+
+---
+
+# 🧠 Why Deterministic + AI?
+
+There are two extremes when applying AI to financial reconciliation.
+
+### Pure Rules
+
+```text
+✓ Deterministic
+✓ Reproducible
+✓ Auditable
+
+✗ Limited explanations
+✗ Harder investigation
+✗ Poor natural-language interaction
 ```
 
-### Scenario Distribution
+### Pure LLM
 
-| Scenario | Approximate % | Description |
-|----------|---------------|-------------|
-| EXACT_MATCH | 70% | All three sources agree |
-| AMOUNT_MISMATCH | 10% | Payment and bank amounts differ |
-| MISSING_BANK_TRANSACTION | 5% | Bank transaction is absent |
-| DUPLICATE_BANK_TRANSACTION | 5% | Duplicate bank settlement |
-| DATE_MISMATCH | 5% | Bank transaction date is delayed |
-| UNMATCHED_BANK_TRANSACTION | 5% | Orphaned bank transaction |
+```text
+✓ Natural language
+✓ Strong explanations
+✓ Flexible reasoning
 
-### Output Files
-
-Generated in `data/generated/`:
-- `payments.json` / `payments.csv`
-- `bank-transactions.json` / `bank-transactions.csv`
-- `invoices.json` / `invoices.csv`
-- `ground-truth.json`
-- `dataset-summary.json`
-
-### Seeded Generation
-
-The generator uses a seeded pseudo-random number generator. The same seed always produces the same dataset, ensuring reproducible evaluation.
-
-### Validation
-
-The generator validates all generated data before writing files:
-- Unique IDs across all datasets
-- Valid amounts (positive, numeric)
-- Correct currency (INR)
-- Ground truth references valid records
-- Scenario counts match payment count
-- Relationship consistency for each scenario
-
-## Phase 4 — Metrics & Analytics
-
-### Overview
-
-Phase 4 builds a deterministic analytics layer on top of the reconciliation engine. It transforms raw reconciliation results into meaningful financial-control metrics.
-
-### Architecture
-
-```
-reconciliation-results.json
-        ↓
-Phase 4 Metrics & Analytics
-        ↓
-Operational + Exception + Quality Metrics
-        ↓
-reconciliation-analytics.json
+✗ Potential hallucination
+✗ Non-deterministic
+✗ Difficult to audit
+✗ Unsafe for financial decisions
 ```
 
-### Exception Rate (Payment-Side)
+### ReconEDGE
 
-Primary exception rate is always payment-side:
-
-```
-exceptionRate = payment-side exception records / total payments
-```
-
-For the current dataset: `175 / 500 = 35.00%`
-
-Bank-only records (UNMATCHED_BANK_TRANSACTION) are excluded from the primary exception rate denominator.
-
-### Match Rates
-
-| Metric | Definition | Baseline |
-|--------|-----------|----------|
-| Payment Match Rate | matched payment records / total payments | 350/500 = 70.00% |
-| Bank Match Rate | matched bank records / results containing bankTransactionId | 350/475 = 73.68% |
-| Invoice Match Rate | matched invoice records / total invoices | 350/500 = 70.00% |
-| Bank Assignment Accuracy | bank transactions correctly assigned to payments / bank transactions with payment match | 100.00% |
-
-### Financial Analytics
-
-All financial calculations use integer minor units internally (paise for INR) to avoid floating-point accumulation artifacts. Decimal values are only converted at the output boundary.
-
-| Metric | Population | Denominator |
-|--------|-----------|-------------|
-| totalPaymentAmount | SUM of all payment amounts in reconciliation results | N/A |
-| totalBankAmount | SUM of unique bank transaction amounts (deduplicated by bankTransactionId) | N/A |
-| totalInvoiceAmount | SUM of all invoice amounts in reconciliation results | N/A |
-| matchedPaymentAmount | SUM of payment amounts where status = MATCHED | N/A |
-| exceptionPaymentAmount | SUM of payment amounts where status = EXCEPTION | N/A |
-| amountMismatchImpact | SUM of abs(payment - bank) for AMOUNT_MISMATCH records only | N/A |
-| matchedAmountRate | matchedPaymentAmount / totalPaymentAmount | totalPaymentAmount |
-| exceptionAmountRate | exceptionPaymentAmount / totalPaymentAmount | totalPaymentAmount |
-
-Zero is a valid financial amount and is never silently excluded.
-
-### Control Effectiveness
-
-The control effectiveness section provides transparent metrics without arbitrary weighted scores:
-
-| Metric | Definition |
-|--------|-----------|
-| reconciliationRate | matched records / total payments |
-| exceptionRate | exception records / total payments (payment-side) |
-| cleanMatchRate | payment match rate |
-| exceptionDetectionPrecision | truePositives / (truePositives + falsePositives) |
-| exceptionDetectionRecall | truePositives / (truePositives + falseNegatives) |
-| exceptionDetectionF1 | harmonic mean of precision and recall |
-
-### Health Classification
-
-| Status | Threshold |
-|--------|-----------|
-| HEALTHY | Exception rate < 10% |
-| WARNING | Exception rate >= 10% and < 25% |
-| CRITICAL | Exception rate >= 25% |
-
-### Severity Model
-
-| Severity | Categories |
-|----------|-----------|
-| HIGH | MISSING_BANK_TRANSACTION, UNMATCHED_BANK_TRANSACTION, DUPLICATE_BANK_TRANSACTION |
-| MEDIUM | AMOUNT_MISMATCH, DATE_MISMATCH |
-
-### Available Metrics
-
-| Category | Metrics |
-|----------|---------|
-| Overview | totalPayments, totalBankTransactions, totalInvoices, matchedRecords, paymentMatchRate, bankMatchRate, invoiceMatchRate, bankAssignmentAccuracy |
-| Exceptions | totalExceptions, exceptionRate (payment-side), breakdown by category with percentageOfTotalPayments |
-| Severity | highSeverityCount, mediumSeverityCount, lowSeverityCount |
-| Financial Impact | totalPaymentAmount, totalBankAmount, totalInvoiceAmount, matchedPaymentAmount, exceptionPaymentAmount, amountMismatchImpact, matchedAmountRate, exceptionAmountRate |
-| Control Effectiveness | reconciliationRate, exceptionRate, cleanMatchRate, exceptionDetectionPrecision, exceptionDetectionRecall, exceptionDetectionF1 |
-| Health | healthStatus (HEALTHY/WARNING/CRITICAL), healthReason |
-
-### Running
-
-```bash
-cd server
-
-# Generate analytics
-npm run analyze:data
+```text
+             RECONEDGE
+                 │
+       ┌─────────┴─────────┐
+       ▼                   ▼
+ Deterministic           Gemini
+ Financial Engine        AI Layer
+       │                   │
+       ▼                   ▼
+Financial Truth       Explanation
+       │                   │
+       └─────────┬─────────┘
+                 ▼
+           Human Decision
 ```
 
-### Output
+This provides the reliability of deterministic systems with the usability of generative AI.
 
-Generated in `data/generated/`:
-- `reconciliation-analytics.json`
+---
 
-### Phase 4 vs Phase 3
+# 🏆 What Makes ReconEDGE Different?
 
-| Aspect | Phase 3 (Reconciliation Metrics) | Phase 4 (Analytics) |
-|--------|----------------------------------|---------------------|
-| Purpose | Evaluation correctness | Business/operational metrics |
-| Input | Reconciliation results + ground truth | Reconciliation results |
-| Ground Truth | Required | Not used |
-| Output | reconciliation-metrics.json | reconciliation-analytics.json |
+Most AI finance prototypes follow:
 
-**Phase 4 does not use Gemini or AI.**
-
-## Phase 5 — AI Exception Analyzer
-
-### Overview
-
-Phase 5 integrates Google Gemini to analyze reconciliation exceptions and provide human-readable explanations, risk context, and recommended next actions.
-
-### Architecture
-
+```text
+CSV
+ ↓
+LLM
+ ↓
+Answer
 ```
+
+ReconEDGE follows:
+
+```text
+CSV
+ ↓
+Schema Detection
+ ↓
+Normalization
+ ↓
+Validation
+ ↓
 Deterministic Reconciliation
-        ↓
-    Exceptions
-        ↓
-  AI Exception Analyzer (Gemini)
-        ↓
-┌───────────────────────────────┐
-│                               │
-│  Explanation                  │
-│  Risk Context                 │
-│  Recommended Actions          │
-│                               │
-└───────────────┬───────────────┘
-                ↓
-          Human Review
+ ↓
+Exception Classification
+ ↓
+AI Explanation
+ ↓
+Human Resolution
+ ↓
+Audit Trail
 ```
 
-### Key Principles
+The difference is fundamental.
 
-- Gemini does **not** reconcile transactions
-- Gemini does **not** modify financial records
-- Gemini does **not** use ground truth
-- Gemini provides **advisory** explanations only
-- Human review is **required** before any financial action
-- Reconciliation continues working if Gemini fails
+ReconEDGE does not ask an LLM:
 
-### Environment Configuration
+> "Which transactions match?"
+
+It first determines the financial relationship through deterministic evidence.
+
+Then it asks AI:
+
+> "Help the finance team understand what happened."
+
+---
+
+# 💼 Business Impact
+
+ReconEDGE is designed to reduce the operational burden of financial reconciliation.
+
+Potential benefits include:
+
+```text
+↓ Manual reconciliation effort
+↓ Exception investigation time
+↓ Duplicate payment risk
+↓ Missed discrepancies
+
+↑ Financial visibility
+↑ Resolution speed
+↑ Auditability
+↑ Operational scalability
+```
+
+The goal is not simply to automate reconciliation.
+
+The goal is to transform reconciliation into an:
+
+> **Intelligent, explainable, auditable financial control system.**
+
+---
+
+# 👥 Target Users
+
+ReconEDGE can support:
+
+- Finance teams
+- Financial controllers
+- Accounts receivable teams
+- Accounts payable teams
+- Reconciliation analysts
+- Fintech operations teams
+- Accounting operations
+- Internal audit teams
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+Install:
+
+- Node.js
+- npm
+- MongoDB
+- Git
+
+For AI functionality, configure a Gemini API key.
+
+---
+
+## 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd ReconEDGE
+```
+
+---
+
+## 2. Install Backend Dependencies
+
+```bash
+cd server
+npm install
+```
+
+---
+
+## 3. Install Frontend Dependencies
+
+```bash
+cd ../client
+npm install
+```
+
+---
+
+## 4. Configure Environment Variables
+
+Create:
+
+```text
+server/.env
+```
+
+Example:
 
 ```env
-GEMINI_API_KEY=your_gemini_api_key_here
-GEMINI_MODEL=gemini-3.6-flash
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/reconedge
+JWT_SECRET=your-strong-secret-key
+GEMINI_API_KEY=your-gemini-api-key
 ```
 
-**Security:** API key is stored server-side only. Never exposed to the frontend.
+Use a strong JWT secret in production.
 
-### API Endpoints
+---
 
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| GET | `/api/ai/status` | AI service status | No |
-| POST | `/api/ai/analyze-exception` | Analyze a reconciliation exception | No |
-
-#### POST /api/ai/analyze-exception
-
-Request:
-```json
-{
-  "exceptionId": "PAY-100002"
-}
-```
-
-Response:
-```json
-{
-  "success": true,
-  "exceptionId": "PAY-100002",
-  "exceptionType": "AMOUNT_MISMATCH",
-  "analysis": {
-    "summary": "Payment and bank amounts differ by ₹144.58.",
-    "likelyCause": "Possible fee, adjustment, or partial payment.",
-    "riskLevel": "MEDIUM",
-    "recommendedActions": [
-      "Verify settlement details with the bank.",
-      "Check if any fees were deducted."
-    ],
-    "confidence": 0.82,
-    "requiresHumanReview": true
-  }
-}
-```
-
-### Structured AI Output
-
-| Field | Type | Description |
-|-------|------|-------------|
-| summary | string | Brief explanation of the exception |
-| likelyCause | string | Most probable cause based on evidence |
-| riskLevel | LOW / MEDIUM / HIGH | AI risk assessment (advisory only) |
-| recommendedActions | string[] | 1-5 recommended human actions |
-| confidence | number (0-1) | AI confidence in its analysis |
-| requiresHumanReview | boolean | Whether human review is needed |
-
-### Exception Types Supported
-
-| Exception Type | Analysis Focus |
-|---------------|----------------|
-| AMOUNT_MISMATCH | Payment/bank amount difference, possible fees |
-| MISSING_BANK_TRANSACTION | Payment without bank settlement |
-| DUPLICATE_BANK_TRANSACTION | Multiple bank records for same payment |
-| DATE_MISMATCH | Settlement timing differences |
-| UNMATCHED_BANK_TRANSACTION | Bank record without matching payment |
-
-### Guardrails
-
-- AI cannot modify financial records
-- AI cannot change reconciliation status
-- AI cannot approve/reject transactions
-- AI cannot delete transactions
-- AI does not use ground truth
-- AI does not perform reconciliation
-- Response validation (risk level, confidence, etc.)
-- Prompt injection defense for transaction fields
-- Timeout protection (30s)
-- Graceful failure handling
-
-### Failure Handling
-
-| Failure | Behavior |
-|---------|----------|
-| Missing API key | Returns AI_UNAVAILABLE |
-| Invalid API key | Returns AI_UNAVAILABLE |
-| Timeout | Returns AI_TIMEOUT |
-| Rate limit | Returns AI_RATE_LIMITED |
-| Network error | Returns AI_UNAVAILABLE |
-| Malformed response | Returns AI_INVALID_RESPONSE |
-
-Reconciliation and analytics continue working without Gemini.
-
-### Running
+## 5. Start the Backend
 
 ```bash
 cd server
+npm run dev
+```
 
-# Run AI tests
-node --test services/ai/__tests__/ai.test.js
+---
 
-# Run all tests
+## 6. Start the Frontend
+
+In another terminal:
+
+```bash
+cd client
+npm run dev
+```
+
+Open the Vite development URL shown in the terminal.
+
+---
+
+# 🧪 Running Tests
+
+## Backend
+
+```bash
+cd server
 npm test
 ```
 
-## Frontend Routes
+Full Node test tree:
 
-| Route | Page | Auth Required |
-|-------|------|---------------|
-| `/login` | Login | No |
-| `/register` | Register | No |
-| `/dashboard` | Dashboard | Yes |
-| `/reconciliation` | Reconciliation | Yes |
-| `/exceptions` | Exceptions | Yes |
-| `/audit-logs` | Audit Logs | Yes |
+```bash
+node --test
+```
+
+## Frontend
+
+```bash
+cd client
+npm test
+```
+
+## Production Build
+
+```bash
+npm run build
+```
+
+---
+
+# 📌 API Capabilities
+
+ReconEDGE provides REST APIs for:
+
+```text
+Authentication
+Reconciliation Runs
+File Uploads
+Reconciliation Results
+Exceptions
+Exception Resolution
+Analytics
+AI Exception Analysis
+Finance Q&A
+Health Checks
+```
+
+Run-specific operations are isolated to the selected reconciliation run.
+
+---
+
+# 🔮 Future Roadmap
+
+ReconEDGE's architecture can be extended with:
+
+## Advanced Financial Identifiers
+
+Support for:
+
+```text
+UTR
+RRN
+Cheque Number
+Voucher Number
+Challan Number
+Transaction Number
+```
+
+## Advanced Reconciliation Relationships
+
+Future support for:
+
+```text
+1 Payment → N Bank Transactions
+N Payments → 1 Invoice
+Partial Payments
+Split Settlements
+Bank Fees
+Taxes
+Chargebacks
+Refunds
+```
+
+## Explainable Match Evidence
+
+Expose why a record was matched:
+
+```text
+Reference Match       ✓
+Amount Match          ✗
+Date Match            ✓
+Customer Match        ✓
+```
+
+## Advanced Ambiguity Workspace
+
+Provide finance users with side-by-side candidate comparison and guided resolution.
+
+## Enterprise Integrations
+
+Potential integrations include:
+
+```text
+ERP Systems
+Accounting Platforms
+Payment Gateways
+Bank APIs
+Data Warehouses
+```
+
+---
+
+# 🛡️ Design Philosophy
+
+ReconEDGE follows one central principle:
+
+> ## **Never let AI invent financial truth.**
+
+The system understands the difference between:
+
+```text
+MATCHED
+```
+
+and:
+
+```text
+INSUFFICIENT EVIDENCE
+```
+
+The second case is not a failure.
+
+It is a signal that a human should review the transaction.
+
+---
+
+
+
+# 🏁 Final Architecture
+
+```text
+                         RECONEDGE AI
+                      AI Finance Controller
+
+                              │
+                              ▼
+                   ┌────────────────────┐
+                   │ Upload Financial   │
+                   │ Data               │
+                   └─────────┬──────────┘
+                             ▼
+                   ┌────────────────────┐
+                   │ Schema Detection   │
+                   │ & Column Mapping   │
+                   └─────────┬──────────┘
+                             ▼
+                   ┌────────────────────┐
+                   │ Normalization &    │
+                   │ Validation         │
+                   └─────────┬──────────┘
+                             ▼
+                   ┌────────────────────┐
+                   │ Deterministic      │
+                   │ Reconciliation     │
+                   └─────────┬──────────┘
+                             ▼
+                   ┌────────────────────┐
+                   │ Exception          │
+                   │ Detection          │
+                   └─────────┬──────────┘
+                             ▼
+                   ┌────────────────────┐
+                   │ Gemini AI          │
+                   │ Explain & Recommend│
+                   └─────────┬──────────┘
+                             ▼
+                   ┌────────────────────┐
+                   │ Human Review &     │
+                   │ Controlled Resolve │
+                   └─────────┬──────────┘
+                             ▼
+                   ┌────────────────────┐
+                   │ Immutable Audit    │
+                   │ Trail              │
+                   └────────────────────┘
+```
+
+---
+
+# ⭐ ReconEDGE AI
+
+## Reconcile. Detect. Explain. Resolve.
+
+ReconEDGE AI brings together:
+
+**Deterministic Financial Controls + Generative AI + Human Oversight + Auditability**
+
+to create a safer, more explainable, and more scalable approach to financial reconciliation.
+
+> **Don't let AI guess your books.**
+>
+> **Let AI explain your evidence.**
