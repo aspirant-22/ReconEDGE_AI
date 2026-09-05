@@ -11,6 +11,7 @@ import ReconRuns from './pages/ReconRuns';
 import CreateReconciliation from './pages/CreateReconciliation';
 import ReconRunDetail from './pages/ReconRunDetail';
 import Exceptions from './pages/Exceptions';
+import ExceptionDetail from './pages/ExceptionDetail';
 import FinanceQA from './pages/FinanceQA';
 import AuditLogs from './pages/AuditLogs';
 
@@ -53,6 +54,7 @@ const AppRoutes = () => {
         <Route path="/reconciliation/runs/new" element={<CreateReconciliation />} />
         <Route path="/reconciliation/runs/:runId" element={<ReconRunDetail />} />
         <Route path="/exceptions" element={<Exceptions />} />
+        <Route path="/exceptions/:runId/:exceptionId" element={<ExceptionDetail />} />
         <Route path="/finance-qa" element={<FinanceQA />} />
         <Route path="/audit-logs" element={<AuditLogs />} />
       </Route>

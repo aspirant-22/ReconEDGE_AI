@@ -15,6 +15,11 @@ const {
   getAnalytics,
   analyzeExceptionAction,
 } = require('../controllers/reconciliationRunController');
+const {
+  getExceptionDetail,
+  performExceptionAction,
+  getExceptionHistory,
+} = require('../controllers/exceptionResolutionController');
 
 const router = express.Router();
 
@@ -33,7 +38,10 @@ router.post('/reconciliation/runs/:runId/upload', protect, upload.single('file')
 router.post('/reconciliation/runs/:runId/run', protect, executeRun);
 router.get('/reconciliation/runs/:runId/results', protect, getResults);
 router.get('/reconciliation/runs/:runId/exceptions', protect, getExceptions);
+router.get('/reconciliation/runs/:runId/exceptions/:exceptionId', protect, getExceptionDetail);
+router.get('/reconciliation/runs/:runId/exceptions/:exceptionId/history', protect, getExceptionHistory);
 router.get('/reconciliation/runs/:runId/analytics', protect, getAnalytics);
 router.post('/reconciliation/runs/:runId/exceptions/:exceptionId/analyze', protect, analyzeExceptionAction);
+router.post('/reconciliation/runs/:runId/exceptions/:exceptionId/action', protect, performExceptionAction);
 
 module.exports = router;

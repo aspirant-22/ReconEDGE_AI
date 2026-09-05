@@ -1,8 +1,11 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { AlertTriangle, Brain, Loader2, ChevronDown, ChevronUp, Shield, Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { AlertTriangle, Brain, Loader2, ChevronDown, ChevronUp, Shield, Search, ClipboardCheck } from 'lucide-react';
 import { recApi } from '../services/recApi';
 import { useReconciliation } from '../contexts/ReconciliationContext';
 import RunSelector from '../components/run/RunSelector';
+import WorkflowBadge from '../components/exceptions/WorkflowBadge';
+import WorkflowSummaryCards from '../components/exceptions/WorkflowSummaryCards';
 
 const EXCEPTION_ICONS = {
   MISSING_BANK_TRANSACTION: '🏦',
@@ -27,6 +30,15 @@ const EXCEPTION_TYPES = [
   { value: 'UNMATCHED_BANK_TRANSACTION', label: 'Unmatched Bank Transaction' },
 ];
 
+const WORKFLOW_FILTERS = [
+  { value: '', label: 'All Workflow States' },
+  { value: 'OPEN', label: 'Open' },
+  { value: 'IN_REVIEW', label: 'In Review' },
+  { value: 'RESOLVED', label: 'Resolved' },
+  { value: 'REJECTED', label: 'Rejected' },
+  { value: 'ESCALATED', label: 'Escalated' },
+];
+
 function loadDemoExceptions() {
   return fetch('/data/generated/reconciliation-results.json')
     .then((r) => r.json())
@@ -44,8 +56,10 @@ const Exceptions = () => {
   const [expandedRow, setExpandedRow] = useState(null);
   const [exceptionType, setExceptionType] = useState('');
   const [severity, setSeverity] = useState('');
+  const [workflowStatus, setWorkflowStatus] = useState('');
   const [search, setSearch] = useState('');
-  const [appliedFilter, setAppliedFilter] = useState({ exceptionType: '', severity: '', search: '' });
+  const [workflowSummary, setWorkflowSummary] = useState(null);
+  const [appliedFilter, setAppliedFilter] = useState({ exceptionType: '', severity: '', search: '', workflowStatus: '' });
   const promoRef = useRef(false);
 
   useEffect(() => {
@@ -66,18 +80,22 @@ const Exceptions = () => {
       if (!selectedRunId) {
         const demo = await loadDemoExceptions();
         setExceptions(demo);
+        setWorkflowSummary(null);
       } else {
         const params = {};
         if (appliedFilter.exceptionType) params.exceptionType = appliedFilter.exceptionType;
         if (appliedFilter.severity) params.severity = appliedFilter.severity;
+        if (appliedFilter.workflowStatus) params.workflowStatus = appliedFilter.workflowStatus;
         if (appliedFilter.search.trim()) params.search = appliedFilter.search.trim();
         params.limit = 100;
         const response = await recApi.getExceptions(selectedRunId, params);
         setExceptions(response.data?.data || []);
+        setWorkflowSummary(response.data?.workflow || null);
       }
     } catch (err) {
       if (err.response?.status === 401) return;
       setExceptions([]);
+      setWorkflowSummary(null);
     } finally {
       setLoading(false);
     }
@@ -96,7 +114,7 @@ const Exceptions = () => {
   }, [selectedRunId]);
 
   const applyFilters = () => {
-    setAppliedFilter({ exceptionType, severity, search });
+    setAppliedFilter({ exceptionType, severity, search, workflowStatus });
   };
 
   const handleAnalyze = async (exception) => {
@@ -177,6 +195,12 @@ const Exceptions = () => {
         </div>
       )}
 
+      {selectedRunId && workflowSummary && (
+        <div className="mb-6">
+          <WorkflowSummaryCards workflow={workflowSummary} />
+        </div>
+      )}
+
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-200">
           <div className="flex items-center justify-between mb-4">
@@ -227,6 +251,17 @@ const Exceptions = () => {
               <option value="MEDIUM">Medium</option>
               <option value="LOW">Low</option>
             </select>
+            <select
+              value={workflowStatus}
+              onChange={(e) => setWorkflowStatus(e.target.value)}
+              aria-label="workflow status filter"
+              disabled={!selectedRunId}
+              className="px-3 py-2 text-sm border border-gray-200 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50"
+            >
+              {WORKFLOW_FILTERS.map((w) => (
+                <option key={w.value} value={w.value}>{w.label}</option>
+              ))}
+            </select>
             <button
               onClick={applyFilters}
               className="px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors"
@@ -265,6 +300,7 @@ const Exceptions = () => {
                             {exc.severity}
                           </span>
                         )}
+                        {selectedRunId && <WorkflowBadge status={exc.workflowStatus} />}
                         <span className="text-xs text-gray-400">|</span>
                         <span className="text-xs text-gray-500">{id}</span>
                       </div>
@@ -278,6 +314,15 @@ const Exceptions = () => {
                       <span className={`text-xs px-2 py-1 rounded-full ${RISK_COLORS[analysis.riskLevel] || 'bg-gray-100 text-gray-600'}`}>
                         {analysis.riskLevel}
                       </span>
+                    )}
+                    {selectedRunId && (
+                      <Link
+                        to={`/exceptions/${selectedRunId}/${encodeURIComponent(id)}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-primary-700 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors"
+                      >
+                        <ClipboardCheck size={13} /> Review
+                      </Link>
                     )}
                     {isExpanded ? <ChevronUp size={16} className="text-gray-400" /> : <ChevronDown size={16} className="text-gray-400" />}
                   </div>

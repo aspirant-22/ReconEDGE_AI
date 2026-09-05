@@ -139,6 +139,32 @@ exports.getDashboard = async (req, res) => {
       .limit(10)
       .lean();
 
+    // Lightweight derived human-workflow metrics — never modifies the locked
+    // deterministic analytics document.
+    const workflowRows = await ReconciliationResult.aggregate([
+      { $match: { runId: run._id, status: 'EXCEPTION' } },
+      { $group: { _id: '$workflowStatus', count: { $sum: 1 } } },
+    ]);
+    const wf = { open: 0, inReview: 0, resolved: 0, rejected: 0, escalated: 0 };
+    workflowRows.forEach((row) => {
+      const key = row._id || 'OPEN';
+      if (key === 'OPEN') wf.open += row.count;
+      else if (key === 'IN_REVIEW') wf.inReview += row.count;
+      else if (key === 'RESOLVED') wf.resolved += row.count;
+      else if (key === 'REJECTED') wf.rejected += row.count;
+      else if (key === 'ESCALATED') wf.escalated += row.count;
+    });
+    const wfTotal = wf.open + wf.inReview + wf.resolved + wf.rejected + wf.escalated;
+    const workflow = {
+      total: wfTotal,
+      open: wf.open,
+      inReview: wf.inReview,
+      resolved: wf.resolved,
+      rejected: wf.rejected,
+      escalated: wf.escalated,
+      resolutionRate: wfTotal > 0 ? Math.round((wf.resolved / wfTotal) * 10000) / 100 : 0,
+    };
+
     const dashboard = {
       ...buildDashboard(run.analytics.toObject ? run.analytics.toObject() : run.analytics, exceptionRecords),
       runId: String(run._id),
@@ -146,6 +172,7 @@ exports.getDashboard = async (req, res) => {
       runStatus: run.status,
       periodStart: run.periodStart || null,
       periodEnd: run.periodEnd || null,
+      workflow,
     };
 
     res.json({ success: true, hasData: true, dashboard });

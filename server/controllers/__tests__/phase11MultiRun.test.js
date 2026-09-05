@@ -218,6 +218,7 @@ describe('Phase 11 — Multi-Run Management', () => {
       ];
       const captured = {};
       mock.method(ReconciliationResult, 'countDocuments', (q) => { captured.countQuery = q; return Promise.resolve(1); });
+      mock.method(ReconciliationResult, 'aggregate', () => Promise.resolve([]));
       mock.method(ReconciliationResult, 'find', (q) => {
         captured.findQuery = q;
         return { sort() { return this; }, skip() { return this; }, limit() { return this; }, lean() { return Promise.resolve(exceptionRows); } };
@@ -230,6 +231,7 @@ describe('Phase 11 — Multi-Run Management', () => {
       assert.equal(captured.findQuery.runId, RUN_A);
       assert.equal(captured.findQuery.status, 'EXCEPTION');
       assert.equal(res.body.data[0].severity, 'MEDIUM');
+      assert.deepEqual(res.body.workflow, { total: 0, open: 0, inReview: 0, resolved: 0, rejected: 0, escalated: 0, resolutionRate: 0 });
       assert.equal(res.body.pagination.total, 1);
     });
 
@@ -237,6 +239,7 @@ describe('Phase 11 — Multi-Run Management', () => {
       mock.method(ReconciliationRun, 'findOne', () => Promise.resolve(makeRun({})));
       const captured = {};
       mock.method(ReconciliationResult, 'countDocuments', () => Promise.resolve(1));
+      mock.method(ReconciliationResult, 'aggregate', () => Promise.resolve([{ _id: 'RESOLVED', count: 1 }]));
       mock.method(ReconciliationResult, 'find', (q) => {
         captured.findQuery = q;
         return { sort() { return this; }, skip() { return this; }, limit() { return this; }, lean() { return Promise.resolve([{ _id: 'e1', status: 'EXCEPTION', exceptionType: 'MISSING_BANK_TRANSACTION', paymentId: 'P9' }]); } };
@@ -261,6 +264,7 @@ describe('Phase 11 — Multi-Run Management', () => {
   describe('Run-aware dashboard', () => {
     it('returns run-specific metrics for an owned run', async () => {
       mock.method(ReconciliationRun, 'findOne', () => Promise.resolve(makeRun({ analytics: ANALYTICS })));
+      mock.method(ReconciliationResult, 'aggregate', () => Promise.resolve([{ _id: 'OPEN', count: 2 }]));
       mock.method(ReconciliationResult, 'find', () => ({
         sort() { return this; }, limit() { return this; }, lean() { return Promise.resolve([]); },
       }));
@@ -274,6 +278,8 @@ describe('Phase 11 — Multi-Run Management', () => {
       assert.equal(res.body.dashboard.overview.matchedPayments, 3);
       assert.equal(res.body.dashboard.overview.exceptions, 2);
       assert.equal(res.body.dashboard.mode, 'run');
+      assert.deepEqual(res.body.dashboard.workflow,
+        { total: 2, open: 2, inReview: 0, resolved: 0, rejected: 0, escalated: 0, resolutionRate: 0 });
     });
 
     it('rejects foreign/missing run with 404 (no demo fallback)', async () => {

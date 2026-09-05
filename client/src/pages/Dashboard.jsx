@@ -11,6 +11,7 @@ import FinancialImpact from '../components/dashboard/FinancialImpact';
 import TopExceptions from '../components/dashboard/TopExceptions';
 import AIInsights from '../components/dashboard/AIInsights';
 import RecentExceptions from '../components/dashboard/RecentExceptions';
+import WorkflowSummaryCards from '../components/exceptions/WorkflowSummaryCards';
 import { SkeletonCard, SkeletonChart, SkeletonTable } from '../components/dashboard/Skeletons';
 import { ErrorState, EmptyState } from '../components/dashboard/States';
 
@@ -105,6 +106,12 @@ const Dashboard = () => {
           <div className="mb-6">
             <KPICards overview={data.overview} />
           </div>
+
+          {selectedRunId && data.workflow && (
+            <div className="mb-6">
+              <WorkflowSummaryCards workflow={data.workflow} />
+            </div>
+          )}
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
             <ReconciliationHealth reconciliation={data.reconciliation} />

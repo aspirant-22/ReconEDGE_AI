@@ -11,8 +11,8 @@
     "bank": 73.68,
     "invoice": 70
   },
-  "processingTimeMs": 17,
-  "recordsPerSecond": 88235.29,
+  "processingTimeMs": 31,
+  "recordsPerSecond": 48387.1,
   "exceptionDistribution": {
     "MISSING_BANK_TRANSACTION": 50,
     "AMOUNT_MISMATCH": 50,

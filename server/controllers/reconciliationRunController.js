@@ -480,14 +480,18 @@ async function getExceptions(req, res) {
       return res.status(404).json({ success: false, error: { code: 'RUN_NOT_FOUND', message: 'Reconciliation run not found.' } });
     }
 
-    const page = Math.max(parseInt(req.query.page, 10) || 1, 1);
+const page = Math.max(parseInt(req.query.page, 10) || 1, 1);
     const limit = Math.min(Math.max(parseInt(req.query.limit, 10) || 25, 1), 100);
     const typeFilter = req.query.exceptionType;
     const severityFilter = req.query.severity;
+    const workflowFilter = req.query.workflowStatus;
     const search = (req.query.search || '').trim();
 
     const query = { runId: run._id, status: 'EXCEPTION' };
     if (typeFilter) query.exceptionType = typeFilter;
+    if (workflowFilter && ReconciliationResult.WORKFLOW_STATUSES.includes(workflowFilter)) {
+      query.workflowStatus = workflowFilter;
+    }
     if (search) {
       const re = new RegExp(search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       query.$or = [
@@ -506,6 +510,36 @@ async function getExceptions(req, res) {
       }
     }
 
+    // Run-wide human workflow summary, independent of the list filters, so a
+    // finance user always sees how many issues are open / in review / resolved.
+    const workflow = await ReconciliationResult.aggregate([
+      { $match: { runId: run._id, status: 'EXCEPTION' } },
+      { $group: {
+          _id: '$workflowStatus',
+          count: { $sum: 1 },
+        } },
+    ]);
+
+    const wf = { open: 0, inReview: 0, resolved: 0, rejected: 0, escalated: 0 };
+    workflow.forEach((row) => {
+      const key = row._id || 'OPEN';
+      if (key === 'OPEN') wf.open += row.count;
+      else if (key === 'IN_REVIEW') wf.inReview += row.count;
+      else if (key === 'RESOLVED') wf.resolved += row.count;
+      else if (key === 'REJECTED') wf.rejected += row.count;
+      else if (key === 'ESCALATED') wf.escalated += row.count;
+    });
+    const wfTotal = wf.open + wf.inReview + wf.resolved + wf.rejected + wf.escalated;
+    const workflowSummary = {
+      total: wfTotal,
+      open: wf.open,
+      inReview: wf.inReview,
+      resolved: wf.resolved,
+      rejected: wf.rejected,
+      escalated: wf.escalated,
+      resolutionRate: wfTotal > 0 ? Math.round((wf.resolved / wfTotal) * 10000) / 100 : 0,
+    };
+
     const [total, results] = await Promise.all([
       ReconciliationResult.countDocuments(query),
       ReconciliationResult.find(query)
@@ -523,6 +557,7 @@ async function getExceptions(req, res) {
     res.json({
       success: true,
       data: items,
+      workflow: workflowSummary,
       pagination: { total, page, limit, pages: Math.max(Math.ceil(total / limit), 1) },
     });
   } catch (error) {
@@ -712,6 +747,14 @@ function serializeResult(r) {
     paymentDate: r.paymentDate,
     bankDate: r.bankDate,
     invoiceDate: r.invoiceDate,
+    // Human workflow state (Phase 12)
+    workflowStatus: r.workflowStatus || 'OPEN',
+    lastAction: r.lastAction || null,
+    resolutionCode: r.resolutionCode || null,
+    resolutionReason: r.resolutionReason || null,
+    resolutionNotes: r.resolutionNotes || null,
+    resolvedBy: r.resolvedBy ? String(r.resolvedBy) : null,
+    resolvedAt: r.resolvedAt || null,
   };
 }
 
