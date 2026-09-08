@@ -1,0 +1,15 @@
+transaction_id,transaction_date,amount,currency,description,reference_number,status
+TXN-1001,2026-07-01,1500.00,INR,UPI credit for Acme Supplies,DEMO-REF-101,Settled
+TXN-1002,2026-07-01,2250.00,INR,Bank transfer from Beta Traders,DEMO-REF-102,Settled
+TXN-1003,2026-07-02,3120.50,INR,UPI credit for Gamma Works,DEMO-REF-103,Settled
+TXN-1004,2026-07-02,440.00,INR,UPI credit for Delta Logistics,DEMO-REF-104,Settled
+TXN-1005,2026-07-03,1875.25,INR,Bank transfer from Epsilon Energy,DEMO-REF-105,Settled
+TXN-1006,2026-07-03,999.00,INR,UPI credit for Zeta Retail,DEMO-REF-106,Settled
+TXN-1007,2026-07-04,2600.00,INR,UPI credit for Eta Foods,DEMO-REF-107,Settled
+TXN-1008,2026-07-04,1900.00,INR,UPI credit for Theta Services,DEMO-REF-108,Settled
+TXN-1009,2026-07-05,1200.00,INR,UPI credit for Iota Media,DEMO-REF-109,Settled
+TXN-1010,2026-07-06,1200.00,INR,UPI credit from Kappa Studios,DEMO-REF-109,Settled
+TXN-1011,2026-07-06,800.00,INR,UPI credit unallocated receipt,DEMO-REF-111,Settled
+TXN-1012,2026-07-07,6400.00,INR,Bank transfer from Lambda Corp,DEMO-REF-112,Settled
+TXN-1013,2026-07-07,75.50,INR,UPI credit for Mu Traders,DEMO-REF-113,Settled
+TXN-1014,2026-07-08,3400.00,INR,UPI credit for Nu Enterprises,DEMO-REF-114,Settled

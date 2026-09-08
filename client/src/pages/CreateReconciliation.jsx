@@ -12,8 +12,15 @@ import {
   AlertCircle,
   Play,
   Wand2,
+  FileDown,
+  Download,
+  Info,
+  ChevronDown,
+  ShieldAlert,
+  Sparkles,
 } from 'lucide-react';
 import { recApi } from '../services/recApi';
+import { SAMPLE_FILES, SAMPLE_LOAD_ERROR, loadSampleFile } from '../utils/sampleFiles';
 
 const FILE_TYPES = [
   { key: 'PAYMENTS', label: 'Payments', icon: CreditCard, color: 'text-blue-600', bg: 'bg-blue-50' },
@@ -40,6 +47,35 @@ const REQUIRED_HINT = {
   BANK_TRANSACTIONS: ['transactionId', 'amount', 'transactionDate'],
   INVOICES: ['invoiceId', 'amount', 'invoiceDate'],
 };
+
+const UPLOAD_REQUIREMENTS = [
+  {
+    label: 'Payments',
+    required: ['Payment ID', 'Amount', 'Payment Date'],
+    recommended: ['Reference', 'Customer ID', 'Currency'],
+  },
+  {
+    label: 'Bank Transactions',
+    required: ['Transaction ID', 'Amount', 'Transaction Date'],
+    recommended: ['Reference', 'Description', 'Currency'],
+  },
+  {
+    label: 'Invoices',
+    required: ['Invoice ID', 'Amount', 'Invoice Date'],
+    recommended: ['Reference', 'Customer ID', 'Currency'],
+  },
+];
+
+const GENERAL_REQUIREMENTS = [
+  'Include a header row',
+  'Use unique record IDs',
+  'Provide valid amounts',
+  'Provide valid dates',
+  'Use consistent currency values',
+  'Keep references consistent for related records',
+  'Row order does not matter',
+  'Files may contain different numbers of records',
+];
 
 function emptyFileState() {
   return { file: null, fileName: '', loading: false, error: null, preview: null, uploaded: false, meta: null };
@@ -159,6 +195,7 @@ const CreateReconciliation = () => {
       {step === 1 && <StepDetails {...{ name, setName, periodStart, setPeriodStart, periodEnd, setPeriodEnd, creating, handleCreate }} />}
       {step === 2 && (
         <div>
+          <UploadRequirements />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             {FILE_TYPES.map((ft) => (
               <FileCard
@@ -276,10 +313,102 @@ function StepDetails({ name, setName, periodStart, setPeriodStart, periodEnd, se
   );
 }
 
+function UploadRequirements() {
+  const [open, setOpen] = useState(true);
+
+  return (
+    <div className="bg-white rounded-xl border border-gray-200 mb-6">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-controls="upload-requirements-panel"
+        className="w-full flex items-center justify-between gap-2 px-4 py-3 text-left"
+      >
+        <span className="flex items-center gap-2 text-sm font-semibold text-gray-900">
+          <Info size={16} className="text-primary-600" />
+          Upload Requirements
+        </span>
+        <span className="flex items-center gap-1 text-xs text-gray-400">
+          {open ? 'Hide' : 'Show'}
+          <ChevronDown size={14} className={`transition-transform ${open ? 'rotate-180' : ''}`} />
+        </span>
+      </button>
+
+      {open && (
+        <div id="upload-requirements-panel" className="px-4 pb-4 pt-3 border-t border-gray-100 space-y-4 text-sm text-gray-600">
+          <p className="text-gray-700">For accurate reconciliation, upload structured financial CSV files containing the required fields.</p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {UPLOAD_REQUIREMENTS.map((req) => (
+              <div key={req.label} className="rounded-lg bg-gray-50 border border-gray-100 p-3">
+                <p className="text-xs font-semibold text-gray-800 mb-2">{req.label}</p>
+                <p className="text-xs text-gray-500 mb-1">
+                  <span className="font-medium text-gray-600">Required:</span>{' '}
+                  {req.required.join(', ')}
+                </p>
+                <p className="text-xs text-gray-500">
+                  <span className="font-medium text-gray-600">Recommended:</span>{' '}
+                  {req.recommended.join(', ')}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-xs flex items-start gap-1.5">
+            <Sparkles size={13} className="text-primary-600 shrink-0 mt-0.5" />
+            <span>ReconEDGE automatically detects supported column names and maps them to the required fields.</span>
+          </p>
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
+            {GENERAL_REQUIREMENTS.map((item) => (
+              <li key={item} className="flex items-center gap-1.5">
+                <CheckCircle2 size={14} className="text-green-500 shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-start gap-2 rounded-lg bg-amber-50 border border-amber-100 px-3 py-2.5">
+            <ShieldAlert size={16} className="text-amber-600 shrink-0 mt-0.5" />
+            <p className="text-xs leading-relaxed">
+              ReconEDGE uses deterministic financial evidence to establish matches. If records contain conflicting
+              or insufficient evidence, they are flagged for human review instead of being guessed.
+            </p>
+          </div>
+
+          <p className="flex items-start gap-1.5 text-xs text-gray-500">
+            <Sparkles size={13} className="text-primary-600 shrink-0 mt-0.5" />
+            <span>No dataset? Use the Sample CSV option below to explore the complete reconciliation workflow.</span>
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function FileCard({ runId, fileType, state, onSelect, onMappingChange, onUpload, required }) {
   const Icon = fileType.icon;
   const uploading = state.loading && !state.uploaded;
   const needsMapping = state.preview && !state.uploaded;
+  const sample = SAMPLE_FILES[fileType.key];
+  const isSample = Boolean(sample && state.fileName === sample.fileName);
+  const [sampleLoading, setSampleLoading] = useState(false);
+  const [sampleError, setSampleError] = useState(null);
+
+  const handleUseSample = async () => {
+    if (!sample || uploading || sampleLoading) return;
+    setSampleLoading(true);
+    setSampleError(null);
+    try {
+      const file = await loadSampleFile(sample);
+      onSelect(fileType.key, file);
+    } catch (err) {
+      setSampleError(SAMPLE_LOAD_ERROR);
+    } finally {
+      setSampleLoading(false);
+    }
+  };
 
   return (
     <div className={`bg-white rounded-xl border p-5 ${state.uploaded ? 'border-green-200' : 'border-gray-200'}`}>
@@ -292,27 +421,65 @@ function FileCard({ runId, fileType, state, onSelect, onMappingChange, onUpload,
           {state.uploaded ? (
             <p className="text-xs text-green-600">{state.meta?.validRows} valid row{state.meta?.validRows === 1 ? '' : 's'}</p>
           ) : (
-            <p className="text-xs text-gray-400">{state.fileName || 'No file selected'}</p>
+            <p className="text-xs text-gray-400 flex items-center gap-1">
+              {isSample && <CheckCircle2 size={12} className="text-green-500" />}
+              {state.fileName || 'No file selected'}
+              {isSample && <span className="inline-flex items-center rounded bg-blue-50 px-1.5 py-0.5 text-[10px] font-medium text-blue-600">Demo sample</span>}
+            </p>
           )}
         </div>
         {state.uploaded && <CheckCircle2 size={20} className="text-green-500" />}
       </div>
 
       {!state.uploaded && (
-        <label className="block cursor-pointer">
-          <input
-            type="file"
-            accept=".csv,.xlsx,.xls"
-            className="hidden"
-            data-testid={`file-${fileType.key}`}
-            disabled={uploading || !runId}
-            onChange={(e) => onSelect(fileType.key, e.target.files?.[0])}
-          />
-          <div className="flex items-center gap-2 justify-center border-2 border-dashed border-gray-200 rounded-lg px-3 py-4 text-sm text-gray-500 hover:border-primary-400 hover:text-primary-600 transition-colors">
-            {uploading ? <Loader2 size={16} className="animate-spin" /> : <Upload size={16} />}
-            {uploading ? 'Reading file...' : 'Choose CSV / XLSX'}
+        <>
+          <label className="block cursor-pointer">
+            <input
+              type="file"
+              accept=".csv,.xlsx,.xls"
+              className="hidden"
+              data-testid={`file-${fileType.key}`}
+              disabled={uploading || !runId}
+              onChange={(e) => onSelect(fileType.key, e.target.files?.[0])}
+            />
+            <div className="flex items-center gap-2 justify-center border-2 border-dashed border-gray-200 rounded-lg px-3 py-4 text-sm text-gray-500 hover:border-primary-400 hover:text-primary-600 transition-colors">
+              {uploading ? <Loader2 size={16} className="animate-spin" /> : <Upload size={16} />}
+              {uploading ? 'Reading file...' : 'Choose CSV / XLSX'}
+            </div>
+          </label>
+
+          <div className="relative mt-3">
+            <div className="flex items-center gap-2">
+              <span className="h-px flex-1 bg-gray-100" />
+              <span className="text-[10px] uppercase tracking-wide text-gray-300">or</span>
+              <span className="h-px flex-1 bg-gray-100" />
+            </div>
+            <button
+              type="button"
+              onClick={handleUseSample}
+              disabled={sampleLoading || uploading || !runId}
+              aria-label={`Use Sample CSV for ${fileType.label}`}
+              className="mt-1 w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border border-gray-200 text-xs font-medium text-gray-600 hover:border-primary-300 hover:text-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              {sampleLoading ? <Loader2 size={14} className="animate-spin" /> : <FileDown size={14} className="text-gray-400" />}
+              {sampleLoading ? 'Loading sample...' : 'Use Sample CSV'}
+            </button>
           </div>
-        </label>
+
+          <a
+            href={sample?.path}
+            download={sample?.fileName}
+            aria-label={`Download Sample CSV for ${fileType.label}`}
+            className="mt-1 flex items-center justify-center gap-1.5 text-xs text-gray-400 hover:text-gray-600 hover:underline underline-offset-2 transition-colors"
+          >
+            <Download size={13} className="text-gray-400" />
+            Download Sample CSV
+          </a>
+
+          {sampleError && (
+            <p className="mt-2 text-xs text-red-600 flex items-center gap-1"><AlertCircle size={12} /> {sampleError}</p>
+          )}
+        </>
       )}
 
       {state.error && (
