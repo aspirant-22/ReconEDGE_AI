@@ -13,7 +13,24 @@ vi.mock('../../services/recApi', () => ({
   },
 }));
 
+vi.mock('../../contexts/ReconciliationContext', () => ({
+  useReconciliation: vi.fn(),
+}));
+
 import { recApi } from '../../services/recApi';
+import { useReconciliation } from '../../contexts/ReconciliationContext';
+
+beforeEach(() => {
+  useReconciliation.mockReturnValue({
+    runs: [],
+    runsLoading: false,
+    selectedRunId: null,
+    selectedRun: null,
+    refreshRuns: vi.fn(),
+    addRun: vi.fn(),
+    setSelectedRunId: vi.fn(),
+  });
+});
 
 const RUN = {
   id: 'r1',
@@ -96,5 +113,23 @@ describe('ReconRunDetail Page', () => {
     recApi.getRun.mockRejectedValue({ response: { status: 404, data: { error: { message: 'Reconciliation run not found.' } } } });
     renderPage();
     await waitFor(() => expect(screen.getByText('Run not found')).toBeInTheDocument());
+  });
+
+  it('syncs the rerun as the active run after execution', async () => {
+    const readyRun = { ...RUN, status: 'READY' };
+    recApi.getRun.mockResolvedValue({ data: { data: readyRun } });
+    recApi.getAnalytics.mockResolvedValue({ data: { data: {} } });
+    recApi.getResults.mockResolvedValue({
+      data: { data: [], pagination: { total: 0, page: 1, limit: 25 } },
+    });
+    recApi.executeRun.mockResolvedValue({ data: { data: { analytics: { matching: { paymentMatchRate: 60 } } } } });
+
+    renderPage();
+    await waitFor(() => expect(screen.getByRole('button', { name: /Run Reconciliation/ })).toBeInTheDocument());
+    fireEvent.click(screen.getByRole('button', { name: /Run Reconciliation/ }));
+    await waitFor(() =>
+      expect(useReconciliation().addRun).toHaveBeenCalledWith({ id: 'r1', name: 'June Recon', status: 'COMPLETED' })
+    );
+    expect(useReconciliation().setSelectedRunId).toHaveBeenCalledWith('r1');
   });
 });

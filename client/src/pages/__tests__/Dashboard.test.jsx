@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from '../Dashboard';
 
 const mockDashboardData = {
@@ -95,11 +95,33 @@ vi.mock('../../contexts/ReconciliationContext', () => ({
   useReconciliation: vi.fn(),
 }));
 
+vi.mock('../../services/recApi', () => ({
+  recApi: {},
+}));
+
 import { useDashboardData } from '../../hooks/useDashboardData';
 import { useReconciliation } from '../../contexts/ReconciliationContext';
 
 function defaultRecon() {
-  return { runs: [], runsLoading: false, selectedRunId: null, setSelectedRunId: vi.fn(), selectedRun: null, refreshRuns: vi.fn() };
+  return {
+    runs: [{ id: 'r1', name: 'June Recon', status: 'COMPLETED' }],
+    runsLoading: false,
+    selectedRunId: 'r1',
+    setSelectedRunId: vi.fn(),
+    selectedRun: { id: 'r1', name: 'June Recon', status: 'COMPLETED' },
+    refreshRuns: vi.fn(),
+  };
+}
+
+function demoRecon() {
+  return {
+    runs: [],
+    runsLoading: false,
+    selectedRunId: null,
+    setSelectedRunId: vi.fn(),
+    selectedRun: null,
+    refreshRuns: vi.fn(),
+  };
 }
 
 function renderDashboard(ui) {
@@ -320,5 +342,95 @@ describe('Dashboard Page', () => {
 
     renderDashboard(<Dashboard />);
     expect(screen.getByText(/Reconcile\. Detect\. Explain\. Resolve\./)).toBeInTheDocument();
+  });
+
+  it('shows a "no reconciliation data yet" empty state for a user with no runs', () => {
+    useReconciliation.mockReturnValue(demoRecon());
+    useDashboardData.mockReturnValue({
+      data: null,
+      loading: false,
+      error: null,
+      lastUpdated: null,
+      refetch: vi.fn(),
+    });
+
+    renderDashboard(<Dashboard />);
+    expect(useDashboardData).toHaveBeenCalledWith(null, expect.objectContaining({ enabled: false }));
+    expect(screen.getByText('No reconciliation data yet.')).toBeInTheDocument();
+    expect(screen.getByText(/Run a reconciliation or view stats for the demo dataset\./)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Run Reconciliation/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /View Demo Stats/ })).toBeInTheDocument();
+    expect(screen.queryByText('Payments Processed')).not.toBeInTheDocument();
+  });
+
+  it('does not fetch or show demo stats implicitly when no real runs exist', () => {
+    useReconciliation.mockReturnValue(demoRecon());
+    useDashboardData.mockReturnValue({
+      data: null,
+      loading: false,
+      error: null,
+      lastUpdated: null,
+      refetch: vi.fn(),
+    });
+
+    renderDashboard(<Dashboard />);
+    expect(screen.queryByText('Showing the demo sample dataset.')).not.toBeInTheDocument();
+    expect(screen.queryByText('Payments Processed')).not.toBeInTheDocument();
+  });
+
+  it('shows demo stats only after explicitly clicking View Demo Stats', () => {
+    useReconciliation.mockReturnValue(demoRecon());
+    useDashboardData.mockImplementation((runId, opts = {}) =>
+      opts.enabled
+        ? { data: mockDashboardData, loading: false, error: null, lastUpdated: new Date(), refetch: vi.fn() }
+        : { data: null, loading: false, error: null, lastUpdated: null, refetch: vi.fn() }
+    );
+
+    renderDashboard(<Dashboard />);
+    expect(screen.getByText('No reconciliation data yet.')).toBeInTheDocument();
+    expect(screen.queryByText('Payments Processed')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: /View Demo Stats/ }));
+    expect(screen.getByText('Payments Processed')).toBeInTheDocument();
+    expect(screen.getByText(/Showing the demo sample dataset\./)).toBeInTheDocument();
+    expect(useDashboardData).toHaveBeenLastCalledWith(null, expect.objectContaining({ enabled: true }));
+  });
+
+  it('navigates to the create reconciliation page from the empty state', () => {
+    useReconciliation.mockReturnValue(demoRecon());
+    useDashboardData.mockReturnValue({
+      data: null,
+      loading: false,
+      error: null,
+      lastUpdated: null,
+      refetch: vi.fn(),
+    });
+
+    render(
+      <MemoryRouter initialEntries={['/dashboard']}>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/reconciliation/runs/new" element={<div>NEW-RUN-PAGE</div>} />
+        </Routes>
+      </MemoryRouter>
+    );
+    fireEvent.click(screen.getByRole('button', { name: /Run Reconciliation/ }));
+    expect(screen.getByText('NEW-RUN-PAGE')).toBeInTheDocument();
+  });
+
+  it('renders real run stats without the demo banner', () => {
+    useReconciliation.mockReturnValue(defaultRecon());
+    useDashboardData.mockReturnValue({
+      data: mockDashboardData,
+      loading: false,
+      error: null,
+      lastUpdated: null,
+      refetch: vi.fn(),
+    });
+
+    renderDashboard(<Dashboard />);
+    expect(useDashboardData).toHaveBeenCalledWith('r1', expect.objectContaining({ enabled: true }));
+    expect(screen.queryByText('Showing the demo sample dataset.')).not.toBeInTheDocument();
+    expect(screen.getAllByText('June Recon').length).toBeGreaterThanOrEqual(1);
   });
 });

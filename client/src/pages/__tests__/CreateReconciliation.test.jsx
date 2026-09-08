@@ -12,7 +12,24 @@ vi.mock('../../services/recApi', () => ({
   },
 }));
 
+vi.mock('../../contexts/ReconciliationContext', () => ({
+  useReconciliation: vi.fn(),
+}));
+
 import { recApi } from '../../services/recApi';
+import { useReconciliation } from '../../contexts/ReconciliationContext';
+
+beforeEach(() => {
+  useReconciliation.mockReturnValue({
+    runs: [],
+    runsLoading: false,
+    selectedRunId: null,
+    selectedRun: null,
+    refreshRuns: vi.fn(),
+    addRun: vi.fn(),
+    setSelectedRunId: vi.fn(),
+  });
+});
 
 const labelFor = {
   PAYMENTS: 'Payments',
@@ -92,11 +109,13 @@ describe('CreateReconciliation Page', () => {
       await waitFor(() => expect(screen.queryByTestId(`upload-${ft}`)).not.toBeInTheDocument());
     }
 
-const runBtn = await screen.findByRole('button', { name: /Run Reconciliation/ });
+    const runBtn = await screen.findByRole('button', { name: /Run Reconciliation/ });
     expect(runBtn).toBeEnabled();
     fireEvent.click(runBtn);
     await waitFor(() => expect(screen.getByText('Reconciliation completed')).toBeInTheDocument());
     expect(recApi.executeRun).toHaveBeenCalledWith('r123');
+    expect(useReconciliation().addRun).toHaveBeenCalledWith({ id: 'r123', name: 'X', status: 'COMPLETED' });
+    expect(useReconciliation().setSelectedRunId).toHaveBeenCalledWith('r123');
   });
 });
 
@@ -275,6 +294,8 @@ describe('CreateReconciliation Page — Use Sample CSV', () => {
     fireEvent.click(runBtn);
     await waitFor(() => expect(screen.getByText('Reconciliation completed')).toBeInTheDocument());
     expect(recApi.executeRun).toHaveBeenCalledWith('r123');
+    expect(useReconciliation().addRun).toHaveBeenCalledWith({ id: 'r123', name: 'Demo Run', status: 'COMPLETED' });
+    expect(useReconciliation().setSelectedRunId).toHaveBeenCalledWith('r123');
     expect(recApi.uploadFile).toHaveBeenNthCalledWith(
       1,
       'r123',

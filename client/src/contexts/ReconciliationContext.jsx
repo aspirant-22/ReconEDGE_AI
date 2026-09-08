@@ -48,6 +48,14 @@ export const ReconciliationProvider = ({ children }) => {
     }
   }, [user, refreshRuns]);
 
+  const addRun = useCallback((run) => {
+    const id = run.id || run._id;
+    setRuns((prev) => {
+      if (prev.some((r) => String(r.id || r._id) === String(id))) return prev;
+      return [run, ...prev];
+    });
+  }, []);
+
   const setSelectedRunId = useCallback(
     (id) => {
       setSelectedRunIdState(id || null);
@@ -72,8 +80,9 @@ export const ReconciliationProvider = ({ children }) => {
       selectedRunId,
       setSelectedRunId,
       selectedRun,
+      addRun,
     }),
-    [runs, runsLoading, refreshRuns, selectedRunId, setSelectedRunId, selectedRun]
+    [runs, runsLoading, refreshRuns, selectedRunId, setSelectedRunId, selectedRun, addRun]
   );
 
   return <ReconciliationContext.Provider value={value}>{children}</ReconciliationContext.Provider>;

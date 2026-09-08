@@ -14,6 +14,7 @@ import {
   X,
 } from 'lucide-react';
 import { recApi } from '../services/recApi';
+import { useReconciliation } from '../contexts/ReconciliationContext';
 
 const STATUS_LABELS = {
   CREATED: 'Created', UPLOADING: 'Uploading', VALIDATING: 'Validating',
@@ -49,6 +50,7 @@ function TypeBadge({ type }) {
 const ReconRunDetail = () => {
   const { runId } = useParams();
   const navigate = useNavigate();
+  const { addRun, setSelectedRunId } = useReconciliation();
   const [run, setRun] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -109,6 +111,8 @@ const ReconRunDetail = () => {
     try {
       const res = await recApi.executeRun(runId);
       setAnalytics(res.data?.data?.analytics);
+      addRun({ id: runId, name: run?.name, status: 'COMPLETED' });
+      setSelectedRunId(runId);
       await load();
     } catch (err) {
       if (err.response?.status !== 401) setError(err.response?.data?.error?.message || 'Reconciliation failed.');

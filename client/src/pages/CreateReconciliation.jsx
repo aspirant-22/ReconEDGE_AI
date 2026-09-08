@@ -20,6 +20,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { recApi } from '../services/recApi';
+import { useReconciliation } from '../contexts/ReconciliationContext';
 import { SAMPLE_FILES, SAMPLE_LOAD_ERROR, loadSampleFile } from '../utils/sampleFiles';
 
 const FILE_TYPES = [
@@ -83,6 +84,7 @@ function emptyFileState() {
 
 const CreateReconciliation = () => {
   const navigate = useNavigate();
+  const { addRun, setSelectedRunId } = useReconciliation();
   const [step, setStep] = useState(1);
   const [name, setName] = useState('');
   const [periodStart, setPeriodStart] = useState('');
@@ -158,6 +160,8 @@ const CreateReconciliation = () => {
       const res = await recApi.executeRun(runId);
       setRunOutcome(res.data?.data);
       setStep(3);
+      addRun({ id: runId, name: runName, status: 'COMPLETED' });
+      setSelectedRunId(runId);
     } catch (err) {
       if (err.response?.status === 401) return;
       setButtonError(err.response?.data?.error?.message || 'Reconciliation failed.');

@@ -1,4 +1,6 @@
-import { RefreshCw, Database, FolderOpen } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { RefreshCw, Database, FolderOpen, Play } from 'lucide-react';
 import { useDashboardData } from '../hooks/useDashboardData';
 import { useReconciliation } from '../contexts/ReconciliationContext';
 import RunSelector from '../components/run/RunSelector';
@@ -16,8 +18,56 @@ import { SkeletonCard, SkeletonChart, SkeletonTable } from '../components/dashbo
 import { ErrorState, EmptyState } from '../components/dashboard/States';
 
 const Dashboard = () => {
-  const { selectedRunId, selectedRun } = useReconciliation();
-  const { data, loading, error, lastUpdated, refetch } = useDashboardData(selectedRunId);
+  const { selectedRunId, selectedRun, runs } = useReconciliation();
+  const [viewingDemo, setViewingDemo] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (selectedRunId) setViewingDemo(false);
+  }, [selectedRunId]);
+
+  const hasRealRuns = runs.length > 0;
+  const showDemo = !selectedRunId && (viewingDemo || hasRealRuns);
+  const showEmpty = !selectedRunId && !hasRealRuns && !viewingDemo;
+  const { data, loading, error, lastUpdated, refetch } = useDashboardData(selectedRunId, {
+    enabled: Boolean(selectedRunId) || showDemo,
+  });
+
+  if (showEmpty) {
+    return (
+      <div>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+          <h1 className="text-2xl font-bold text-gray-900">Financial Control Dashboard</h1>
+          <RunSelector />
+        </div>
+        <div className="bg-white rounded-xl border border-gray-200 p-5">
+          <div className="text-center py-12">
+            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Database size={28} className="text-gray-300" />
+            </div>
+            <h2 className="text-lg font-medium text-gray-900 mb-2">No reconciliation data yet.</h2>
+            <p className="text-sm text-gray-500 max-w-md mx-auto mb-6">
+              Run a reconciliation or view stats for the demo dataset.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <button
+                onClick={() => navigate('/reconciliation/runs/new')}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors"
+              >
+                <Play size={14} /> Run Reconciliation
+              </button>
+              <button
+                onClick={() => setViewingDemo(true)}
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <Database size={14} /> View Demo Stats
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return (

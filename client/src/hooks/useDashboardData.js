@@ -1,13 +1,19 @@
 import { useState, useEffect, useCallback } from 'react';
 import api from '../services/api';
 
-export function useDashboardData(runId) {
+export function useDashboardData(runId, { enabled = true } = {}) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
 
   const fetchDashboard = useCallback(async () => {
+    if (!enabled) {
+      setData(null);
+      setError(null);
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     setError(null);
 
@@ -35,7 +41,7 @@ export function useDashboardData(runId) {
     } finally {
       setLoading(false);
     }
-  }, [runId]);
+  }, [runId, enabled]);
 
   useEffect(() => {
     fetchDashboard();
