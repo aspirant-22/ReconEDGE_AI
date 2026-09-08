@@ -679,6 +679,76 @@ What should I investigate first?
 The Q&A system is scoped to the selected reconciliation run.
 
 ---
+# 📸 Application Screenshots
+
+### 🏠 Dashboard
+
+Overview of reconciliation runs, financial metrics, exception counts, and reconciliation health.
+
+<img width="960" height="504" alt="Screenshot 2026-09-08 174038" src="https://github.com/user-attachments/assets/deb133cf-ebc8-43e2-b57d-8e83da6bc168" />
+<img width="960" height="504" alt="Screenshot 2026-09-08 174604" src="https://github.com/user-attachments/assets/01d97a4c-9c89-433e-bf03-ec0534a9ce2b" />
+
+
+
+---
+
+### 📊 Reconciliation Dashboard
+
+View the current reconciliation run, switch between previous runs, and analyze reconciliation results.
+<img width="960" height="498" alt="Screenshot 2026-09-08 174618" src="https://github.com/user-attachments/assets/b992342c-283e-427f-b724-a0b020978b1a" />
+
+
+
+---
+
+### ⚠️ Exception Management
+
+Review detected financial exceptions, understand their severity, and investigate individual transactions.
+
+<img width="960" height="508" alt="Screenshot 2026-09-08 174631" src="https://github.com/user-attachments/assets/fbf2f3b8-6eb7-4d40-979e-dc36a4082482" />
+
+
+
+---
+
+### 🤖 AI Exception Analysis
+
+Gemini-powered intelligence explains detected exceptions and recommends investigation steps without modifying the underlying financial truth.
+
+<img width="960" height="505" alt="Screenshot 2026-09-08 182210" src="https://github.com/user-attachments/assets/b52952fa-3e7f-4c5e-b6cf-9bc7f7951157" />
+
+
+
+---
+
+### 🔍 Exception Detail & Resolution
+
+Review transaction evidence and perform controlled human resolution actions.
+
+<img width="960" height="500" alt="Screenshot 2026-09-08 182136" src="https://github.com/user-attachments/assets/e6b48a39-0af3-4e37-bc17-41f9f9d4c41a" />
+
+
+
+---
+
+### 🧠 Finance Q&A
+
+Ask finance-related questions scoped to the selected reconciliation run.
+
+<img width="960" height="504" alt="Screenshot 2026-09-08 174647" src="https://github.com/user-attachments/assets/e3977980-1c39-4b0f-8fd5-93822c7c8027" />
+
+
+
+
+---
+### 🛡️ Audit Trail
+
+Track important financial workflow actions with a complete audit history, including who performed an action, what changed, and when it happened.
+
+<img width="960" height="517" alt="Screenshot 2026-09-08 182556" src="https://github.com/user-attachments/assets/1c306cd1-1075-418a-90f9-efe2c590460a" />
+
+
+---
 
 # 🏗️ System Architecture
 
