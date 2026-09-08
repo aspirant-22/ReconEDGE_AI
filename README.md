@@ -10,6 +10,15 @@ It combines a reliable rule-based reconciliation engine with **Gemini-powered ex
 
 ---
 
+## 🎥 Product Demo
+
+See ReconEDGE AI in action — from financial data upload and deterministic reconciliation to AI-powered exception explanation and human-controlled resolution.
+
+[![ReconEDGE AI Demo](https://img.youtube.com/vi/AhdULPXFoh8/maxresdefault.jpg)](https://youtu.be/AhdULPXFoh8)
+
+> 🎬 Click the preview above to watch the complete demo.
+---
+
 ## 🚀 The Problem
 
 Financial reconciliation is still heavily dependent on manual comparison of data from multiple systems.
