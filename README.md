@@ -10,6 +10,15 @@ It combines a reliable rule-based reconciliation engine with **Gemini-powered ex
 
 ---
 
+## 🚀 Live Demo
+
+**Try ReconEDGE AI:**  
+👉 [Launch ReconEDGE AI](https://recon-edge-ai.vercel.app/)
+
+> Explore financial reconciliation, exception detection, AI-powered explanations, and audit trails.
+
+---
+
 ## 🎥 Product Demo
 
 See ReconEDGE AI in action — from financial data upload and deterministic reconciliation to AI-powered exception explanation and human-controlled resolution.
